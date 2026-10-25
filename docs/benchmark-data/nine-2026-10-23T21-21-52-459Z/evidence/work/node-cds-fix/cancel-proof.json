@@ -1,0 +1,36 @@
+{
+  "checked_at_utc": "2026-10-23T20:32:29.662Z",
+  "passed": true,
+  "tests": [
+    {
+      "image": "sap-polling-node:nine-sql",
+      "image_id": "sha256:a945b55d66dd3209f6215878e3f7c739aed45a32e4647fbd636cf989396cf1b0",
+      "outcome": "ok",
+      "fetch_elapsed_ms": 5007.3255309999995,
+      "rows": 100,
+      "injected_fault": "Five-second client-side fetch stall, released only when SQLCancel reaches its statement handle",
+      "proof": {
+        "cancel_calls": 0,
+        "cancel_reached_fetch": false
+      }
+    },
+    {
+      "image": "sap-polling-node:nine-fixed-sql",
+      "image_id": "sha256:3221921974e44b13334f012a793e021174f8b6d52249cfa16b0eaba289fe605d",
+      "outcome": "ok",
+      "fetch_elapsed_ms": 503.49629300000004,
+      "rows": 100,
+      "injected_fault": "Five-second client-side fetch stall, released only when SQLCancel reaches its statement handle",
+      "proof": {
+        "cancel_calls": 1,
+        "cancel_reached_fetch": true
+      }
+    }
+  ],
+  "scope": "Real node-odbc addon and live SAP cursor; test shim models a stalled native fetch and successful cancellation. This does not prove SAP driver cancellation latency under paging.",
+  "source_sha256": {
+    "cancel-shim.cpp": "a94c6bb536b722d0cdedd0d0ff97ea112cf320568f950e7da8b1b28b2f60af0e",
+    "probe-cursor.mjs": "b4dca8b6826c37446b12de629565dfa951a2a62b20aacff687ce6edbc7d21edc",
+    "run-cancel-proof.mjs": "da2fe27e53ec291f3bd04eacc22eb4f32b16d511264b402cf8ad1e7b2694c586"
+  }
+}

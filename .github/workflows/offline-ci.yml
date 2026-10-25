@@ -1,0 +1,64 @@
+name: Offline verification
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: offline-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  node:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version-file: .node-version
+          cache: npm
+          cache-dependency-path: clients/node/package-lock.json
+      - run: npm ci --prefix clients/node --omit=optional --ignore-scripts --no-audit --no-fund
+      - run: npm run verify:node
+      - run: npm run verify:docs
+  rust:
+    runs-on: ubuntu-24.04
+    container: rust:1.99.1-bookworm@sha256:48b7f435b8fc6378ce43b44f15e3a47fd8919b2825f835c39bd4bd3da50af5b8
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version-file: .node-version
+      - name: Install open-source ODBC manager headers
+        run: |
+          rm -f /etc/apt/sources.list.d/debian.sources
+          printf '%s\n' 'deb [check-valid-until=no] http://snapshot.debian.org/archive/debian/20261024T000000Z/ bookworm main' 'deb [check-valid-until=no] http://snapshot.debian.org/archive/debian-security/20261024T000000Z/ bookworm-security main' > /etc/apt/sources.list
+          apt-get update
+          apt-get install -y --no-install-recommends unixodbc-dev
+      - run: npm run verify:rust
+  source-images:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - context: clients/node
+            dockerfile: clients/node/Dockerfile
+          - context: clients/node
+            dockerfile: clients/node/Dockerfile.sql
+          - context: clients/rust
+            dockerfile: clients/rust/Dockerfile
+          - context: clients/rust
+            dockerfile: clients/rust/Dockerfile.sql
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - run: docker build --platform linux/amd64 --pull --no-cache --progress=plain -f "${{ matrix.dockerfile }}" "${{ matrix.context }}"

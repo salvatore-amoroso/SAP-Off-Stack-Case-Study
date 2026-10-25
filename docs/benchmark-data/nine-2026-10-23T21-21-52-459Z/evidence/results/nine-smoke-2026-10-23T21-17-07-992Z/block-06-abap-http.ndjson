@@ -1,0 +1,5 @@
+{"kind":"scan","phase":"warmup","schema_version":1,"scan_index":0,"outcome":"ok","rows":5000,"pages":51,"digest":"df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7","error":null,"metrics":{"elapsed_ms":1602,"body_bytes":1074741,"missed_slots":0}}
+{"kind":"scan","phase":"measured","schema_version":1,"scan_index":0,"outcome":"ok","rows":5000,"pages":51,"digest":"df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7","error":null,"metrics":{"elapsed_ms":1542,"body_bytes":1074741,"missed_slots":0}}
+{"kind":"scan","phase":"measured","schema_version":1,"scan_index":1,"outcome":"ok","rows":5000,"pages":51,"digest":"df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7","error":null,"metrics":{"elapsed_ms":1529,"body_bytes":1074741,"missed_slots":0}}
+{"kind":"summary","transport":"classic_socket","authentication":"preemptive_basic","service_root":"http://host.docker.internal/sap/opu/odata4/sap/zui_bl_orders_o4/srvd_a2x/sap/zui_bl_orders/0001/","duration_seconds":3,"warmup_scans":1,"measured_scans":2,"measured_wall_ms":3072,"measured_valid_rows":10000,"measured_body_bytes":2149482,"failed_scans":0}
+

@@ -1,0 +1,2475 @@
+{
+  "block_index": 13,
+  "round": 2,
+  "app_id": "rust-http",
+  "language": "rust",
+  "implementation": "rust",
+  "approach": "http",
+  "started_utc": "2026-10-23T22:00:07.386Z",
+  "finished_utc": "2026-10-23T22:03:16.565Z",
+  "control_wall_ms": 189177.91889999993,
+  "exit_code": 0,
+  "timed_out": false,
+  "oversized": false,
+  "execution_failure": null,
+  "raw_file": "block-13-rust-http.ndjson",
+  "raw_sha256": "e412361796d42b203f6c4403dd550bfdfb62941955d70c3471f263334601b833",
+  "verification": {
+    "passed": true,
+    "failures": 0,
+    "failing_scan_records": [],
+    "sequence_valid": true,
+    "timing_valid": true,
+    "summary_valid": true,
+    "warmup_scans": 5,
+    "measured_scans": 130,
+    "measured_wall_ms": 181344,
+    "expected_pages": 51,
+    "expected_body_bytes": 1074741,
+    "host_memory_valid": true
+  },
+  "resource_samples": [
+    {
+      "at_utc": "2026-10-23T22:00:39.553Z",
+      "passed": true,
+      "samples": [
+        {
+          "BlockIO": "12.6GB / 712MB",
+          "CPUPerc": "93.39%",
+          "Container": "a4h",
+          "ID": "3794fe900b2b",
+          "MemPerc": "78.17%",
+          "MemUsage": "18.35GiB / 23.47GiB",
+          "Name": "a4h",
+          "NetIO": "710MB / 13GB",
+          "PIDs": "689"
+        },
+        {
+          "BlockIO": "16.8MB / 0B",
+          "CPUPerc": "1.23%",
+          "Container": "sap-local-ports",
+          "ID": "ff42f318249e",
+          "MemPerc": "14.67%",
+          "MemUsage": "18.77MiB / 128MiB",
+          "Name": "sap-local-ports",
+          "NetIO": "641MB / 640MB",
+          "PIDs": "2"
+        },
+        {
+          "BlockIO": "2.13MB / 0B",
+          "CPUPerc": "2.34%",
+          "Container": "nine-http-rust-20261023212152-13",
+          "ID": "0efc79cad6f5",
+          "MemPerc": "1.71%",
+          "MemUsage": "4.375MiB / 256MiB",
+          "Name": "nine-http-rust-20261023212152-13",
+          "NetIO": "38.5MB / 2.18MB",
+          "PIDs": "3"
+        }
+      ],
+      "host": {
+        "free_memory_bytes": 6867668992,
+        "total_memory_bytes": 34108788736,
+        "cpu_time_ms": 400476059,
+        "cpu_idle_ms": 368698845
+      }
+    },
+    {
+      "at_utc": "2026-10-23T22:01:09.553Z",
+      "passed": true,
+      "samples": [
+        {
+          "BlockIO": "12.6GB / 722MB",
+          "CPUPerc": "93.62%",
+          "Container": "a4h",
+          "ID": "3794fe900b2b",
+          "MemPerc": "78.17%",
+          "MemUsage": "18.35GiB / 23.47GiB",
+          "Name": "a4h",
+          "NetIO": "711MB / 13GB",
+          "PIDs": "689"
+        },
+        {
+          "BlockIO": "16.8MB / 0B",
+          "CPUPerc": "1.30%",
+          "Container": "sap-local-ports",
+          "ID": "ff42f318249e",
+          "MemPerc": "14.75%",
+          "MemUsage": "18.88MiB / 128MiB",
+          "Name": "sap-local-ports",
+          "NetIO": "665MB / 664MB",
+          "PIDs": "2"
+        },
+        {
+          "BlockIO": "2.13MB / 0B",
+          "CPUPerc": "2.42%",
+          "Container": "nine-http-rust-20261023212152-13",
+          "ID": "0efc79cad6f5",
+          "MemPerc": "1.70%",
+          "MemUsage": "4.352MiB / 256MiB",
+          "Name": "nine-http-rust-20261023212152-13",
+          "NetIO": "73.9MB / 4.12MB",
+          "PIDs": "3"
+        }
+      ],
+      "host": {
+        "free_memory_bytes": 6810656768,
+        "total_memory_bytes": 34108788736,
+        "cpu_time_ms": 401318153,
+        "cpu_idle_ms": 369455563
+      }
+    },
+    {
+      "at_utc": "2026-10-23T22:01:39.562Z",
+      "passed": true,
+      "samples": [
+        {
+          "BlockIO": "12.6GB / 745MB",
+          "CPUPerc": "94.91%",
+          "Container": "a4h",
+          "ID": "3794fe900b2b",
+          "MemPerc": "78.19%",
+          "MemUsage": "18.35GiB / 23.47GiB",
+          "Name": "a4h",
+          "NetIO": "711MB / 13GB",
+          "PIDs": "689"
+        },
+        {
+          "BlockIO": "16.8MB / 0B",
+          "CPUPerc": "1.31%",
+          "Container": "sap-local-ports",
+          "ID": "ff42f318249e",
+          "MemPerc": "15.65%",
+          "MemUsage": "20.04MiB / 128MiB",
+          "Name": "sap-local-ports",
+          "NetIO": "691MB / 690MB",
+          "PIDs": "2"
+        },
+        {
+          "BlockIO": "2.13MB / 0B",
+          "CPUPerc": "2.45%",
+          "Container": "nine-http-rust-20261023212152-13",
+          "ID": "0efc79cad6f5",
+          "MemPerc": "1.72%",
+          "MemUsage": "4.395MiB / 256MiB",
+          "Name": "nine-http-rust-20261023212152-13",
+          "NetIO": "107MB / 5.9MB",
+          "PIDs": "3"
+        }
+      ],
+      "host": {
+        "free_memory_bytes": 6813196288,
+        "total_memory_bytes": 34108788736,
+        "cpu_time_ms": 402159809,
+        "cpu_idle_ms": 370206206
+      }
+    },
+    {
+      "at_utc": "2026-10-23T22:02:09.565Z",
+      "passed": true,
+      "samples": [
+        {
+          "BlockIO": "12.6GB / 750MB",
+          "CPUPerc": "93.22%",
+          "Container": "a4h",
+          "ID": "3794fe900b2b",
+          "MemPerc": "78.19%",
+          "MemUsage": "18.35GiB / 23.47GiB",
+          "Name": "a4h",
+          "NetIO": "712MB / 13.1GB",
+          "PIDs": "689"
+        },
+        {
+          "BlockIO": "16.8MB / 0B",
+          "CPUPerc": "1.28%",
+          "Container": "sap-local-ports",
+          "ID": "ff42f318249e",
+          "MemPerc": "15.06%",
+          "MemUsage": "19.28MiB / 128MiB",
+          "Name": "sap-local-ports",
+          "NetIO": "715MB / 715MB",
+          "PIDs": "2"
+        },
+        {
+          "BlockIO": "2.13MB / 0B",
+          "CPUPerc": "2.40%",
+          "Container": "nine-http-rust-20261023212152-13",
+          "ID": "0efc79cad6f5",
+          "MemPerc": "1.90%",
+          "MemUsage": "4.852MiB / 256MiB",
+          "Name": "nine-http-rust-20261023212152-13",
+          "NetIO": "141MB / 7.76MB",
+          "PIDs": "3"
+        }
+      ],
+      "host": {
+        "free_memory_bytes": 6739726336,
+        "total_memory_bytes": 34108788736,
+        "cpu_time_ms": 403000751,
+        "cpu_idle_ms": 370960053
+      }
+    },
+    {
+      "at_utc": "2026-10-23T22:02:39.582Z",
+      "passed": true,
+      "samples": [
+        {
+          "BlockIO": "12.6GB / 750MB",
+          "CPUPerc": "95.02%",
+          "Container": "a4h",
+          "ID": "3794fe900b2b",
+          "MemPerc": "78.19%",
+          "MemUsage": "18.35GiB / 23.47GiB",
+          "Name": "a4h",
+          "NetIO": "713MB / 13.1GB",
+          "PIDs": "689"
+        },
+        {
+          "BlockIO": "16.8MB / 0B",
+          "CPUPerc": "1.37%",
+          "Container": "sap-local-ports",
+          "ID": "ff42f318249e",
+          "MemPerc": "15.54%",
+          "MemUsage": "19.89MiB / 128MiB",
+          "Name": "sap-local-ports",
+          "NetIO": "741MB / 741MB",
+          "PIDs": "2"
+        },
+        {
+          "BlockIO": "2.13MB / 0B",
+          "CPUPerc": "2.44%",
+          "Container": "nine-http-rust-20261023212152-13",
+          "ID": "0efc79cad6f5",
+          "MemPerc": "1.86%",
+          "MemUsage": "4.75MiB / 256MiB",
+          "Name": "nine-http-rust-20261023212152-13",
+          "NetIO": "175MB / 9.62MB",
+          "PIDs": "3"
+        }
+      ],
+      "host": {
+        "free_memory_bytes": 6759890944,
+        "total_memory_bytes": 34108788736,
+        "cpu_time_ms": 403843823,
+        "cpu_idle_ms": 371717221
+      }
+    },
+    {
+      "at_utc": "2026-10-23T22:03:09.594Z",
+      "passed": true,
+      "samples": [
+        {
+          "BlockIO": "12.6GB / 756MB",
+          "CPUPerc": "95.91%",
+          "Container": "a4h",
+          "ID": "3794fe900b2b",
+          "MemPerc": "78.19%",
+          "MemUsage": "18.35GiB / 23.47GiB",
+          "Name": "a4h",
+          "NetIO": "713MB / 13.1GB",
+          "PIDs": "689"
+        },
+        {
+          "BlockIO": "16.8MB / 0B",
+          "CPUPerc": "1.34%",
+          "Container": "sap-local-ports",
+          "ID": "ff42f318249e",
+          "MemPerc": "15.01%",
+          "MemUsage": "19.21MiB / 128MiB",
+          "Name": "sap-local-ports",
+          "NetIO": "766MB / 765MB",
+          "PIDs": "2"
+        },
+        {
+          "BlockIO": "2.13MB / 0B",
+          "CPUPerc": "2.68%",
+          "Container": "nine-http-rust-20261023212152-13",
+          "ID": "0efc79cad6f5",
+          "MemPerc": "1.81%",
+          "MemUsage": "4.625MiB / 256MiB",
+          "Name": "nine-http-rust-20261023212152-13",
+          "NetIO": "212MB / 11.7MB",
+          "PIDs": "3"
+        }
+      ],
+      "host": {
+        "free_memory_bytes": 6647205888,
+        "total_memory_bytes": 34108788736,
+        "cpu_time_ms": 404685829,
+        "cpu_idle_ms": 372475770
+      }
+    }
+  ],
+  "records": [
+    {
+      "kind": "scan",
+      "phase": "warmup",
+      "schema_version": 1,
+      "scan_index": 0,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1733,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "warmup",
+      "schema_version": 1,
+      "scan_index": 1,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1441,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "warmup",
+      "schema_version": 1,
+      "scan_index": 2,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1392,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "warmup",
+      "schema_version": 1,
+      "scan_index": 3,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1404,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "warmup",
+      "schema_version": 1,
+      "scan_index": 4,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1362,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 5,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1401,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 6,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1360,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 7,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1366,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 8,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1367,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 9,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1378,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 10,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1372,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 11,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1369,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 12,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1366,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 13,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1394,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 14,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1370,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 15,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1353,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 16,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1362,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 17,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1381,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 18,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1382,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 19,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1378,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 20,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1389,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 21,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1400,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 22,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1416,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 23,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1389,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 24,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1410,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 25,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1405,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 26,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1393,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 27,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1415,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 28,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1401,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 29,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1397,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 30,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1386,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 31,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1425,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 32,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1406,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 33,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1399,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 34,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1414,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 35,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1424,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 36,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1411,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 37,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1418,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 38,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1407,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 39,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1425,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 40,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1403,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 41,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1390,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 42,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1414,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 43,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1384,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 44,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1406,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 45,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1434,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 46,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1394,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 47,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1383,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 48,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1394,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 49,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1403,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 50,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1368,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 51,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1375,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 52,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1380,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 53,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1391,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 54,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1400,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 55,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1365,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 56,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1387,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 57,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1406,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 58,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1381,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 59,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1380,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 60,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1407,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 61,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1424,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 62,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1384,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 63,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1395,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 64,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1416,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 65,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1385,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 66,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1382,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 67,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1427,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 68,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1411,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 69,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1414,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 70,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1400,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 71,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1418,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 72,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1394,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 73,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1390,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 74,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1406,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 75,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1400,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 76,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1379,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 77,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1367,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 78,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1410,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 79,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1386,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 80,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1386,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 81,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1388,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 82,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1409,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 83,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1409,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 84,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1384,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 85,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1397,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 86,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1394,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 87,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1389,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 88,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1404,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 89,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1402,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 90,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1398,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 91,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1389,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 92,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1398,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 93,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1424,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 94,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1392,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 95,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1378,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 96,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1382,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 97,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1384,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 98,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1382,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 99,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1402,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 100,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1434,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 101,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1404,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 102,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1393,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 103,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1432,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 104,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1436,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 105,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1375,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 106,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1386,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 107,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1386,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 108,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1405,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 109,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1388,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 110,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1413,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 111,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1408,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 112,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1402,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 113,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1397,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 114,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1401,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 115,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1422,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 116,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1418,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 117,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1399,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 118,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1397,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 119,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1397,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 120,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1363,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 121,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1373,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 122,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1401,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 123,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1368,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 124,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1370,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 125,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1425,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 126,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1393,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 127,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1367,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 128,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1394,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 129,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1380,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 130,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1378,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 131,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1375,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 132,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1379,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 133,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1390,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 134,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 1374,
+        "body_bytes": 1074741,
+        "missed_slots": 0
+      }
+    },
+    {
+      "client_policy": "fresh_per_scan",
+      "kind": "summary",
+      "measured_scans": 130,
+      "measured_wall_ms": 181344,
+      "outcome": "ok",
+      "schema_version": 1,
+      "transport": "socket",
+      "warmup_scans": 5
+    }
+  ]
+}

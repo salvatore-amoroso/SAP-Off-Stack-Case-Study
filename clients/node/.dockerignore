@@ -1,0 +1,17 @@
+node_modules
+test
+README.md
+*.jsonl
+.env
+.env.*
+*.pem
+*.key
+*.sar
+*.SAR
+*.so
+*.so.*
+*.dll
+*.p12
+*.pfx
+*.pse
+SAPCAR*

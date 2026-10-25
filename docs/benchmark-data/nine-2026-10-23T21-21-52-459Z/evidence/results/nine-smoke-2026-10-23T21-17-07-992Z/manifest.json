@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "protocol": "sap-nine-path-benchmark-smoke-v1",
+  "run_id": "2026-10-23T21-17-07-992Z",
+  "inputs_file": "inputs.json",
+  "inputs_sha256": "07847a000c5373b1e2683437cc8f27e4404e52d57cc259dba6abf354bb7cfafd",
+  "status": "complete",
+  "started_utc": "2026-10-23T21:17:09.171Z",
+  "duration_seconds": 3,
+  "warmup_scans": 1,
+  "rounds": 1,
+  "schedule": [
+    [
+      "node-http",
+      "rust-cds",
+      "abap-native",
+      "node-cds",
+      "rust-native",
+      "abap-http",
+      "node-native",
+      "rust-http",
+      "abap-cds"
+    ]
+  ],
+  "blocks": [
+    {
+      "path": "block-01-node-http.json",
+      "sha256": "6a3166b8ce0d2cbf035727a5d6c8ec85f746f95225df0cbe2f45f9c197bd9d36",
+      "round": 1,
+      "app_id": "node-http",
+      "language": "node",
+      "implementation": "node",
+      "approach": "http",
+      "passed": true
+    },
+    {
+      "path": "block-02-rust-cds.json",
+      "sha256": "81c183c54a71dc646374282aae0b17e5595c7464ebd6902b923f8aa232884242",
+      "round": 1,
+      "app_id": "rust-cds",
+      "language": "rust",
+      "implementation": "rust",
+      "approach": "cds",
+      "passed": true
+    },
+    {
+      "path": "block-03-abap-native.json",
+      "sha256": "60004118ab6bb5be6973f79f27742a27878aaa8dd4952b3d2f2b4fea5d315081",
+      "round": 1,
+      "app_id": "abap-native",
+      "language": "abap",
+      "implementation": "abap",
+      "approach": "native",
+      "passed": true
+    },
+    {
+      "path": "block-04-node-cds.json",
+      "sha256": "14556ea21891476c62affa4fca6d09847f6e031f3feeeaeb6712330141574572",
+      "round": 1,
+      "app_id": "node-cds",
+      "language": "node",
+      "implementation": "node",
+      "approach": "cds",
+      "passed": true
+    },
+    {
+      "path": "block-05-rust-native.json",
+      "sha256": "19675f22df0913328772a4249b09ce87653d7225d6109f3087f18907245d55de",
+      "round": 1,
+      "app_id": "rust-native",
+      "language": "rust",
+      "implementation": "rust",
+      "approach": "native",
+      "passed": true
+    },
+    {
+      "path": "block-06-abap-http.json",
+      "sha256": "7e7c6f052d2ed6893b7441b42b8aa0fec39f9607afb6bc9908613c61d87cb1f6",
+      "round": 1,
+      "app_id": "abap-http",
+      "language": "abap",
+      "implementation": "abap",
+      "approach": "http",
+      "passed": true
+    },
+    {
+      "path": "block-07-node-native.json",
+      "sha256": "10d0ca6f4c2d78143485773954d95e39c77fbc4af32e088ef5366240842f84a6",
+      "round": 1,
+      "app_id": "node-native",
+      "language": "node",
+      "implementation": "node",
+      "approach": "native",
+      "passed": true
+    },
+    {
+      "path": "block-08-rust-http.json",
+      "sha256": "181797469cf5c51375704a438a5ef9dc3ebd3cf9938835c689b50ff9d8ae6c86",
+      "round": 1,
+      "app_id": "rust-http",
+      "language": "rust",
+      "implementation": "rust",
+      "approach": "http",
+      "passed": true
+    },
+    {
+      "path": "block-09-abap-cds.json",
+      "sha256": "b2bc566d4a1eb6e405dbb1ea2471936b57741a7b8be0fa223d923c80ea501750",
+      "round": 1,
+      "app_id": "abap-cds",
+      "language": "abap",
+      "implementation": "abap",
+      "approach": "cds",
+      "passed": true
+    }
+  ],
+  "baseline_resources": {
+    "passed": true,
+    "samples": [
+      {
+        "BlockIO": "11.8GB / 360MB",
+        "CPUPerc": "6.00%",
+        "Container": "a4h",
+        "ID": "3794fe900b2b",
+        "MemPerc": "73.23%",
+        "MemUsage": "17.19GiB / 23.47GiB",
+        "Name": "a4h",
+        "NetIO": "181kB / 2.52MB",
+        "PIDs": "677"
+      },
+      {
+        "BlockIO": "16.8MB / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "sap-local-ports",
+        "ID": "ff42f318249e",
+        "MemPerc": "12.48%",
+        "MemUsage": "15.98MiB / 128MiB",
+        "Name": "sap-local-ports",
+        "NetIO": "1.04MB / 1.04MB",
+        "PIDs": "2"
+      },
+      {
+        "BlockIO": "719MB / 128MB",
+        "CPUPerc": "10.21%",
+        "Container": "sap-polling-lab-control-plane",
+        "ID": "493af5471188",
+        "MemPerc": "34.59%",
+        "MemUsage": "708.5MiB / 2GiB",
+        "Name": "sap-polling-lab-control-plane",
+        "NetIO": "7.43kB / 6.48kB",
+        "PIDs": "314"
+      }
+    ],
+    "host": {
+      "free_memory_bytes": 8791367680,
+      "total_memory_bytes": 34108788736,
+      "cpu_time_ms": 327349186,
+      "cpu_idle_ms": 301747286
+    }
+  },
+  "final_images": {
+    "node-http": {
+      "tag": "sap-polling-node:nine-fixed-http",
+      "id": "sha256:c39d28320ae59178e85d3a6fcfcfceb6bdc69c39568ca983ea051c60acedcd0d",
+      "repo_digests": [
+        "sap-polling-node@sha256:c39d28320ae59178e85d3a6fcfcfceb6bdc69c39568ca983ea051c60acedcd0d"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "node-cds": {
+      "tag": "sap-polling-node:nine-fixed-sql",
+      "id": "sha256:3221921974e44b13334f012a793e021174f8b6d52249cfa16b0eaba289fe605d",
+      "repo_digests": [
+        "sap-polling-node@sha256:3221921974e44b13334f012a793e021174f8b6d52249cfa16b0eaba289fe605d"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "node-native": {
+      "tag": "sap-polling-node:nine-fixed-sql",
+      "id": "sha256:3221921974e44b13334f012a793e021174f8b6d52249cfa16b0eaba289fe605d",
+      "repo_digests": [
+        "sap-polling-node@sha256:3221921974e44b13334f012a793e021174f8b6d52249cfa16b0eaba289fe605d"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "rust-http": {
+      "tag": "sap-polling-rust:nine-http",
+      "id": "sha256:b9297d62027bc866e57dc0f25929770871ac1fa6e4cf395af70f8e15e6b5c8fe",
+      "repo_digests": [
+        "sap-polling-rust@sha256:b9297d62027bc866e57dc0f25929770871ac1fa6e4cf395af70f8e15e6b5c8fe"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "rust-cds": {
+      "tag": "sap-polling-rust:nine-sql",
+      "id": "sha256:65c7f725a1f6a9625de2a56891daa2cfa1a9142c8e86d026699d2371f5cc9347",
+      "repo_digests": [
+        "sap-polling-rust@sha256:65c7f725a1f6a9625de2a56891daa2cfa1a9142c8e86d026699d2371f5cc9347"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "rust-native": {
+      "tag": "sap-polling-rust:nine-sql",
+      "id": "sha256:65c7f725a1f6a9625de2a56891daa2cfa1a9142c8e86d026699d2371f5cc9347",
+      "repo_digests": [
+        "sap-polling-rust@sha256:65c7f725a1f6a9625de2a56891daa2cfa1a9142c8e86d026699d2371f5cc9347"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    }
+  },
+  "final_resources": {
+    "passed": true,
+    "samples": [
+      {
+        "BlockIO": "11.9GB / 370MB",
+        "CPUPerc": "6.88%",
+        "Container": "a4h",
+        "ID": "3794fe900b2b",
+        "MemPerc": "73.98%",
+        "MemUsage": "17.36GiB / 23.47GiB",
+        "Name": "a4h",
+        "NetIO": "8.8MB / 138MB",
+        "PIDs": "679"
+      },
+      {
+        "BlockIO": "16.8MB / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "sap-local-ports",
+        "ID": "ff42f318249e",
+        "MemPerc": "12.79%",
+        "MemUsage": "16.37MiB / 128MiB",
+        "Name": "sap-local-ports",
+        "NetIO": "15.2MB / 15.2MB",
+        "PIDs": "2"
+      },
+      {
+        "BlockIO": "719MB / 130MB",
+        "CPUPerc": "10.80%",
+        "Container": "sap-polling-lab-control-plane",
+        "ID": "493af5471188",
+        "MemPerc": "33.80%",
+        "MemUsage": "692.2MiB / 2GiB",
+        "Name": "sap-polling-lab-control-plane",
+        "NetIO": "8.44kB / 6.48kB",
+        "PIDs": "314"
+      }
+    ],
+    "host": {
+      "free_memory_bytes": 8559312896,
+      "total_memory_bytes": 34108788736,
+      "cpu_time_ms": 329040807,
+      "cpu_idle_ms": 303305817
+    }
+  },
+  "finished_utc": "2026-10-23T21:18:12.221Z"
+}

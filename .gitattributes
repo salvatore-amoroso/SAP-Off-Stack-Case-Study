@@ -1,0 +1,9 @@
+# Preserve canonical TSV bytes and the exported source manifest across checkouts.
+* text=auto eol=lf
+# Evidence and SAP exports retain the raw bytes recorded in their hash manifests.
+docs/benchmark-data/** -text -whitespace
+docs/benchmark-history/** -text -whitespace
+docs/sap-export-*.json -text
+docs/*.svg -text -whitespace
+sap/src/*.ddls.asddls -text
+sap/setup/*.sql1.json -text

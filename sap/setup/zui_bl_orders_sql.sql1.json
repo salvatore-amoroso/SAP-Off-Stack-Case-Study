@@ -1,0 +1,9 @@
+{
+  "header": {
+    "externalServiceName": "ZUI_BL_ORDERS_SQL",
+    "authorizationDefaults": "D3FFE0E781CA58E7B5D4B8294EC1F2HT"
+  },
+  "enabledOperations": {
+    "enabledForSelect": true
+  }
+}

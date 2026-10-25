@@ -1,0 +1,60 @@
+{
+  "checked_at_utc": "2026-10-23T22:47:59.370Z",
+  "passed": true,
+  "archive": "docs/benchmark-data/nine-2026-10-23T21-21-52-459Z",
+  "source_checks": [
+    {
+      "name": "zcl_bl_poll_orders",
+      "file": "postrun/zcl_bl_poll_orders.abap",
+      "sha256": "fd428d25b6623aa1f1d567af953f99ad6920a12a728f3005a5692e9461f84444",
+      "matches_archived_preflight_source": true
+    },
+    {
+      "name": "zcl_bl_bench_orders",
+      "file": "postrun/zcl_bl_bench_orders.abap",
+      "sha256": "ff9690570c626b65ad2f32e206ec42da8bee81e6b879248b7c116bfafdb98459",
+      "matches_archived_preflight_source": true
+    },
+    {
+      "name": "zcl_bl_bench_cds",
+      "file": "postrun/zcl_bl_bench_cds.abap",
+      "sha256": "e8e679636d057bfda75722a8b9ac51a3fc5015fd3ffe28d9b62786b861ffecfd",
+      "matches_archived_preflight_source": true
+    },
+    {
+      "name": "zcl_bl_bench_native",
+      "file": "postrun/zcl_bl_bench_native.abap",
+      "sha256": "f027613c760e73fbb53512918ce4f2e727068d76a3f6c324a6719c5bde678f06",
+      "matches_archived_preflight_source": true
+    },
+    {
+      "name": "zi_bl_orderheader",
+      "file": "postrun/zi_bl_orderheader.abap",
+      "sha256": "f7213fcacc83213a0e3ffc307d674984f95746d2e43524526fdab7f2f4926a95",
+      "matches_archived_preflight_source": true
+    },
+    {
+      "name": "zi_bl_orderposition",
+      "file": "postrun/zi_bl_orderposition.abap",
+      "sha256": "edbe5e61fdf9d691b8fe4380587ec6770fd754b2330214a52e0c65da0d6bc412",
+      "matches_archived_preflight_source": true
+    }
+  ],
+  "native_view": {
+    "file": "postrun/view-definition.csv",
+    "sha256": "2b31d48a60e610dc38f7540f34e57430429e973cd6419dc9639910278e6f51f5",
+    "matches_preflight": true
+  },
+  "sap_container_unchanged": true,
+  "sap_container": {
+    "image": "sapse/abap-cloud-developer-trial:2025",
+    "memory_limit": 0,
+    "memory_swap_limit": 0,
+    "nano_cpus": 0,
+    "started_at": "2026-10-23T20:25:59.133540807Z"
+  },
+  "driver_files_unchanged": true,
+  "configured_identities_unchanged": true,
+  "script_sha256": "2b2cecf95392a674e3dd3459b083361f9da47599425eacc75fba76c0e542e7bb",
+  "scope": "Read-only checks after all 27 measurement windows and before graceful shutdown. Sources compare after EOL/EOF normalization; no SAP data, source or configuration was changed."
+}

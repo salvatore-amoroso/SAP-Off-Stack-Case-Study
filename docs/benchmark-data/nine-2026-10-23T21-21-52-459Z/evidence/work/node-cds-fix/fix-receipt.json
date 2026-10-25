@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "prepared_at_utc": "2026-10-23T20:37:38.068Z",
+  "status": "prepared_awaiting_operator_idle_and_fresh_smoke",
+  "official_measurements_started": false,
+  "images": {
+    "sap-polling-node:nine-fixed-http": "sha256:c39d28320ae59178e85d3a6fcfcfceb6bdc69c39568ca983ea051c60acedcd0d",
+    "sap-polling-node:nine-fixed-sql": "sha256:3221921974e44b13334f012a793e021174f8b6d52249cfa16b0eaba289fe605d",
+    "sap-polling-rust:nine-http": "sha256:b9297d62027bc866e57dc0f25929770871ac1fa6e4cf395af70f8e15e6b5c8fe",
+    "sap-polling-rust:nine-sql": "sha256:65c7f725a1f6a9625de2a56891daa2cfa1a9142c8e86d026699d2371f5cc9347"
+  },
+  "node_runtime": {
+    "node": "v24.22.1",
+    "source_sha256": {
+      "package.json": "25e321e91a791f9556dca7bab8dc6e03cf938ecb05cf6be98efc66ff4848300c",
+      "package-lock.json": "35dd7bc0c2bffd245dcd5ce1567def97674649cbb4b49ac83ad779e6e0c9c8e7",
+      "scripts/patch-odbc.mjs": "20c13e1e0461e1c7f96e6adc11e9062b7687c2b693ae14edaf7ac602b6f281fc",
+      "src/benchmark.mjs": "12d46b9858782eb3828c33980bb7fceb9fd517b4c669d531b413f9d9d5b6bd44",
+      "src/cli.mjs": "0ffbdc071dbaa740a36b8da46e79aac3e644f9ba637bd5dce2638d474bc2deb9",
+      "src/config.mjs": "e2aed527ac55c3540abbd57ec70de974fb8cf3d2dad0176a46be78b126d8cddf",
+      "src/poller.mjs": "53b2f7eb2a292d99dea8614e6f9e837d85581875533ad855ed1598c841cf302d",
+      "src/sql-benchmark.mjs": "d270fdd85b0b041438e507c3594d506b3fcd3c080a732794835074759dfbe1bb",
+      "src/sql-cli.mjs": "403d07bf240ce0cb74cd0f32caea961b6fa3350e0c08a824265750b3e3a14673",
+      "src/sql-config.mjs": "a486c5646266deed93cf86d91c0b30a9890fc9bf12254f578203bbe0042fe04b",
+      "src/sql-poller.mjs": "61b5c1f2ce0b0696dbac3b6769dd6b0bf74f82bc5130816e6aca7a73e83e9f2e",
+      "src/sql-profile.mjs": "90590c3135f3a9c6d70fc706ac7939ce38566e54a77896bf99177b4697642133",
+      "src/sql-transport.mjs": "8fde0045d1fd37ebdc32d0535b6a6659399aad0f030f830ed2765da3e75a1778",
+      "src/transport.mjs": "e86c47c252586e859df3ab525947f68184eb6e5726ca607bb91d312abcced2c5"
+    }
+  },
+  "node_tests": {
+    "passed": true,
+    "count": 139,
+    "failed": 0
+  },
+  "controller_tests": {
+    "passed": true,
+    "count": 12
+  },
+  "analyzer_self_test": {
+    "passed": true,
+    "synthetic_results_excluded": true
+  },
+  "source_sha256": {
+    "clients/node/scripts/patch-odbc.mjs": "20c13e1e0461e1c7f96e6adc11e9062b7687c2b693ae14edaf7ac602b6f281fc",
+    "clients/node/test/odbc-patch.test.mjs": "be59924c11f88ec531116ad70d21e0fa7a5108a58704d9e4b29801e453baabeb",
+    "scripts/run-nine-comparison.mjs": "aa747cdfc6ec4d640ea7de1a10332f3e2ea578ab7cb593bf34342c4acbbf38b0",
+    "scripts/run-nine-comparison.test.mjs": "778c1419aad5b27ae14b5b774a024c01afaedb3a187442377005658610e1fe8b",
+    "scripts/analyze-nine-comparison.mjs": "7e815993ee57f50914ca45116e747182e5e73551fc3382b9ef24405acd082cc0",
+    "docs/node-cds-block26-investigation.md": "1b2ab3ab7d2ac7f0aa1b892009206c296ac31119472ba8e5d8e1652a576bf912",
+    "docs/nine-benchmark-protocol.md": "770dabafd5d3b1371a2cffb8af9a1fd6e8309ee4c6501d10eff6b1babf12cd96"
+  },
+  "evidence_sha256": {
+    "work/node-cds-fix/node-tests.tap": "08feaa6e48cd9cb12a739e0598ea8f32647239bbe90ee60d2e3e98cab9146f2e",
+    "work/node-cds-fix/cancel-proof.json": "870e92a396ab1ed4df0304de7a0f3fe9f771dafb8df5f3751113dfcf47695c92",
+    "work/node-cds-fix/timeout-proof.json": "7507aa0fe096fabaef563bdbf9ed37708065d7d536d78748bfa0d7aba6c758f6",
+    "work/node-cds-fix/cancel-capabilities.json": "046fc0c6bb36cc54ef9da3865e0f986c8389f3e778a350444db74c88d1c2e813",
+    "work/node-cds-fix/live-parity.json": "3174ac45039cd78903a3c85610e20fd1f2957124f405c8e17d2c48f62dc92ab8",
+    "work/node-cds-fix/abap-parity.json": "653e4c9600eb4c52a9bbb663a8d92729768fcd4edd619db8b2b471f994ca9227",
+    "work/node-cds-fix/post-fix-host.json": "62eb40b8b8992a00c6659580ca7b2e416f387450793f4caf932861ccf9de684f"
+  },
+  "build": "New Node images extend the preserved cached runtime. The native ODBC addon was rebuilt offline after applying cursor registration; SAP driver files remain external. Historical image tags are unchanged.",
+  "historical_comparison": "results/nine-continued-2026-10-23T16-45-15-388Z",
+  "next_steps": [
+    "Wait for explicit operator idle confirmation",
+    "Refresh host/source/view checks and run all nine smoke paths",
+    "Write fresh readiness evidence and enable readiness.ready only if every gate passes",
+    "Run all 27 blocks with this prepared input, retaining any failure and no retries",
+    "Validate, analyze and plot all nine paths locally; preserve the old comparison separately"
+  ],
+  "benchmark_configuration": {
+    "rows_per_scan": 5000,
+    "warmup_scans": 5,
+    "measured_seconds": 180,
+    "rounds": 3,
+    "minimum_free_host_memory_bytes": 2147483648,
+    "old_timings_adopted": false
+  }
+}

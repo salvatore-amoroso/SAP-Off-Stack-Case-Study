@@ -1,0 +1,10 @@
+{
+  "BASEINFO": {
+    "FROM": [
+      "ZBL_ORD_HDR"
+    ],
+    "ASSOCIATED": [
+      "ZI_BL_ORDERPOSITION"
+    ]
+  }
+}

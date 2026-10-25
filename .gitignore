@@ -1,0 +1,28 @@
+work/
+results/
+**/node_modules/
+**/target/
+.env
+.env.*
+!.env.example
+*.log
+*.zip
+*.pem
+*.key
+
+# SAP driver distributions and compiled runtime libraries stay outside Git.
+*.sar
+*.SAR
+SAPCAR*
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+
+# Private credential stores and local cluster access files.
+*.p12
+*.pfx
+*.pse
+.kube/
+*kubeconfig*

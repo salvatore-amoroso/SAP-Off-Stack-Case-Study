@@ -1,0 +1,7 @@
+{
+  "checked_at_utc": "2026-10-23T21:20:38.073Z",
+  "passed": true,
+  "shared_fixtures": 68,
+  "unit_methods": 9,
+  "route": "Stateless authenticated ADT requests using the existing local runtime credentials; no SAP source or configuration changes"
+}

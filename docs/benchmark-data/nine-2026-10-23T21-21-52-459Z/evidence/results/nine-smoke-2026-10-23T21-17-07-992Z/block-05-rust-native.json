@@ -1,0 +1,2845 @@
+{
+  "block_index": 5,
+  "round": 1,
+  "app_id": "rust-native",
+  "language": "rust",
+  "implementation": "rust",
+  "approach": "native",
+  "started_utc": "2026-10-23T21:17:40.147Z",
+  "finished_utc": "2026-10-23T21:17:43.720Z",
+  "control_wall_ms": 3573.412199999999,
+  "exit_code": 0,
+  "timed_out": false,
+  "oversized": false,
+  "execution_failure": null,
+  "raw_file": "block-05-rust-native.ndjson",
+  "raw_sha256": "6d3287f583e01533dd66ca61e365c20dd396ca3927c5c0998364e686cd1f623d",
+  "verification": {
+    "passed": true,
+    "failures": 0,
+    "failing_scan_records": [],
+    "sequence_valid": true,
+    "timing_valid": true,
+    "summary_valid": true,
+    "warmup_scans": 1,
+    "measured_scans": 174,
+    "measured_wall_ms": 3001,
+    "expected_pages": 51,
+    "expected_body_bytes": 0,
+    "host_memory_valid": true
+  },
+  "resource_samples": [],
+  "records": [
+    {
+      "kind": "scan",
+      "phase": "warmup",
+      "schema_version": 1,
+      "scan_index": 0,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 30,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 1,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 2,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 3,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 18,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 4,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 5,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 6,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 7,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 8,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 9,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 10,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 11,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 12,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 18,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 13,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 14,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 15,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 16,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 17,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 18,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 19,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 20,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 21,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 22,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 23,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 24,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 25,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 26,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 27,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 28,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 29,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 30,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 31,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 32,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 33,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 34,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 35,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 36,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 15,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 37,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 38,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 39,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 40,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 41,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 42,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 43,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 44,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 45,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 46,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 47,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 48,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 49,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 50,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 51,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 52,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 53,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 54,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 55,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 56,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 57,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 58,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 59,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 60,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 61,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 62,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 63,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 64,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 65,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 66,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 67,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 68,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 69,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 70,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 71,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 72,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 73,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 74,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 75,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 76,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 77,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 78,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 79,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 80,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 81,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 82,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 83,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 84,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 85,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 86,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 87,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 88,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 89,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 90,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 91,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 23,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 92,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 18,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 93,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 23,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 94,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 20,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 95,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 18,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 96,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 22,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 97,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 19,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 98,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 21,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 99,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 20,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 100,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 22,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 101,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 20,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 102,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 103,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 104,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 105,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 106,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 107,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 108,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 109,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 110,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 18,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 111,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 20,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 112,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 18,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 113,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 18,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 114,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 18,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 115,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 19,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 116,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 19,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 117,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 21,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 118,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 119,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 120,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 121,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 122,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 123,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 124,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 18,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 125,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 18,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 126,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 127,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 128,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 129,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 130,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 131,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 132,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 133,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 134,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 135,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 136,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 137,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 138,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 139,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 140,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 141,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 142,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 143,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 144,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 145,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 146,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 147,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 148,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 149,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 150,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 151,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 152,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 153,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 154,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 155,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 156,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 157,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 158,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 159,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 160,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 161,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 18,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 162,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 163,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 164,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 165,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 166,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 167,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 168,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 169,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 170,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 171,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 172,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 173,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 16,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "schema_version": 1,
+      "scan_index": 174,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 17,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "client_policy": "persistent",
+      "fetch_size": 100,
+      "kind": "summary",
+      "measured_scans": 174,
+      "measured_wall_ms": 3001,
+      "outcome": "ok",
+      "schema_version": 1,
+      "transport": "hana",
+      "warmup_scans": 1
+    }
+  ]
+}

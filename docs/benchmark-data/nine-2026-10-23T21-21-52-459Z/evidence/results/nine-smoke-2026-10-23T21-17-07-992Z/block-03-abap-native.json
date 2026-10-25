@@ -1,0 +1,867 @@
+{
+  "block_index": 3,
+  "round": 1,
+  "app_id": "abap-native",
+  "language": "abap",
+  "implementation": "abap",
+  "approach": "native",
+  "started_utc": "2026-10-23T21:17:29.693Z",
+  "finished_utc": "2026-10-23T21:17:32.973Z",
+  "control_wall_ms": 3280.2141999999985,
+  "exit_code": 0,
+  "timed_out": false,
+  "oversized": false,
+  "execution_failure": null,
+  "raw_file": "block-03-abap-native.ndjson",
+  "raw_sha256": "3c96f14daa81d0905a9823104fbaeaf21bab2ca0d6da9fced917293a60922ca3",
+  "verification": {
+    "passed": true,
+    "failures": 0,
+    "failing_scan_records": [],
+    "sequence_valid": true,
+    "timing_valid": true,
+    "summary_valid": true,
+    "warmup_scans": 1,
+    "measured_scans": 42,
+    "measured_wall_ms": 3069,
+    "expected_pages": 51,
+    "expected_body_bytes": 0,
+    "host_memory_valid": true
+  },
+  "resource_samples": [],
+  "records": [
+    {
+      "kind": "scan",
+      "phase": "warmup",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 0,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 87,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 0,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 72,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 1,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 75,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 2,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 75,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 3,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 74,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 4,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 73,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 5,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 74,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 6,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 71,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 7,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 72,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 8,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 71,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 9,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 72,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 10,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 71,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 11,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 70,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 12,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 72,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 13,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 72,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 14,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 75,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 15,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 71,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 16,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 70,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 17,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 75,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 18,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 71,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 19,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 71,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 20,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 72,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 21,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 72,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 22,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 72,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 23,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 73,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 24,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 75,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 25,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 73,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 26,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 74,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 27,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 73,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 28,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 73,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 29,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 75,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 30,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 73,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 31,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 74,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 32,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 72,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 33,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 73,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 34,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 73,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 35,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 72,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 36,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 71,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 37,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 72,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 38,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 76,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 39,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 71,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 40,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 72,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "scan",
+      "phase": "measured",
+      "transport": "native_hana_adbc",
+      "logical_fetches": 51,
+      "http_requests": 0,
+      "schema_version": 1,
+      "scan_index": 41,
+      "outcome": "ok",
+      "rows": 5000,
+      "pages": 51,
+      "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "error": null,
+      "metrics": {
+        "elapsed_ms": 71,
+        "body_bytes": 0,
+        "missed_slots": 0
+      }
+    },
+    {
+      "kind": "summary",
+      "transport": "native_hana_adbc",
+      "entity": "ZBL_BENCH_SQL.ORDER_POSITIONS_001",
+      "sap_client": "001",
+      "db_package_size": 100,
+      "http_requests": 0,
+      "duration_seconds": 3,
+      "warmup_scans": 1,
+      "measured_scans": 42,
+      "measured_wall_ms": 3069,
+      "measured_valid_rows": 210000,
+      "measured_logical_fetches": 2142,
+      "measured_body_bytes": 0,
+      "failed_scans": 0
+    }
+  ]
+}

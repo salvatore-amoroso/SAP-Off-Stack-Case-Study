@@ -1,0 +1,83 @@
+{
+  "checked_at_utc": "2026-10-23T20:29:57.038Z",
+  "passed": true,
+  "image": "sap-polling-node:nine-fixed-sql",
+  "image_id": "sha256:3221921974e44b13334f012a793e021174f8b6d52249cfa16b0eaba289fe605d",
+  "scope": "Functional parity only; concurrent host activity makes these diagnostic timings unsuitable for performance comparison",
+  "reports": [
+    {
+      "transport": "odbc",
+      "records": [
+        {
+          "schema_version": 1,
+          "scan_index": 0,
+          "outcome": "ok",
+          "rows": 5000,
+          "pages": 51,
+          "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+          "error": null,
+          "metrics": {
+            "elapsed_ms": 445.426376,
+            "body_bytes": 0,
+            "missed_slots": 0
+          }
+        },
+        {
+          "schema_version": 1,
+          "scan_index": 1,
+          "outcome": "ok",
+          "rows": 5000,
+          "pages": 51,
+          "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+          "error": null,
+          "metrics": {
+            "elapsed_ms": 59.27587599999998,
+            "body_bytes": 0,
+            "missed_slots": 0
+          }
+        },
+        {
+          "stage": "session-close",
+          "outcome": "ok"
+        }
+      ]
+    },
+    {
+      "transport": "hana",
+      "records": [
+        {
+          "schema_version": 1,
+          "scan_index": 0,
+          "outcome": "ok",
+          "rows": 5000,
+          "pages": 51,
+          "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+          "error": null,
+          "metrics": {
+            "elapsed_ms": 232.652574,
+            "body_bytes": 0,
+            "missed_slots": 0
+          }
+        },
+        {
+          "schema_version": 1,
+          "scan_index": 1,
+          "outcome": "ok",
+          "rows": 5000,
+          "pages": 51,
+          "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+          "error": null,
+          "metrics": {
+            "elapsed_ms": 61.39006500000005,
+            "body_bytes": 0,
+            "missed_slots": 0
+          }
+        },
+        {
+          "stage": "session-close",
+          "outcome": "ok"
+        }
+      ]
+    }
+  ]
+}

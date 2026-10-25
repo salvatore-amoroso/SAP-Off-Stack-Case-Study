@@ -1,0 +1,11 @@
+{
+  "BASEINFO": {
+    "FROM": [
+      "ZI_BL_ORDERHEADER",
+      "ZBL_ORD_POS"
+    ],
+    "ASSOCIATED": [
+      "ZI_BL_ORDERHEADER"
+    ]
+  }
+}

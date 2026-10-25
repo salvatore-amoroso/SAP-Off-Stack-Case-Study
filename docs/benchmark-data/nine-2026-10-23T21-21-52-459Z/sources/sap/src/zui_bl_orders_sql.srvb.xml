@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SRVB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SRVB>
+    <METADATA>
+     <NAME>ZUI_BL_ORDERS_SQL</NAME>
+     <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Order polling SQL read API</DESCRIPTION>
+    </METADATA>
+    <CONTENT>
+     <BIND_TYPE_IMPL>
+      <NAME>ZUI_BL_ORDERS_SQL</NAME>
+     </BIND_TYPE_IMPL>
+     <BIND_TYPE>SQL</BIND_TYPE>
+     <BIND_TYPE_CATEGORY>1</BIND_TYPE_CATEGORY>
+     <BIND_TYPE_VERSION>1</BIND_TYPE_VERSION>
+     <SERVICES>
+      <item>
+       <SERVICE_NAME>ZUI_BL_ORDERS_SQL</SERVICE_NAME>
+       <SERVICE_CONTENT>
+        <item>
+         <SERVICE_VERSION>0001</SERVICE_VERSION>
+         <RELEASE_STATE>NOT_RELEASED</RELEASE_STATE>
+         <SRVD_REF>
+          <URI>/sap/bc/adt/ddic/srvd/sources/zui_bl_orders</URI>
+          <TYPE>SRVD/SRV</TYPE>
+          <NAME>ZUI_BL_ORDERS</NAME>
+         </SRVD_REF>
+         <BIND_TYPE_DATA>
+          <CONTENT>
+           <CONTENT_TYPE>application/vnd.sap.adt.businessservices.sql.v1+json</CONTENT_TYPE>
+           <ENCODING>base64</ENCODING>
+           <DATA>ewogICJoZWFkZXIiOiB7CiAgICAiZXh0ZXJuYWxTZXJ2aWNlTmFtZSI6ICJaVUlfQkxfT1JERVJTX1NRTCIsCiAgICAiYXV0aG9yaXphdGlvbkRlZmF1bHRzIjogIkQzRkZFMEU3ODFDQTU4RTdCNUQ0QjgyOTRFQzFGMkhUIgogIH0sCiAgImVuYWJsZWRPcGVyYXRpb25zIjogewogICAgImVuYWJsZWRGb3JTZWxlY3QiOiB0cnVlCiAgfQp9</DATA>
+          </CONTENT>
+         </BIND_TYPE_DATA>
+        </item>
+       </SERVICE_CONTENT>
+      </item>
+     </SERVICES>
+    </CONTENT>
+    <CONTRACT>C2</CONTRACT>
+    <RELEASE_SUPPORTED>true</RELEASE_SUPPORTED>
+    <BINDING_CREATED>true</BINDING_CREATED>
+   </SRVB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,117 @@
+{
+  "checked_at_utc": "2026-10-23T20:32:38.236Z",
+  "passed": true,
+  "tests": [
+    {
+      "image": "sap-polling-node:nine-sql",
+      "records": [
+        {
+          "schema_version": 1,
+          "scan_index": 0,
+          "outcome": "ok",
+          "rows": 5000,
+          "pages": 51,
+          "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+          "error": null,
+          "metrics": {
+            "elapsed_ms": 273.540146,
+            "body_bytes": 0,
+            "missed_slots": 0
+          }
+        },
+        {
+          "schema_version": 1,
+          "scan_index": 1,
+          "outcome": "error",
+          "rows": 1900,
+          "pages": 20,
+          "digest": null,
+          "error": {
+            "code": "TIMEOUT",
+            "page_index": 20,
+            "http_status": null
+          },
+          "metrics": {
+            "elapsed_ms": 5031.551244,
+            "body_bytes": 0,
+            "missed_slots": 0
+          }
+        },
+        {
+          "schema_version": 1,
+          "scan_index": 2,
+          "outcome": "ok",
+          "rows": 5000,
+          "pages": 51,
+          "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+          "error": null,
+          "metrics": {
+            "elapsed_ms": 60.47295200000008,
+            "body_bytes": 0,
+            "missed_slots": 0
+          }
+        }
+      ],
+      "proof": {
+        "cancel_calls": 0,
+        "cancel_reached_fetch": false
+      }
+    },
+    {
+      "image": "sap-polling-node:nine-fixed-sql",
+      "records": [
+        {
+          "schema_version": 1,
+          "scan_index": 0,
+          "outcome": "ok",
+          "rows": 5000,
+          "pages": 51,
+          "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+          "error": null,
+          "metrics": {
+            "elapsed_ms": 327.906708,
+            "body_bytes": 0,
+            "missed_slots": 0
+          }
+        },
+        {
+          "schema_version": 1,
+          "scan_index": 1,
+          "outcome": "error",
+          "rows": 1900,
+          "pages": 20,
+          "digest": null,
+          "error": {
+            "code": "TIMEOUT",
+            "page_index": 20,
+            "http_status": null
+          },
+          "metrics": {
+            "elapsed_ms": 1029.9642470000001,
+            "body_bytes": 0,
+            "missed_slots": 0
+          }
+        },
+        {
+          "schema_version": 1,
+          "scan_index": 2,
+          "outcome": "ok",
+          "rows": 5000,
+          "pages": 51,
+          "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+          "error": null,
+          "metrics": {
+            "elapsed_ms": 57.68464300000005,
+            "body_bytes": 0,
+            "missed_slots": 0
+          }
+        }
+      ],
+      "proof": {
+        "cancel_calls": 1,
+        "cancel_reached_fetch": true
+      }
+    }
+  ],
+  "scope": "Controlled five-second client-side stall at logical fetch 20 of scan 2. A one-second test deadline reproduces the original normalized failure and verifies reconnect, count, validation and hash. The shim models successful native cancellation; this is not an SAP driver stress or performance result."
+}

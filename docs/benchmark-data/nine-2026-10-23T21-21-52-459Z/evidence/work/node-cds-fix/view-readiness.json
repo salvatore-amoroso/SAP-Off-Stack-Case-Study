@@ -1,0 +1,12 @@
+{
+  "checked_at_utc": "2026-10-23T21:17:07.698Z",
+  "view": "ZBL_BENCH_SQL.ORDER_POSITIONS_001",
+  "read_only_metadata_query": true,
+  "source": "SYS.VIEWS.DEFINITION via existing local HDB userstore DEFAULT",
+  "definition_sha256": "5ff4ddd31a38929b322125fe52ebab405b04b772c3fe38c7c08c7b217cf0b563",
+  "previous_definition_sha256": "5ff4ddd31a38929b322125fe52ebab405b04b772c3fe38c7c08c7b217cf0b563",
+  "normalized_definition_sha256": "2b31d48a60e610dc38f7540f34e57430429e973cd6419dc9639910278e6f51f5",
+  "matches_previous_after_eol_eof_normalization": true,
+  "previous_file": "work/native-benchmark-readiness/view-definition.csv",
+  "definition_file": "work/node-cds-fix/view-definition.csv"
+}

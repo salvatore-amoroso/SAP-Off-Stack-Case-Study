@@ -1,0 +1,104 @@
+{
+  "readiness": {
+    "schema_version": 1,
+    "checked_at_utc": "2026-10-23T15:17:38.750Z",
+    "sap_system": "A4H",
+    "sap_basis": "816",
+    "client": "001",
+    "binding": "ZUI_BL_ORDERS_SQL",
+    "service_definition": "ZUI_BL_ORDERS",
+    "binding_type": "SQL",
+    "binding_version": "1",
+    "creation_confirmed": true,
+    "creation_status": 201,
+    "activation_confirmed": true,
+    "active_read_status": 200,
+    "operations_enabled": [
+      "SELECT"
+    ],
+    "sql_schema": "ZUI_BL_ORDERS_SQL",
+    "order_positions_entity": "OrderPositions",
+    "cds_entity": "ZI_BL_OrderPosition",
+    "service_path": "/sap/bc/sql/sql1/sap/S_PRIVILEGED",
+    "uid_type": "uid",
+    "wssql_active": "1",
+    "wssql_privileged_active": "1",
+    "profile_persisted": true,
+    "sap_restarted": false,
+    "human_approval": "Enable both settings and persist them",
+    "authorization_checks": {
+      "S_START_SQL1_S_PRIVILEGED": 0,
+      "S_SQL_VIEW_SELECT": 0
+    },
+    "additional_roles_or_user_grants_created": false,
+    "validator_modified_by_odbc_task": false,
+    "abap_unit_methods_passed": 9,
+    "shared_fixture_cases_passed": 68,
+    "activation_evidence": "work/odbc-sap/activate.json",
+    "active_binding_evidence": "work/odbc-sap/binding-active.json",
+    "profile_evidence": "work/odbc-sap/profile-evidence.json",
+    "conformance_evidence": "work/odbc-sap/conformance.json",
+    "live_query_evidence": "work/abap-odbc/parity.json",
+    "live_query_note": "Parent integration captures external Node/Rust full reads and ABAP reference; this readiness file does not substitute for their exit status or final integration result.",
+    "abapgit_serializer_status": "S",
+    "abapgit_export_manifest": "work/odbc-sap/export-manifest.json",
+    "abapgit_export_archive": "work/odbc-sap/package.odbc.zip",
+    "abapgit_explicitly_excluded_generated_type": "SQL1",
+    "clean_system_import_verified": false
+  },
+  "profile": {
+    "enabled_at_utc": "2026-10-23T15:12:57Z",
+    "human_approval": "Enable both settings and persist them",
+    "profile": "/sapmnt/A4H/profile/A4H_D00_vhcala4hci",
+    "profile_alias": "/usr/sap/A4H/SYS/profile/A4H_D00_vhcala4hci",
+    "backup": "/sapmnt/A4H/profile/A4H_D00_vhcala4hci.codex-before-abap-odbc-20261023",
+    "before_sha256": "9267cefa6a332b57001eba3c6fc0f030abe44b5df924224abd47b927d4883c62",
+    "after_sha256": "fa8da0e5b826cc8508d1275960d72394ccc4049d342dc554c965092ac6906009",
+    "changes": {
+      "wssql/active": {
+        "before": "0",
+        "after": "1"
+      },
+      "wssql/privileged/active": {
+        "before": "0",
+        "after": "1"
+      }
+    },
+    "dynamic_change_api": "CL_SPFL_PROFILE_PARAMETER=>CHANGE_VALUE",
+    "dynamic_verification_api": "CL_SPFL_PROFILE_PARAMETER=>GET_VALUE",
+    "dynamic_evidence": "work/odbc-sap/setup-run.json",
+    "persistent_diff": "Only added blank separators and the two approved parameter assignments at EOF",
+    "sap_restarted": false,
+    "sapcontrol_parameter_value_note": "sapcontrol ParameterValue still reports the startup service's preexisting values; ABAP GET_VALUE is the live application runtime evidence"
+  },
+  "conformance": {
+    "checked_at_utc": "2026-10-23T15:17:38.750Z",
+    "active_core_sha256": "fd428d25b6623aa1f1d567af953f99ad6920a12a728f3005a5692e9461f84444",
+    "local_core_sha256": "c3e72a073f9782a748916a6dc060f9b88161cd26b77eb35d9f5069f7704ce81e",
+    "active_matches_local_after_eol_eof_normalization": true,
+    "active_and_local_byte_identical": false,
+    "existing_validator_source_changed_by_odbc_task": false,
+    "abap_unit": {
+      "passed": true,
+      "methods": [
+        "DIRECT_CDS_COUNT",
+        "DIRECT_CDS_DIGEST",
+        "DIRECT_CDS_SEED",
+        "ENCODED_DOT_NAME",
+        "ENCODED_TRAVERSAL",
+        "INCOMPLETE_UTF8",
+        "INVALID_RUN_CONFIG",
+        "INVALID_UTF8",
+        "TIMER_WRAP"
+      ],
+      "method_count": 9,
+      "alerts": 0,
+      "response_sha256": "871ab47a9e4cf49f7f0984e70a655d68ad4b4386c28be26733369c08b07372fd"
+    },
+    "shared_fixtures": {
+      "passed": true,
+      "cases": 68,
+      "response_sha256": "a815e7a8cec629091e9deca6b624b5af2020b9870e3e0cb95c3324ee4574f031"
+    }
+  }
+}

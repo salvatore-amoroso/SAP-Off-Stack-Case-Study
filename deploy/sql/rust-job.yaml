@@ -1,0 +1,62 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: poller-rust-hana
+  labels:
+    app.kubernetes.io/part-of: sap-order-polling-lab
+spec:
+  suspend: true
+  backoffLimit: 0
+  completions: 1
+  parallelism: 1
+  activeDeadlineSeconds: 150
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: poller-rust-hana
+    spec:
+      restartPolicy: Never
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: poller
+          image: sap-polling-rust:sql
+          imagePullPolicy: Never
+          args: [--transport, hana]
+          envFrom:
+            - configMapRef:
+                name: native-hana-config
+            - secretRef:
+                name: native-hana-credentials
+          volumeMounts:
+            - name: query
+              mountPath: /run/sql
+              readOnly: true
+            - name: scratch
+              mountPath: /tmp
+          resources:
+            requests:
+              cpu: "1"
+              memory: "256Mi"
+            limits:
+              cpu: "1"
+              memory: "256Mi"
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: [ALL]
+      volumes:
+        - name: query
+          configMap:
+            name: native-hana-query
+            defaultMode: 0444
+        - name: scratch
+          emptyDir:
+            medium: Memory
+            sizeLimit: 16Mi

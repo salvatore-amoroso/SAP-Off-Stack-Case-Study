@@ -1,0 +1,2 @@
+FROM sap-polling-node:nine-fixed-sql
+ENTRYPOINT ["node", "/app/src/cli.mjs"]

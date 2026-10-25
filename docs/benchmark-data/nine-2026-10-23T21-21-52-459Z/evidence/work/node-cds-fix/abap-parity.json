@@ -1,0 +1,90 @@
+{
+  "checked_at_utc": "2026-10-23T21:16:45.244Z",
+  "passed": true,
+  "source_checks": [
+    {
+      "name": "zcl_bl_poll_orders",
+      "type": "class",
+      "file": "work/node-cds-fix/zcl_bl_poll_orders.active.abap",
+      "active_sha256": "fd428d25b6623aa1f1d567af953f99ad6920a12a728f3005a5692e9461f84444",
+      "normalized_sha256": "c3e72a073f9782a748916a6dc060f9b88161cd26b77eb35d9f5069f7704ce81e",
+      "matches_current_local": true
+    },
+    {
+      "name": "zcl_bl_bench_orders",
+      "type": "class",
+      "file": "work/node-cds-fix/zcl_bl_bench_orders.active.abap",
+      "active_sha256": "ff9690570c626b65ad2f32e206ec42da8bee81e6b879248b7c116bfafdb98459",
+      "normalized_sha256": "9e60a570913a2cbfcaa16a774cc7dbf2975d355484a5f1fdcf2d0b5a5ca8895f",
+      "matches_current_local": true
+    },
+    {
+      "name": "zcl_bl_bench_cds",
+      "type": "class",
+      "file": "work/node-cds-fix/zcl_bl_bench_cds.active.abap",
+      "active_sha256": "e8e679636d057bfda75722a8b9ac51a3fc5015fd3ffe28d9b62786b861ffecfd",
+      "normalized_sha256": "e6d849a05e681ad3ffdcc15e1edfb77bc5e95667c8e31e12520e2383e967c3df",
+      "matches_current_local": true
+    },
+    {
+      "name": "zcl_bl_bench_native",
+      "type": "class",
+      "file": "work/node-cds-fix/zcl_bl_bench_native.active.abap",
+      "active_sha256": "f027613c760e73fbb53512918ce4f2e727068d76a3f6c324a6719c5bde678f06",
+      "normalized_sha256": "3acc3ea46aebcb9e2f96ea566c7d3800269b75c9fb429e341e4df3776be0f25f",
+      "matches_current_local": true
+    },
+    {
+      "name": "zi_bl_orderheader",
+      "type": "ddl",
+      "file": "work/node-cds-fix/zi_bl_orderheader.active.abap",
+      "active_sha256": "f7213fcacc83213a0e3ffc307d674984f95746d2e43524526fdab7f2f4926a95",
+      "normalized_sha256": "5c737ab8f8f37e71f5677b17d7cc64d625ee192cf154b0f3940b3d427103f58d",
+      "matches_current_local": true
+    },
+    {
+      "name": "zi_bl_orderposition",
+      "type": "ddl",
+      "file": "work/node-cds-fix/zi_bl_orderposition.active.abap",
+      "active_sha256": "edbe5e61fdf9d691b8fe4380587ec6770fd754b2330214a52e0c65da0d6bc412",
+      "normalized_sha256": "f568de3116aae18a304343c1ccf889ac1b50749ee5b9a9e84b2f6cbcac0d566a",
+      "matches_current_local": true
+    }
+  ],
+  "scope": "Functional source and digest parity only. Internal ABAP has 50 nonempty packages; external ODBC counts 51 fetches including EOF.",
+  "abap": {
+    "kind": "scan",
+    "phase": "measured",
+    "transport": "direct_cds",
+    "application_batches": 50,
+    "http_requests": 0,
+    "schema_version": 1,
+    "scan_index": 0,
+    "outcome": "ok",
+    "rows": 5000,
+    "pages": 50,
+    "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+    "error": null,
+    "metrics": {
+      "elapsed_ms": 79,
+      "body_bytes": 0,
+      "missed_slots": 0
+    }
+  },
+  "rust": {
+    "schema_version": 1,
+    "scan_index": 0,
+    "outcome": "ok",
+    "rows": 5000,
+    "pages": 51,
+    "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+    "error": null,
+    "metrics": {
+      "elapsed_ms": 402,
+      "body_bytes": 0,
+      "missed_slots": 0
+    }
+  },
+  "node_reference": "work/node-cds-fix/live-parity.json",
+  "node_reference_sha256": "3174ac45039cd78903a3c85610e20fd1f2957124f405c8e17d2c48f62dc92ab8"
+}

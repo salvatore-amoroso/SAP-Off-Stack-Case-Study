@@ -1,0 +1,15 @@
+{
+  "name": "sap-off-stack-case-study",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "doctor": "node scripts/doctor.mjs",
+    "verify:offline": "node scripts/verify-offline.mjs",
+    "verify:node": "node scripts/verify-offline.mjs --node-only",
+    "verify:rust": "node scripts/verify-offline.mjs --rust-only",
+    "verify:docs": "node scripts/check-case-study-docs.mjs",
+    "build:clients": "node scripts/build-clients.mjs"
+  }
+}

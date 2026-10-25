@@ -1,0 +1,10 @@
+{
+  "checked_at_utc": "2026-10-23T20:33:48.536Z",
+  "outcome": "ok",
+  "transaction_info_rc": 0,
+  "transaction_capability": 0,
+  "cancel_function_rc": 0,
+  "cancel_function_supported": 1,
+  "disconnect_rc": 0,
+  "free_rc": 0
+}

@@ -1,0 +1,1376 @@
+{
+  "schema_version": 1,
+  "protocol": "sap-nine-path-benchmark-v1",
+  "run_id": "2026-10-23T21-21-52-459Z",
+  "started_utc": "2026-10-23T21:21:53.632Z",
+  "configuration": {
+    "duration_seconds": 180,
+    "warmup_scans": 5,
+    "rounds": 3,
+    "cooldown_seconds": 5,
+    "sap_client": "001",
+    "expected_rows": 5000,
+    "expected_digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+    "continuous": true,
+    "concurrency": 1,
+    "output_buffered_until_after_timing": true,
+    "resource_sample_interval_seconds": 30,
+    "external_resources": {
+      "cpus": 1,
+      "memory_bytes": 268435456,
+      "memory_swap_bytes": 268435456,
+      "workers": 1
+    },
+    "deadlines": {
+      "external_request_seconds": 10,
+      "scan_seconds": 120,
+      "external_process_seconds": 480
+    },
+    "retries": 0,
+    "minimum_host_free_memory_bytes": 2147483648
+  },
+  "apps": [
+    {
+      "app_id": "node-http",
+      "language": "node",
+      "implementation": "node",
+      "approach": "http"
+    },
+    {
+      "app_id": "node-cds",
+      "language": "node",
+      "implementation": "node",
+      "approach": "cds"
+    },
+    {
+      "app_id": "node-native",
+      "language": "node",
+      "implementation": "node",
+      "approach": "native"
+    },
+    {
+      "app_id": "rust-http",
+      "language": "rust",
+      "implementation": "rust",
+      "approach": "http"
+    },
+    {
+      "app_id": "rust-cds",
+      "language": "rust",
+      "implementation": "rust",
+      "approach": "cds"
+    },
+    {
+      "app_id": "rust-native",
+      "language": "rust",
+      "implementation": "rust",
+      "approach": "native"
+    },
+    {
+      "app_id": "abap-http",
+      "language": "abap",
+      "implementation": "abap",
+      "approach": "http"
+    },
+    {
+      "app_id": "abap-cds",
+      "language": "abap",
+      "implementation": "abap",
+      "approach": "cds"
+    },
+    {
+      "app_id": "abap-native",
+      "language": "abap",
+      "implementation": "abap",
+      "approach": "native"
+    }
+  ],
+  "schedule": [
+    [
+      "node-http",
+      "rust-cds",
+      "abap-native",
+      "node-cds",
+      "rust-native",
+      "abap-http",
+      "node-native",
+      "rust-http",
+      "abap-cds"
+    ],
+    [
+      "rust-native",
+      "abap-http",
+      "node-cds",
+      "rust-http",
+      "abap-cds",
+      "node-native",
+      "rust-cds",
+      "abap-native",
+      "node-http"
+    ],
+    [
+      "abap-cds",
+      "node-native",
+      "rust-http",
+      "abap-native",
+      "node-http",
+      "rust-cds",
+      "abap-http",
+      "node-cds",
+      "rust-native"
+    ]
+  ],
+  "images": {
+    "node-http": {
+      "tag": "sap-polling-node:nine-fixed-http",
+      "id": "sha256:c39d28320ae59178e85d3a6fcfcfceb6bdc69c39568ca983ea051c60acedcd0d",
+      "repo_digests": [
+        "sap-polling-node@sha256:c39d28320ae59178e85d3a6fcfcfceb6bdc69c39568ca983ea051c60acedcd0d"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "node-cds": {
+      "tag": "sap-polling-node:nine-fixed-sql",
+      "id": "sha256:3221921974e44b13334f012a793e021174f8b6d52249cfa16b0eaba289fe605d",
+      "repo_digests": [
+        "sap-polling-node@sha256:3221921974e44b13334f012a793e021174f8b6d52249cfa16b0eaba289fe605d"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "node-native": {
+      "tag": "sap-polling-node:nine-fixed-sql",
+      "id": "sha256:3221921974e44b13334f012a793e021174f8b6d52249cfa16b0eaba289fe605d",
+      "repo_digests": [
+        "sap-polling-node@sha256:3221921974e44b13334f012a793e021174f8b6d52249cfa16b0eaba289fe605d"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "rust-http": {
+      "tag": "sap-polling-rust:nine-http",
+      "id": "sha256:b9297d62027bc866e57dc0f25929770871ac1fa6e4cf395af70f8e15e6b5c8fe",
+      "repo_digests": [
+        "sap-polling-rust@sha256:b9297d62027bc866e57dc0f25929770871ac1fa6e4cf395af70f8e15e6b5c8fe"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "rust-cds": {
+      "tag": "sap-polling-rust:nine-sql",
+      "id": "sha256:65c7f725a1f6a9625de2a56891daa2cfa1a9142c8e86d026699d2371f5cc9347",
+      "repo_digests": [
+        "sap-polling-rust@sha256:65c7f725a1f6a9625de2a56891daa2cfa1a9142c8e86d026699d2371f5cc9347"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "rust-native": {
+      "tag": "sap-polling-rust:nine-sql",
+      "id": "sha256:65c7f725a1f6a9625de2a56891daa2cfa1a9142c8e86d026699d2371f5cc9347",
+      "repo_digests": [
+        "sap-polling-rust@sha256:65c7f725a1f6a9625de2a56891daa2cfa1a9142c8e86d026699d2371f5cc9347"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    }
+  },
+  "source_inputs": [
+    {
+      "path": "scripts/run-nine-comparison.mjs",
+      "sha256": "aa747cdfc6ec4d640ea7de1a10332f3e2ea578ab7cb593bf34342c4acbbf38b0",
+      "snapshot": "sources/scripts/run-nine-comparison.mjs"
+    },
+    {
+      "path": "scripts/benchmark-control.mjs",
+      "sha256": "de7a47903dad557e91cad88dbd2f087ccf68f18e16c5f7e63ee155d4cc222026",
+      "snapshot": "sources/scripts/benchmark-control.mjs"
+    },
+    {
+      "path": "scripts/native-benchmark-control.mjs",
+      "sha256": "edcd2f218fd386577222bc3a6602a5b43b2500c53cc38b898ea11784cd3d1a40",
+      "snapshot": "sources/scripts/native-benchmark-control.mjs"
+    },
+    {
+      "path": "deploy/benchmark-client.mjs",
+      "sha256": "8bc44ac1eadfc3d0cbc0eefeb6f42f41549982bc6b2336323235a73a703e37fc",
+      "snapshot": "sources/deploy/benchmark-client.mjs"
+    },
+    {
+      "path": "deploy/sql/native-runtime.mjs",
+      "sha256": "3d89199e6091c222f20b415d377c379283093a2846600d02b5733dd3e30a80d6",
+      "snapshot": "sources/deploy/sql/native-runtime.mjs"
+    },
+    {
+      "path": "deploy/sql/odbc-runtime.mjs",
+      "sha256": "62c354f7725f2ddc78a538b924331477038244fdacc7c4c2d279cfce94b84c19",
+      "snapshot": "sources/deploy/sql/odbc-runtime.mjs"
+    },
+    {
+      "path": "contracts/seed-manifest.json",
+      "sha256": "361a9b70e48013e57353e6580a201c85c2318d9bf16d71669482c91f7df7fc36",
+      "snapshot": "sources/contracts/seed-manifest.json"
+    },
+    {
+      "path": "contracts/fixtures.json",
+      "sha256": "8229bc0ce608fbb010a9bec224f386f2b96920c92032c0fe0f7b6c09b5dc9711",
+      "snapshot": "sources/contracts/fixtures.json"
+    },
+    {
+      "path": "contracts/native-hana.sql",
+      "sha256": "8cad3d9b329526eb6dea7ffe9d682eb1e4a17a7cb29144ae1703a16219c85419",
+      "snapshot": "sources/contracts/native-hana.sql"
+    },
+    {
+      "path": "contracts/abap-cds-odbc.sql",
+      "sha256": "a00236dcebd71ec45302561d268538594e4e7b5524c9452288aa38119b6007a6",
+      "snapshot": "sources/contracts/abap-cds-odbc.sql"
+    },
+    {
+      "path": "clients/node/.dockerignore",
+      "sha256": "8115f248ff934b01e510ca0c0a8421241b37cfa636a56af33993d9914677d2cb",
+      "snapshot": "sources/clients/node/.dockerignore"
+    },
+    {
+      "path": "clients/node/.gitignore",
+      "sha256": "7761e132880fa493a84f81f020785741ddbc448ed200e621dac72c44db8a5e41",
+      "snapshot": "sources/clients/node/.gitignore"
+    },
+    {
+      "path": "clients/node/Dockerfile",
+      "sha256": "8b5f44a19ebc87f64bc8ceabcac85a239f269d01427921637f92952e85760985",
+      "snapshot": "sources/clients/node/Dockerfile"
+    },
+    {
+      "path": "clients/node/Dockerfile.sql",
+      "sha256": "9db6be67beca58cf72dfde0a2c3d19d7e8f0b26e750f39bd5a32471b60a3ffbf",
+      "snapshot": "sources/clients/node/Dockerfile.sql"
+    },
+    {
+      "path": "clients/node/README.md",
+      "sha256": "ad297f6dcae30e858748d99628c76ee2200f9fa61a1fcfb7f3535e6489a9b78a",
+      "snapshot": "sources/clients/node/README.md"
+    },
+    {
+      "path": "clients/node/package-lock.json",
+      "sha256": "35dd7bc0c2bffd245dcd5ce1567def97674649cbb4b49ac83ad779e6e0c9c8e7",
+      "snapshot": "sources/clients/node/package-lock.json"
+    },
+    {
+      "path": "clients/node/package.json",
+      "sha256": "25e321e91a791f9556dca7bab8dc6e03cf938ecb05cf6be98efc66ff4848300c",
+      "snapshot": "sources/clients/node/package.json"
+    },
+    {
+      "path": "clients/node/scripts/patch-odbc.mjs",
+      "sha256": "20c13e1e0461e1c7f96e6adc11e9062b7687c2b693ae14edaf7ac602b6f281fc",
+      "snapshot": "sources/clients/node/scripts/patch-odbc.mjs"
+    },
+    {
+      "path": "clients/node/src/benchmark.mjs",
+      "sha256": "12d46b9858782eb3828c33980bb7fceb9fd517b4c669d531b413f9d9d5b6bd44",
+      "snapshot": "sources/clients/node/src/benchmark.mjs"
+    },
+    {
+      "path": "clients/node/src/cli.mjs",
+      "sha256": "0ffbdc071dbaa740a36b8da46e79aac3e644f9ba637bd5dce2638d474bc2deb9",
+      "snapshot": "sources/clients/node/src/cli.mjs"
+    },
+    {
+      "path": "clients/node/src/config.mjs",
+      "sha256": "e2aed527ac55c3540abbd57ec70de974fb8cf3d2dad0176a46be78b126d8cddf",
+      "snapshot": "sources/clients/node/src/config.mjs"
+    },
+    {
+      "path": "clients/node/src/poller.mjs",
+      "sha256": "53b2f7eb2a292d99dea8614e6f9e837d85581875533ad855ed1598c841cf302d",
+      "snapshot": "sources/clients/node/src/poller.mjs"
+    },
+    {
+      "path": "clients/node/src/sql-benchmark.mjs",
+      "sha256": "d270fdd85b0b041438e507c3594d506b3fcd3c080a732794835074759dfbe1bb",
+      "snapshot": "sources/clients/node/src/sql-benchmark.mjs"
+    },
+    {
+      "path": "clients/node/src/sql-cli.mjs",
+      "sha256": "403d07bf240ce0cb74cd0f32caea961b6fa3350e0c08a824265750b3e3a14673",
+      "snapshot": "sources/clients/node/src/sql-cli.mjs"
+    },
+    {
+      "path": "clients/node/src/sql-config.mjs",
+      "sha256": "a486c5646266deed93cf86d91c0b30a9890fc9bf12254f578203bbe0042fe04b",
+      "snapshot": "sources/clients/node/src/sql-config.mjs"
+    },
+    {
+      "path": "clients/node/src/sql-poller.mjs",
+      "sha256": "61b5c1f2ce0b0696dbac3b6769dd6b0bf74f82bc5130816e6aca7a73e83e9f2e",
+      "snapshot": "sources/clients/node/src/sql-poller.mjs"
+    },
+    {
+      "path": "clients/node/src/sql-profile.mjs",
+      "sha256": "90590c3135f3a9c6d70fc706ac7939ce38566e54a77896bf99177b4697642133",
+      "snapshot": "sources/clients/node/src/sql-profile.mjs"
+    },
+    {
+      "path": "clients/node/src/sql-transport.mjs",
+      "sha256": "8fde0045d1fd37ebdc32d0535b6a6659399aad0f030f830ed2765da3e75a1778",
+      "snapshot": "sources/clients/node/src/sql-transport.mjs"
+    },
+    {
+      "path": "clients/node/src/transport.mjs",
+      "sha256": "e86c47c252586e859df3ab525947f68184eb6e5726ca607bb91d312abcced2c5",
+      "snapshot": "sources/clients/node/src/transport.mjs"
+    },
+    {
+      "path": "clients/node/test/benchmark.test.mjs",
+      "sha256": "1e1decbcdd26ffeb234b202f9bb438cedd4b9c987d6676990e4a1b9dc7eb454c",
+      "snapshot": "sources/clients/node/test/benchmark.test.mjs"
+    },
+    {
+      "path": "clients/node/test/odbc-patch.test.mjs",
+      "sha256": "be59924c11f88ec531116ad70d21e0fa7a5108a58704d9e4b29801e453baabeb",
+      "snapshot": "sources/clients/node/test/odbc-patch.test.mjs"
+    },
+    {
+      "path": "clients/node/test/odbc-recovery.test.mjs",
+      "sha256": "bee42424c9b5cf5bae997a5fae97ebb5fcb93f1f933b0f86c0bc30502c1c92cf",
+      "snapshot": "sources/clients/node/test/odbc-recovery.test.mjs"
+    },
+    {
+      "path": "clients/node/test/poller.test.mjs",
+      "sha256": "0265fd204272fb9a0b7abce9be80dd40571854c6d53efeaa4e915d2b032e5d1d",
+      "snapshot": "sources/clients/node/test/poller.test.mjs"
+    },
+    {
+      "path": "clients/node/test/sql-config.test.mjs",
+      "sha256": "3bb60482317618650bd43bbbe35c524d9807faea8fba434faed8b304a20c3d00",
+      "snapshot": "sources/clients/node/test/sql-config.test.mjs"
+    },
+    {
+      "path": "clients/node/test/sql-profile.test.mjs",
+      "sha256": "c9f14a7e9e60eb0520c8af6e75d30b087d702889bc660a927a029687cfc54af8",
+      "snapshot": "sources/clients/node/test/sql-profile.test.mjs"
+    },
+    {
+      "path": "clients/node/test/sql.test.mjs",
+      "sha256": "a0a1cfc6af84c7035f0fc16907b4fc42a8171c81dcc782c02b8def6f064b7d17",
+      "snapshot": "sources/clients/node/test/sql.test.mjs"
+    },
+    {
+      "path": "clients/node/test/url-guards.test.mjs",
+      "sha256": "c0227d91cf775c1cb2d17b7ccda3e3dcc3adff510d6a121de34ae581a59d0481",
+      "snapshot": "sources/clients/node/test/url-guards.test.mjs"
+    },
+    {
+      "path": "clients/rust/.dockerignore",
+      "sha256": "fdd4a6e0a2848b5ee3767daf15d2cba37eb2cb92b217395c827788c80a0b79cf",
+      "snapshot": "sources/clients/rust/.dockerignore"
+    },
+    {
+      "path": "clients/rust/.gitignore",
+      "sha256": "306fd52e74fca6746e12acc750f232de15e71da917756a1270d74c91f5eb7368",
+      "snapshot": "sources/clients/rust/.gitignore"
+    },
+    {
+      "path": "clients/rust/Cargo.lock",
+      "sha256": "e21a8ceb16efd2d24329f028cb848a41ce8abea3b8f388d42351be2a356d0275",
+      "snapshot": "sources/clients/rust/Cargo.lock"
+    },
+    {
+      "path": "clients/rust/Cargo.toml",
+      "sha256": "79b96c3214487acf609c321126332f7f892ad8d0d05f53028390a9233891dc23",
+      "snapshot": "sources/clients/rust/Cargo.toml"
+    },
+    {
+      "path": "clients/rust/Dockerfile",
+      "sha256": "58d392d333b9097f2f6c4401d78b2f7f78f2706db50e11516671ed541fee4e14",
+      "snapshot": "sources/clients/rust/Dockerfile"
+    },
+    {
+      "path": "clients/rust/Dockerfile.sql",
+      "sha256": "d8e30c9467ad8d1c2502e7550b9d07be4e6d88417dab70194b243647e291e43f",
+      "snapshot": "sources/clients/rust/Dockerfile.sql"
+    },
+    {
+      "path": "clients/rust/README.md",
+      "sha256": "b9781a0fb3789b4b673c5689408090b9de1f9c69a264f2e14a786eed7d9bd676",
+      "snapshot": "sources/clients/rust/README.md"
+    },
+    {
+      "path": "clients/rust/src/lib.rs",
+      "sha256": "3e86cb72bf1fe93ed71a126db5091e436babdda799d152c84f4397674b4ecf3f",
+      "snapshot": "sources/clients/rust/src/lib.rs"
+    },
+    {
+      "path": "clients/rust/src/main.rs",
+      "sha256": "c5fe94b500696323959e891fa16c5ff0caa84935821e418657dd43bd5e335192",
+      "snapshot": "sources/clients/rust/src/main.rs"
+    },
+    {
+      "path": "clients/rust/src/sql.rs",
+      "sha256": "83af5dfd2d90b0d9beb2de29193d474bb56209146aee5dd3e4b564de6937db65",
+      "snapshot": "sources/clients/rust/src/sql.rs"
+    },
+    {
+      "path": "clients/rust/src/sql/profile.rs",
+      "sha256": "11073eca805290f55d5702c4136b15ecb35612d946808a57642f3d73af9c3f83",
+      "snapshot": "sources/clients/rust/src/sql/profile.rs"
+    },
+    {
+      "path": "clients/rust/src/sql_main.rs",
+      "sha256": "b9f2a57d1465e4d62a79906ca68debec11ffa329952a97198aac5201ab03de5c",
+      "snapshot": "sources/clients/rust/src/sql_main.rs"
+    },
+    {
+      "path": "clients/rust/src/sql_profile_main.rs",
+      "sha256": "dc65e26981acb959bc28d19ffbc4d4af1458d41d6c827ced41ae8548d5434822",
+      "snapshot": "sources/clients/rust/src/sql_profile_main.rs"
+    },
+    {
+      "path": "contracts/canonical-example.tsv",
+      "sha256": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+      "snapshot": "sources/contracts/canonical-example.tsv"
+    },
+    {
+      "path": "contracts/http-scenarios.json",
+      "sha256": "7d7e597ab33b3e91b56e7064a6d301a7e9a837d28795e3616a1ac26125ba9a30",
+      "snapshot": "sources/contracts/http-scenarios.json"
+    },
+    {
+      "path": "deploy/README.md",
+      "sha256": "b6346e451f38f5d354da5210a87b6ad4d792d1af264bef994de8ebb345e4d334",
+      "snapshot": "sources/deploy/README.md"
+    },
+    {
+      "path": "deploy/Set-SapSecret.ps1",
+      "sha256": "233c6cc2a8a510aadc050872d77d95b3ecc1e82bb77129d8d02d945af8ca369f",
+      "snapshot": "sources/deploy/Set-SapSecret.ps1"
+    },
+    {
+      "path": "deploy/base/kustomization.yaml",
+      "sha256": "104a12be667f29c10d00be23f63b5d74325f6f58526b9c9d76ba0f6393765615",
+      "snapshot": "sources/deploy/base/kustomization.yaml"
+    },
+    {
+      "path": "deploy/base/namespace.yaml",
+      "sha256": "01940e21ea06fd4300415759ac545cecd65d5b931b1dec7cac64ac9da67b53d9",
+      "snapshot": "sources/deploy/base/namespace.yaml"
+    },
+    {
+      "path": "deploy/base/node-job.yaml",
+      "sha256": "4e35503c906c44460e92e3a7161900309a060872c62c939df8f120c6ecfceee2",
+      "snapshot": "sources/deploy/base/node-job.yaml"
+    },
+    {
+      "path": "deploy/base/rust-job.yaml",
+      "sha256": "0a2136b640db6f7f77aa68be485c4beae60f332164ea801afff8789aac2b0343",
+      "snapshot": "sources/deploy/base/rust-job.yaml"
+    },
+    {
+      "path": "deploy/benchmark-client.test.mjs",
+      "sha256": "a432d272e558510fc27ffa70095248e022d72432e1e990ded89a7be88ca0a4cd",
+      "snapshot": "sources/deploy/benchmark-client.test.mjs"
+    },
+    {
+      "path": "deploy/kind.yaml",
+      "sha256": "b13c790dddafd95139b653f399575e266617ea0ec5f624307f39655915ce6454",
+      "snapshot": "sources/deploy/kind.yaml"
+    },
+    {
+      "path": "deploy/local/kustomization.yaml",
+      "sha256": "eced95cee668de646581ad12c27223708e699a98476549fe45956de67c7f0392",
+      "snapshot": "sources/deploy/local/kustomization.yaml"
+    },
+    {
+      "path": "deploy/secret.example.yaml",
+      "sha256": "6ad8cfecfbf2319a1cda9dd41f6bc89e11d6a966af5b1cbd5941f91e1a694ee7",
+      "snapshot": "sources/deploy/secret.example.yaml"
+    },
+    {
+      "path": "deploy/sql/README.md",
+      "sha256": "555540be12abe98419a75df12efc996fa0f96c66345788dc04a7a8457102ef05",
+      "snapshot": "sources/deploy/sql/README.md"
+    },
+    {
+      "path": "deploy/sql/configure-odbc-runtime.mjs",
+      "sha256": "d1956be6c6e8938fafbdc85d66d51985c21af3abf2a148fdbbbb99e2ad0e07f5",
+      "snapshot": "sources/deploy/sql/configure-odbc-runtime.mjs"
+    },
+    {
+      "path": "deploy/sql/configure-runtime.mjs",
+      "sha256": "f560449dcbf61a83a5b01e0228bfa9622d74a577b4d95d4bad9504f1a3571967",
+      "snapshot": "sources/deploy/sql/configure-runtime.mjs"
+    },
+    {
+      "path": "deploy/sql/kustomization.yaml",
+      "sha256": "72159bb5036898d1a0529d037dddc9df8f60d35b63a7cdd394cd9108ef71e7cb",
+      "snapshot": "sources/deploy/sql/kustomization.yaml"
+    },
+    {
+      "path": "deploy/sql/native-runtime.test.mjs",
+      "sha256": "fcfa9f6d6cd30493a655902fd2c0b2538ef411bef59ef573785a320fee6541a9",
+      "snapshot": "sources/deploy/sql/native-runtime.test.mjs"
+    },
+    {
+      "path": "deploy/sql/node-job.yaml",
+      "sha256": "b271fa6261dcd846e18752a10e112fa70c0e840a0ef6ed8b694e8696f2de322c",
+      "snapshot": "sources/deploy/sql/node-job.yaml"
+    },
+    {
+      "path": "deploy/sql/odbc-runtime.test.mjs",
+      "sha256": "e43a0ac39512f07259d2fd69135417f0d1ffd25b7675ae74ededcb5322f16b85",
+      "snapshot": "sources/deploy/sql/odbc-runtime.test.mjs"
+    },
+    {
+      "path": "deploy/sql/rust-job.yaml",
+      "sha256": "fd7cf6232c5b692bcb75f6ae8523843d1244979f871213d70664ccd2dd1a3c1a",
+      "snapshot": "sources/deploy/sql/rust-job.yaml"
+    },
+    {
+      "path": "sap/setup/apply-native-scan.mjs",
+      "sha256": "26421b8e3fdb6f5bbd0802ecdd77a8d551c98876a5f6298df15ebbf73135b4f9",
+      "snapshot": "sources/sap/setup/apply-native-scan.mjs"
+    },
+    {
+      "path": "sap/setup/generate-fixtures.mjs",
+      "sha256": "a8299f30165f42ada398146ebae4b494a0ed6c7be616cc3a57be2c3403109c73",
+      "snapshot": "sources/sap/setup/generate-fixtures.mjs"
+    },
+    {
+      "path": "sap/setup/native-hana-view.sql",
+      "sha256": "697db829716d6b5c4520d0fd2484038fe5d2d1fa63ea042b507654620d947f52",
+      "snapshot": "sources/sap/setup/native-hana-view.sql"
+    },
+    {
+      "path": "sap/setup/native-scan-definition.abap",
+      "sha256": "71554690d9b11483d4ebe01e739238d3f652c5ba20ffde5e9f94e4782fb9152e",
+      "snapshot": "sources/sap/setup/native-scan-definition.abap"
+    },
+    {
+      "path": "sap/setup/native-scan-implementation.abap",
+      "sha256": "547d63644dfef86c15c83e93ef33db31d207339c4aeddfc50978f3db56924a2f",
+      "snapshot": "sources/sap/setup/native-scan-implementation.abap"
+    },
+    {
+      "path": "sap/setup/zui_bl_orders_sql.adt-create.xml",
+      "sha256": "9a7ec1edcfdc23236bdbda2aaae3936f5e9904d92f819277a40a7453ef770e04",
+      "snapshot": "sources/sap/setup/zui_bl_orders_sql.adt-create.xml"
+    },
+    {
+      "path": "sap/setup/zui_bl_orders_sql.sql1.json",
+      "sha256": "39838bbb4ae057e5061a21e6380f595e18cd2807093b2b5431fd6d7a299561ac",
+      "snapshot": "sources/sap/setup/zui_bl_orders_sql.sql1.json"
+    },
+    {
+      "path": "sap/src/1540fe59987c8dab1e3d7b892139adht.sush.xml",
+      "sha256": "467624262ff7a99ac3543d593b83bfb32afe440b7ae2e10aeedd74ea9130c3f2",
+      "snapshot": "sources/sap/src/1540fe59987c8dab1e3d7b892139adht.sush.xml"
+    },
+    {
+      "path": "sap/src/d3ffe0e781ca58e7b5d4b8294ec1f2ht.sush.xml",
+      "sha256": "b16efe1e38a6526f4f953eef5aec4b6a4fe5955f4af5d6d4456f981a6fdf0338",
+      "snapshot": "sources/sap/src/d3ffe0e781ca58e7b5d4b8294ec1f2ht.sush.xml"
+    },
+    {
+      "path": "sap/src/package.devc.xml",
+      "sha256": "0831957408dbf2eb2ca56737814868c61cf86fc8fb510fd464269cc5873ed73d",
+      "snapshot": "sources/sap/src/package.devc.xml"
+    },
+    {
+      "path": "sap/src/zbl_ord_hdr.tabl.xml",
+      "sha256": "9a74976cfa39e7efd09e006129cde2e901c5223ce7b7fdc9c086da86401b44d1",
+      "snapshot": "sources/sap/src/zbl_ord_hdr.tabl.xml"
+    },
+    {
+      "path": "sap/src/zbl_ord_pos.tabl.xml",
+      "sha256": "c014e0f9de7a0c09a8cffb505fd560f1887b65ba196f2ad7c4b8901dba1d66b4",
+      "snapshot": "sources/sap/src/zbl_ord_pos.tabl.xml"
+    },
+    {
+      "path": "sap/src/zcl_bl_bench_cds.clas.abap",
+      "sha256": "e6d849a05e681ad3ffdcc15e1edfb77bc5e95667c8e31e12520e2383e967c3df",
+      "snapshot": "sources/sap/src/zcl_bl_bench_cds.clas.abap"
+    },
+    {
+      "path": "sap/src/zcl_bl_bench_cds.clas.xml",
+      "sha256": "5bf84b15609fb2fbbdd599ca8c1d3cba8dec9f56dd0b944862ae0394ef32a8a3",
+      "snapshot": "sources/sap/src/zcl_bl_bench_cds.clas.xml"
+    },
+    {
+      "path": "sap/src/zcl_bl_bench_native.clas.abap",
+      "sha256": "3acc3ea46aebcb9e2f96ea566c7d3800269b75c9fb429e341e4df3776be0f25f",
+      "snapshot": "sources/sap/src/zcl_bl_bench_native.clas.abap"
+    },
+    {
+      "path": "sap/src/zcl_bl_bench_native.clas.xml",
+      "sha256": "a6350a76dc416ada6e5727726da4af5211312b3a049ef052f03731fe40938679",
+      "snapshot": "sources/sap/src/zcl_bl_bench_native.clas.xml"
+    },
+    {
+      "path": "sap/src/zcl_bl_bench_orders.clas.abap",
+      "sha256": "7f36842985875d49610bc1086da6b0a98cd9b83a6008ef44dce7e280c3d946fc",
+      "snapshot": "sources/sap/src/zcl_bl_bench_orders.clas.abap"
+    },
+    {
+      "path": "sap/src/zcl_bl_bench_orders.clas.xml",
+      "sha256": "2173c8f8d1ec37df23da5a952a2a0c01db06400559f9c1051a25d7638edb7479",
+      "snapshot": "sources/sap/src/zcl_bl_bench_orders.clas.xml"
+    },
+    {
+      "path": "sap/src/zcl_bl_export_git.clas.abap",
+      "sha256": "ac804d3d6e2d9e8eda72fe523396acecf8e9ec1984f73da0bb24501fdeb354c5",
+      "snapshot": "sources/sap/src/zcl_bl_export_git.clas.abap"
+    },
+    {
+      "path": "sap/src/zcl_bl_export_git.clas.xml",
+      "sha256": "607fca06e6ec430aa7ecc5ae020ec0faa26b890d30519f46eed124c81f0e5b53",
+      "snapshot": "sources/sap/src/zcl_bl_export_git.clas.xml"
+    },
+    {
+      "path": "sap/src/zcl_bl_export_odbc.clas.abap",
+      "sha256": "5318239d23c06164eb6f6757fca3417d050a1152d63929eda1009a52aabf9fb4",
+      "snapshot": "sources/sap/src/zcl_bl_export_odbc.clas.abap"
+    },
+    {
+      "path": "sap/src/zcl_bl_export_odbc.clas.xml",
+      "sha256": "42e9e90babdd3ac762b5e31f1ad88bff55818f6dbaeef2c270d2ea38d94189f1",
+      "snapshot": "sources/sap/src/zcl_bl_export_odbc.clas.xml"
+    },
+    {
+      "path": "sap/src/zcl_bl_poll_orders.clas.abap",
+      "sha256": "c3e72a073f9782a748916a6dc060f9b88161cd26b77eb35d9f5069f7704ce81e",
+      "snapshot": "sources/sap/src/zcl_bl_poll_orders.clas.abap"
+    },
+    {
+      "path": "sap/src/zcl_bl_poll_orders.clas.locals_def.abap",
+      "sha256": "3d94e0e39088097a540ac0ac859796041966db9773b4aeb402b8caf1d494a651",
+      "snapshot": "sources/sap/src/zcl_bl_poll_orders.clas.locals_def.abap"
+    },
+    {
+      "path": "sap/src/zcl_bl_poll_orders.clas.locals_imp.abap",
+      "sha256": "4ba7c3d7322ad91e32fe605718a80720a17497ad6447c024d9b544647154f8a5",
+      "snapshot": "sources/sap/src/zcl_bl_poll_orders.clas.locals_imp.abap"
+    },
+    {
+      "path": "sap/src/zcl_bl_poll_orders.clas.testclasses.abap",
+      "sha256": "78edb660d8f3f7d37d8b5907da60fe367ae8b9e4938041b8eb08c48e1bb227a4",
+      "snapshot": "sources/sap/src/zcl_bl_poll_orders.clas.testclasses.abap"
+    },
+    {
+      "path": "sap/src/zcl_bl_poll_orders.clas.xml",
+      "sha256": "a19685a06adcb1cfb0f4eb41c748a80880467cb9d0915915f0da4f87b1b037da",
+      "snapshot": "sources/sap/src/zcl_bl_poll_orders.clas.xml"
+    },
+    {
+      "path": "sap/src/zcl_bl_run_orders.clas.abap",
+      "sha256": "fa6f084434bdb6c01a89b13679b30fc8d7e39ec103f23630ecbabbbea55f872e",
+      "snapshot": "sources/sap/src/zcl_bl_run_orders.clas.abap"
+    },
+    {
+      "path": "sap/src/zcl_bl_run_orders.clas.xml",
+      "sha256": "27ffa893ce56c7cdcb9a0329cb4fa77b7a8f6ad428bd315397dc9c96e8f18e20",
+      "snapshot": "sources/sap/src/zcl_bl_run_orders.clas.xml"
+    },
+    {
+      "path": "sap/src/zcl_bl_seed_orders.clas.abap",
+      "sha256": "6d321c3e3ff57d879816985914103310272faafb3696d44a89c7d6aa263c539e",
+      "snapshot": "sources/sap/src/zcl_bl_seed_orders.clas.abap"
+    },
+    {
+      "path": "sap/src/zcl_bl_seed_orders.clas.xml",
+      "sha256": "1b3bbd4295d87f704aae86fb57c7cea6351499074d70d36415e6854562340d2f",
+      "snapshot": "sources/sap/src/zcl_bl_seed_orders.clas.xml"
+    },
+    {
+      "path": "sap/src/zcl_bl_setup_sql.clas.abap",
+      "sha256": "be5cb2e47396f2570634620274ad68e42bafcca7eac9db5ab2b059eb8189a51d",
+      "snapshot": "sources/sap/src/zcl_bl_setup_sql.clas.abap"
+    },
+    {
+      "path": "sap/src/zcl_bl_setup_sql.clas.xml",
+      "sha256": "aec8411df42cc8969a8dce5d4a41298e3e066b3b03aeacb3af1eefc9cd3703f8",
+      "snapshot": "sources/sap/src/zcl_bl_setup_sql.clas.xml"
+    },
+    {
+      "path": "sap/src/zcl_bl_test_http.clas.abap",
+      "sha256": "36f31900d141251a173fb75101bb2c1dae1d52f82f2f69f6679f6994eb187081",
+      "snapshot": "sources/sap/src/zcl_bl_test_http.clas.abap"
+    },
+    {
+      "path": "sap/src/zcl_bl_test_http.clas.xml",
+      "sha256": "9db29b4abc4d788dfc3d7733d1835d6ae997485c105725e38e74107fe32fca50",
+      "snapshot": "sources/sap/src/zcl_bl_test_http.clas.xml"
+    },
+    {
+      "path": "sap/src/zcl_bl_test_orders.clas.abap",
+      "sha256": "2c28744292e8e218c9d0641878ecbaf58074857d2e9d7215a2f9a87cd717762c",
+      "snapshot": "sources/sap/src/zcl_bl_test_orders.clas.abap"
+    },
+    {
+      "path": "sap/src/zcl_bl_test_orders.clas.xml",
+      "sha256": "6cb1282e998271406abaa4905ae5d345e30ed92d0ecd71ec0072aa1534fc1f17",
+      "snapshot": "sources/sap/src/zcl_bl_test_orders.clas.xml"
+    },
+    {
+      "path": "sap/src/zi_bl_orderheader.ddls.asddls",
+      "sha256": "f7213fcacc83213a0e3ffc307d674984f95746d2e43524526fdab7f2f4926a95",
+      "snapshot": "sources/sap/src/zi_bl_orderheader.ddls.asddls"
+    },
+    {
+      "path": "sap/src/zi_bl_orderheader.ddls.baseinfo",
+      "sha256": "ef85e171b97fc00d83ae388c7695ce2d52e06cdcd17fc3ccd3761d9ab6c2b40e",
+      "snapshot": "sources/sap/src/zi_bl_orderheader.ddls.baseinfo"
+    },
+    {
+      "path": "sap/src/zi_bl_orderheader.ddls.xml",
+      "sha256": "2ae2adf989506f363698576cad41f2a1363b71c0fab380408b5af8e792cc7a2a",
+      "snapshot": "sources/sap/src/zi_bl_orderheader.ddls.xml"
+    },
+    {
+      "path": "sap/src/zi_bl_orderposition.ddls.asddls",
+      "sha256": "edbe5e61fdf9d691b8fe4380587ec6770fd754b2330214a52e0c65da0d6bc412",
+      "snapshot": "sources/sap/src/zi_bl_orderposition.ddls.asddls"
+    },
+    {
+      "path": "sap/src/zi_bl_orderposition.ddls.baseinfo",
+      "sha256": "a5deca70dc987f2e6f3b1ca4ad6e0fe56164e76f3b18f2105533245f25c7fd2d",
+      "snapshot": "sources/sap/src/zi_bl_orderposition.ddls.baseinfo"
+    },
+    {
+      "path": "sap/src/zi_bl_orderposition.ddls.xml",
+      "sha256": "67a34d24714bfb532b1c5d37f224b7e570230599e10aeffc2cf27b6ae544f9fb",
+      "snapshot": "sources/sap/src/zi_bl_orderposition.ddls.xml"
+    },
+    {
+      "path": "sap/src/zui_bl_orders.srvd.srvdsrv",
+      "sha256": "7627a9854d8d776a672e194380f0e2d839349e5a823cbcf22a01cd5ddd75fe8b",
+      "snapshot": "sources/sap/src/zui_bl_orders.srvd.srvdsrv"
+    },
+    {
+      "path": "sap/src/zui_bl_orders.srvd.xml",
+      "sha256": "d4259aaf3e3aa045044bac7fca7354537a5898ae68850badfd4c87639f0a56b5",
+      "snapshot": "sources/sap/src/zui_bl_orders.srvd.xml"
+    },
+    {
+      "path": "sap/src/zui_bl_orders_o4.g4ba.xml",
+      "sha256": "cd7da741a6acd51d6327ac56651d0a940de8b947942889710948ff333e60f47c",
+      "snapshot": "sources/sap/src/zui_bl_orders_o4.g4ba.xml"
+    },
+    {
+      "path": "sap/src/zui_bl_orders_o4.srvb.xml",
+      "sha256": "ab907aa754ce1702f8767893fc369d3efaee16e65d5850f20c10f70051df9390",
+      "snapshot": "sources/sap/src/zui_bl_orders_o4.srvb.xml"
+    },
+    {
+      "path": "sap/src/zui_bl_orders_sql.srvb.xml",
+      "sha256": "b175b0f63be88345e7b0761c7c8dc670eb6d4decdf8a7cd5c28b73df3a05f1a0",
+      "snapshot": "sources/sap/src/zui_bl_orders_sql.srvb.xml"
+    },
+    {
+      "path": "scripts/analyze-cds-comparison.mjs",
+      "sha256": "4c93754a6d3b4b1aa24dd7a79d171a33bbd4b506fc5b16f051d5b8361ffaae98",
+      "snapshot": "sources/scripts/analyze-cds-comparison.mjs"
+    },
+    {
+      "path": "scripts/analyze-cds-slowdown.mjs",
+      "sha256": "62d62ed6a3910e9015471b37cb5f6ba3951d6dd957950ae9b5fbc5653517f991",
+      "snapshot": "sources/scripts/analyze-cds-slowdown.mjs"
+    },
+    {
+      "path": "scripts/analyze-native-comparison.mjs",
+      "sha256": "239f5eac8b4a44f8e58472d584b11f573f182b048340823f0d98054b71c9b932",
+      "snapshot": "sources/scripts/analyze-native-comparison.mjs"
+    },
+    {
+      "path": "scripts/analyze-native-profile.mjs",
+      "sha256": "9763b224a38dae6b8f98ff4983a633a0fd1603c3e8848b71ebec028ab5d39963",
+      "snapshot": "sources/scripts/analyze-native-profile.mjs"
+    },
+    {
+      "path": "scripts/analyze-performance.mjs",
+      "sha256": "3213fcb9a70098983c54505d571313ca31aa428f455376a9553421e11a1436ff",
+      "snapshot": "sources/scripts/analyze-performance.mjs"
+    },
+    {
+      "path": "scripts/check-cds-odbc-kubernetes.mjs",
+      "sha256": "8f2cdb675f061fe314afd6549511980fcb177e89efc47749cc154bb139a4e89a",
+      "snapshot": "sources/scripts/check-cds-odbc-kubernetes.mjs"
+    },
+    {
+      "path": "scripts/check-conformance.mjs",
+      "sha256": "bb82b3bc1f5289503c4fc286f04239cf5767808c293863f546f6dce47c309a3a",
+      "snapshot": "sources/scripts/check-conformance.mjs"
+    },
+    {
+      "path": "scripts/check-http-conformance.mjs",
+      "sha256": "b4126434919e153cc63412235bed6fd3ab56c34879ab047d975ee5ed6c4bdf25",
+      "snapshot": "sources/scripts/check-http-conformance.mjs"
+    },
+    {
+      "path": "scripts/check-http-results.mjs",
+      "sha256": "5bf9f0ced75ff8fb28375de2b5a699b61195a91b7ff8f10cf2af6791945fd1f3",
+      "snapshot": "sources/scripts/check-http-results.mjs"
+    },
+    {
+      "path": "scripts/check-live-parity.mjs",
+      "sha256": "5dd2cd749d8cc1175ab58374f847fe07d3e2ee6f61795a1f3be38d9116097f18",
+      "snapshot": "sources/scripts/check-live-parity.mjs"
+    },
+    {
+      "path": "scripts/check-sap-service.mjs",
+      "sha256": "28e7b312b8430d08337157c41613bfc042e150047546a9c5cf950844841c7b5d",
+      "snapshot": "sources/scripts/check-sap-service.mjs"
+    },
+    {
+      "path": "scripts/generate-contracts.mjs",
+      "sha256": "eb2a5e35a1d2e56349ca85407e63de3630538ca7ec06165cbd6d764a2781ef94",
+      "snapshot": "sources/scripts/generate-contracts.mjs"
+    },
+    {
+      "path": "scripts/native-profile-control.mjs",
+      "sha256": "e7d0c7d0bb3b9074ef539159e9c708d616b382d2720ee99be82ca09f7feb9755",
+      "snapshot": "sources/scripts/native-profile-control.mjs"
+    },
+    {
+      "path": "scripts/plot-cds-comparison.py",
+      "sha256": "e97954b33abf4aed4eb257a9c44b9fe7b1c150199c16f872dccbf0d671eff0a1",
+      "snapshot": "sources/scripts/plot-cds-comparison.py"
+    },
+    {
+      "path": "scripts/plot-cds-slowdown.py",
+      "sha256": "8a39e6d60ff81ff1dc488dc5f6e38101899aeee8c11ee85b07f246cffcf3d10c",
+      "snapshot": "sources/scripts/plot-cds-slowdown.py"
+    },
+    {
+      "path": "scripts/plot-native-comparison.py",
+      "sha256": "a8c24db097574c70fd39a1da49e0f08927912ecba18b9533f0fbe08309646e8e",
+      "snapshot": "sources/scripts/plot-native-comparison.py"
+    },
+    {
+      "path": "scripts/plot-native-profile.py",
+      "sha256": "649c84268d0e04908f9420e0889afc84ea81a97cfcb413148a1a2499439cfa81",
+      "snapshot": "sources/scripts/plot-native-profile.py"
+    },
+    {
+      "path": "scripts/plot-performance.py",
+      "sha256": "97fa36f70e148d8c47958d4ec05864ec265d2078fff6c3e84e664fb62c5c0729",
+      "snapshot": "sources/scripts/plot-performance.py"
+    },
+    {
+      "path": "scripts/run-cds-comparison.mjs",
+      "sha256": "3a3031833e67384df6d752caca18502db15a3d9b1b2912d1898b1c133e7f5c2b",
+      "snapshot": "sources/scripts/run-cds-comparison.mjs"
+    },
+    {
+      "path": "scripts/run-cds-odbc-clients.mjs",
+      "sha256": "9bb10cd98f1b009ee1ccd33b781069b549c03ed08f31f5a968440cd59a696b5d",
+      "snapshot": "sources/scripts/run-cds-odbc-clients.mjs"
+    },
+    {
+      "path": "scripts/run-native-abap.mjs",
+      "sha256": "a4b48b79b917941d5902be2abb752735c26a635e5abe93fa6bc223a6f8d95c4d",
+      "snapshot": "sources/scripts/run-native-abap.mjs"
+    },
+    {
+      "path": "scripts/run-native-clients.mjs",
+      "sha256": "8ed5328c9b0140788c55c84b1dc4fa2bece1cd0ddd664958a0a5d1ed537c8e66",
+      "snapshot": "sources/scripts/run-native-clients.mjs"
+    },
+    {
+      "path": "scripts/run-native-comparison.mjs",
+      "sha256": "72248ae49a168c39837de6d22e549ca333a2706eb7add424bd1b93b6710550cd",
+      "snapshot": "sources/scripts/run-native-comparison.mjs"
+    },
+    {
+      "path": "scripts/run-native-profile.mjs",
+      "sha256": "c04ebf604207421cef4c6f026b5d1ca8a191490372174d6820b962ba99e31241",
+      "snapshot": "sources/scripts/run-native-profile.mjs"
+    },
+    {
+      "path": "scripts/run-node-hana-buffer-control.mjs",
+      "sha256": "e3db5a7acd4a190432f81b7cd88b7c2cc9a89b9dd4097e357a807f3cb50a0ba3",
+      "snapshot": "sources/scripts/run-node-hana-buffer-control.mjs"
+    },
+    {
+      "path": "scripts/run-performance-comparison.mjs",
+      "sha256": "3539fc889e27019d9bcee75170e796b184a5825b4d233ccd294447e6582948fe",
+      "snapshot": "sources/scripts/run-performance-comparison.mjs"
+    },
+    {
+      "path": "scripts/sap-runtime.mjs",
+      "sha256": "bb3ef393adfd23d1c6922146cae907965e3e195ba5904c513d46ec720af86d2c",
+      "snapshot": "sources/scripts/sap-runtime.mjs"
+    },
+    {
+      "path": "scripts/setup-native-hana.mjs",
+      "sha256": "12e9778b4731bf34d97a1a8048aa335781ccc68dafd2ccd8a846574de41f2d5c",
+      "snapshot": "sources/scripts/setup-native-hana.mjs"
+    },
+    {
+      "path": "scripts/write-verification-record.mjs",
+      "sha256": "bc6c218d94d50bbb7d667895337d45c20c83cb8a5b86f5934d6006233637caa2",
+      "snapshot": "sources/scripts/write-verification-record.mjs"
+    },
+    {
+      "path": "scripts/run-nine-comparison.test.mjs",
+      "sha256": "778c1419aad5b27ae14b5b774a024c01afaedb3a187442377005658610e1fe8b",
+      "snapshot": "sources/scripts/run-nine-comparison.test.mjs"
+    },
+    {
+      "path": "scripts/analyze-nine-comparison.mjs",
+      "sha256": "7e815993ee57f50914ca45116e747182e5e73551fc3382b9ef24405acd082cc0",
+      "snapshot": "sources/scripts/analyze-nine-comparison.mjs"
+    },
+    {
+      "path": "scripts/plot-nine-comparison.py",
+      "sha256": "3a02f6535a7ad8406e250cd83063b67b2560164030b96cdac6c936c33f86654f",
+      "snapshot": "sources/scripts/plot-nine-comparison.py"
+    },
+    {
+      "path": "docs/nine-benchmark-protocol.md",
+      "sha256": "770dabafd5d3b1371a2cffb8af9a1fd6e8309ee4c6501d10eff6b1babf12cd96",
+      "snapshot": "sources/docs/nine-benchmark-protocol.md"
+    },
+    {
+      "path": "docs/node-cds-block26-investigation.md",
+      "sha256": "1b2ab3ab7d2ac7f0aa1b892009206c296ac31119472ba8e5d8e1652a576bf912",
+      "snapshot": "sources/docs/node-cds-block26-investigation.md"
+    },
+    {
+      "path": "work/node-cds-fix/Dockerfile",
+      "sha256": "0b0976e8ea19cf72d4501cdd5542bf973fffe12bb0bb8d4aeb23f4614a4b752c",
+      "snapshot": "sources/work/node-cds-fix/Dockerfile"
+    },
+    {
+      "path": "work/node-cds-fix/Dockerfile.http",
+      "sha256": "2a81e513cf7be3453d1e89ada33bb3522cac914d7e3bce0ee55df60bb7ce02ee",
+      "snapshot": "sources/work/node-cds-fix/Dockerfile.http"
+    },
+    {
+      "path": "work/node-cds-fix/cancel-shim.cpp",
+      "sha256": "a94c6bb536b722d0cdedd0d0ff97ea112cf320568f950e7da8b1b28b2f60af0e",
+      "snapshot": "sources/work/node-cds-fix/cancel-shim.cpp"
+    },
+    {
+      "path": "work/node-cds-fix/probe-cursor.mjs",
+      "sha256": "b4dca8b6826c37446b12de629565dfa951a2a62b20aacff687ce6edbc7d21edc",
+      "snapshot": "sources/work/node-cds-fix/probe-cursor.mjs"
+    },
+    {
+      "path": "work/node-cds-fix/probe-poller-timeout.mjs",
+      "sha256": "bd611ab216fd7707269395dac8564f550e3e622b57dedf1426d4c7f2839b5e6c",
+      "snapshot": "sources/work/node-cds-fix/probe-poller-timeout.mjs"
+    },
+    {
+      "path": "work/node-cds-fix/run-cancel-proof.mjs",
+      "sha256": "da2fe27e53ec291f3bd04eacc22eb4f32b16d511264b402cf8ad1e7b2694c586",
+      "snapshot": "sources/work/node-cds-fix/run-cancel-proof.mjs"
+    },
+    {
+      "path": "work/node-cds-fix/run-timeout-proof.mjs",
+      "sha256": "89de311d5e6ab42db51c2c05e3d1fe419c302ec11423771622ca6a02f3563be6",
+      "snapshot": "sources/work/node-cds-fix/run-timeout-proof.mjs"
+    },
+    {
+      "path": "work/node-cds-fix/run-cancel-capabilities.mjs",
+      "sha256": "c3b154430941f3098a7ff2683742c38dd7ce2c7803ad2132cf16099f3356fa56",
+      "snapshot": "sources/work/node-cds-fix/run-cancel-capabilities.mjs"
+    },
+    {
+      "path": "work/node-cds-fix/cancel-capabilities.cpp",
+      "sha256": "4ce9f7acf5855855f871741b0ae9c53930363866ec6de64a55c990d8c3813cdc",
+      "snapshot": "sources/work/node-cds-fix/cancel-capabilities.cpp"
+    },
+    {
+      "path": "work/node-cds-fix/session-parity.mjs",
+      "sha256": "1ffd756c9df954fb356c8477313ffe67227d93b7fa600ebbbb142a67a9d273d0",
+      "snapshot": "sources/work/node-cds-fix/session-parity.mjs"
+    },
+    {
+      "path": "work/node-cds-fix/verify-live.mjs",
+      "sha256": "d98c87067c84ed377dcc37d25a008076d5461a6131c556e3d8c27dc7fd9ccc8d",
+      "snapshot": "sources/work/node-cds-fix/verify-live.mjs"
+    },
+    {
+      "path": "work/node-cds-fix/verify-abap.mjs",
+      "sha256": "2eae3a3756e7a54fe23bc59a7a8b8b728698a0f8ba9c6359268db9ac657f4d81",
+      "snapshot": "sources/work/node-cds-fix/verify-abap.mjs"
+    },
+    {
+      "path": "work/node-cds-fix/prepare-inputs.mjs",
+      "sha256": "7e5de8d30df9fdf046402c702be456b728f23846cdc5b3cdb5fd4d8b913aa276",
+      "snapshot": "sources/work/node-cds-fix/prepare-inputs.mjs"
+    },
+    {
+      "path": "work/night-run/sap-tests.mjs",
+      "sha256": "3b93faca45a9e17416125d9b143449f0959f8d00e9fb9bec4d46b56e90a78ae7",
+      "snapshot": "sources/work/night-run/sap-tests.mjs"
+    },
+    {
+      "path": "work/night-run/enable-readiness.mjs",
+      "sha256": "b309e54b1d4e5da9bd03b838ddb83edbec26c2329d660da43889aaf74613cf66",
+      "snapshot": "sources/work/night-run/enable-readiness.mjs"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "work/node-cds-fix/node-tests.tap",
+      "sha256": "08feaa6e48cd9cb12a739e0598ea8f32647239bbe90ee60d2e3e98cab9146f2e",
+      "snapshot": "evidence/work/node-cds-fix/node-tests.tap"
+    },
+    {
+      "path": "work/node-cds-fix/cancel-proof.json",
+      "sha256": "870e92a396ab1ed4df0304de7a0f3fe9f771dafb8df5f3751113dfcf47695c92",
+      "snapshot": "evidence/work/node-cds-fix/cancel-proof.json"
+    },
+    {
+      "path": "work/node-cds-fix/timeout-proof.json",
+      "sha256": "7507aa0fe096fabaef563bdbf9ed37708065d7d536d78748bfa0d7aba6c758f6",
+      "snapshot": "evidence/work/node-cds-fix/timeout-proof.json"
+    },
+    {
+      "path": "work/node-cds-fix/cancel-capabilities.json",
+      "sha256": "046fc0c6bb36cc54ef9da3865e0f986c8389f3e778a350444db74c88d1c2e813",
+      "snapshot": "evidence/work/node-cds-fix/cancel-capabilities.json"
+    },
+    {
+      "path": "work/node-cds-fix/live-parity.json",
+      "sha256": "3174ac45039cd78903a3c85610e20fd1f2957124f405c8e17d2c48f62dc92ab8",
+      "snapshot": "evidence/work/node-cds-fix/live-parity.json"
+    },
+    {
+      "path": "work/node-cds-fix/abap-parity.json",
+      "sha256": "59bed0c714f01a18170cdd4d76265d9bfaf6abef9b0b26e4efe567ddf52f553a",
+      "snapshot": "evidence/work/node-cds-fix/abap-parity.json"
+    },
+    {
+      "path": "work/node-cds-fix/post-fix-host.json",
+      "sha256": "62eb40b8b8992a00c6659580ca7b2e416f387450793f4caf932861ccf9de684f",
+      "snapshot": "evidence/work/node-cds-fix/post-fix-host.json"
+    },
+    {
+      "path": "work/node-cds-fix/fix-receipt.json",
+      "sha256": "2202691067fcbfd2f400429ae42130be669cff746b832742982177ea59b5e5f6",
+      "snapshot": "evidence/work/node-cds-fix/fix-receipt.json"
+    },
+    {
+      "path": "work/night-run/sap-tests.json",
+      "sha256": "48c9344b4b77b7b2771b103c97b58e336122c00ad40600fe8b56631a652f4a9e",
+      "snapshot": "evidence/work/night-run/sap-tests.json"
+    },
+    {
+      "path": "work/night-run/unit.xml",
+      "sha256": "53cda4ea6c712b722359741b32fd5fb8fd8b0325657f91ddc36d72feec3e5dd6",
+      "snapshot": "evidence/work/night-run/unit.xml"
+    },
+    {
+      "path": "work/night-run/fixtures.ndjson",
+      "sha256": "be9dcab9845f5f9b65ad32638b70e00f597952ef41e0fabac9b9eeee0b1db614",
+      "snapshot": "evidence/work/night-run/fixtures.ndjson"
+    },
+    {
+      "path": "work/node-cds-fix/view-readiness.json",
+      "sha256": "34435125ead62bb07bb9669483ac6014e79879d0ed97d2137f383fa48ab9405a",
+      "snapshot": "evidence/work/node-cds-fix/view-readiness.json"
+    },
+    {
+      "path": "work/node-cds-fix/view-definition.csv",
+      "sha256": "5ff4ddd31a38929b322125fe52ebab405b04b772c3fe38c7c08c7b217cf0b563",
+      "snapshot": "evidence/work/node-cds-fix/view-definition.csv"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/manifest.json",
+      "sha256": "6dfb361559c85dd3c4bb8a2dbcf882a35f46c977f8b5f6c1f646919d619c565a",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/manifest.json"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-01-node-http.json",
+      "sha256": "6a3166b8ce0d2cbf035727a5d6c8ec85f746f95225df0cbe2f45f9c197bd9d36",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-01-node-http.json"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-01-node-http.ndjson",
+      "sha256": "e18930765f694a876903a6bddfaac32a597ec0fc724d2168effe9d4a4bd78d17",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-01-node-http.ndjson"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-02-rust-cds.json",
+      "sha256": "81c183c54a71dc646374282aae0b17e5595c7464ebd6902b923f8aa232884242",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-02-rust-cds.json"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-02-rust-cds.ndjson",
+      "sha256": "6c2c86164e444bd996ffe93cbdff36329c1d59d94635debec51c05f5443f1e74",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-02-rust-cds.ndjson"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-03-abap-native.json",
+      "sha256": "60004118ab6bb5be6973f79f27742a27878aaa8dd4952b3d2f2b4fea5d315081",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-03-abap-native.json"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-03-abap-native.ndjson",
+      "sha256": "3c96f14daa81d0905a9823104fbaeaf21bab2ca0d6da9fced917293a60922ca3",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-03-abap-native.ndjson"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-04-node-cds.json",
+      "sha256": "14556ea21891476c62affa4fca6d09847f6e031f3feeeaeb6712330141574572",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-04-node-cds.json"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-04-node-cds.ndjson",
+      "sha256": "f23135100bd48575f28924f7fc8905244786808a54206472ea62b3df35a211a4",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-04-node-cds.ndjson"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-05-rust-native.json",
+      "sha256": "19675f22df0913328772a4249b09ce87653d7225d6109f3087f18907245d55de",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-05-rust-native.json"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-05-rust-native.ndjson",
+      "sha256": "6d3287f583e01533dd66ca61e365c20dd396ca3927c5c0998364e686cd1f623d",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-05-rust-native.ndjson"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-06-abap-http.json",
+      "sha256": "7e7c6f052d2ed6893b7441b42b8aa0fec39f9607afb6bc9908613c61d87cb1f6",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-06-abap-http.json"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-06-abap-http.ndjson",
+      "sha256": "ee786a2a5fced9def2623708705dd76b4f479bbac701e87257906d7e21565366",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-06-abap-http.ndjson"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-07-node-native.json",
+      "sha256": "10d0ca6f4c2d78143485773954d95e39c77fbc4af32e088ef5366240842f84a6",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-07-node-native.json"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-07-node-native.ndjson",
+      "sha256": "f72cc18eb72be9c52abed1c82f9079a8b1f04eba59893ded0e1712b8e6e93fd7",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-07-node-native.ndjson"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-08-rust-http.json",
+      "sha256": "181797469cf5c51375704a438a5ef9dc3ebd3cf9938835c689b50ff9d8ae6c86",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-08-rust-http.json"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-08-rust-http.ndjson",
+      "sha256": "e1cbbdfc94b52317dac5959a4a31b4d8b6fa7359916969ef666cea6f1752815d",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-08-rust-http.ndjson"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-09-abap-cds.json",
+      "sha256": "b2bc566d4a1eb6e405dbb1ea2471936b57741a7b8be0fa223d923c80ea501750",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-09-abap-cds.json"
+    },
+    {
+      "path": "results/nine-smoke-2026-10-23T21-17-07-992Z/block-09-abap-cds.ndjson",
+      "sha256": "d6962258eb926d2759d0f2886aa5ef22686acfe123141710c72f4ea62e988089",
+      "snapshot": "evidence/results/nine-smoke-2026-10-23T21-17-07-992Z/block-09-abap-cds.ndjson"
+    },
+    {
+      "path": "work/node-cds-fix/zcl_bl_poll_orders.active.abap",
+      "sha256": "fd428d25b6623aa1f1d567af953f99ad6920a12a728f3005a5692e9461f84444",
+      "snapshot": "evidence/work/node-cds-fix/zcl_bl_poll_orders.active.abap"
+    },
+    {
+      "path": "work/node-cds-fix/zcl_bl_bench_orders.active.abap",
+      "sha256": "ff9690570c626b65ad2f32e206ec42da8bee81e6b879248b7c116bfafdb98459",
+      "snapshot": "evidence/work/node-cds-fix/zcl_bl_bench_orders.active.abap"
+    },
+    {
+      "path": "work/node-cds-fix/zcl_bl_bench_cds.active.abap",
+      "sha256": "e8e679636d057bfda75722a8b9ac51a3fc5015fd3ffe28d9b62786b861ffecfd",
+      "snapshot": "evidence/work/node-cds-fix/zcl_bl_bench_cds.active.abap"
+    },
+    {
+      "path": "work/node-cds-fix/zcl_bl_bench_native.active.abap",
+      "sha256": "f027613c760e73fbb53512918ce4f2e727068d76a3f6c324a6719c5bde678f06",
+      "snapshot": "evidence/work/node-cds-fix/zcl_bl_bench_native.active.abap"
+    },
+    {
+      "path": "work/node-cds-fix/zi_bl_orderheader.active.abap",
+      "sha256": "f7213fcacc83213a0e3ffc307d674984f95746d2e43524526fdab7f2f4926a95",
+      "snapshot": "evidence/work/node-cds-fix/zi_bl_orderheader.active.abap"
+    },
+    {
+      "path": "work/node-cds-fix/zi_bl_orderposition.active.abap",
+      "sha256": "edbe5e61fdf9d691b8fe4380587ec6770fd754b2330214a52e0c65da0d6bc412",
+      "snapshot": "evidence/work/node-cds-fix/zi_bl_orderposition.active.abap"
+    },
+    {
+      "path": "work/nine-readiness/readiness.json",
+      "sha256": "b89796f9b869bc368b918a604456d1eb78fd6f445a1b79e9cc26c4d9ec0bacfe",
+      "snapshot": "evidence/work/nine-readiness/readiness.json"
+    },
+    {
+      "path": "work/night-run/host-preflight.json",
+      "sha256": "753ef41ccd15fe5ec5dfe84020657532587548312b3c1653efb085adae219eb5",
+      "snapshot": "evidence/work/night-run/host-preflight.json"
+    }
+  ],
+  "readiness_input": {
+    "sha256": "36c7d7def2c0c36210aa4e76f235aa69cb05557347e054120d77305bec57100a",
+    "path": "work\\night-run\\inputs.json"
+  },
+  "readiness": {
+    "ready": true,
+    "operator_idle_confirmed": true,
+    "authorization": "Operator authorized the recorded comparison.",
+    "nine_path_smoke_passed": true,
+    "smoke_run": "results/nine-smoke-2026-10-23T21-17-07-992Z",
+    "smoke_blocks": 9,
+    "fixed_node_conformance_passed": true,
+    "node_tests": 139,
+    "live_abap_unit_methods": 9,
+    "shared_abap_fixtures": 68,
+    "active_sap_source_checks": 6,
+    "native_view_definition_unchanged": true,
+    "rust_source_and_image_unchanged_from_verified_build": true,
+    "functional_parity_passed": true
+  },
+  "provenance": {
+    "fix_receipt": "work/node-cds-fix/fix-receipt.json",
+    "image_ids_at_preparation": {
+      "sap-polling-node:nine-fixed-http": "sha256:c39d28320ae59178e85d3a6fcfcfceb6bdc69c39568ca983ea051c60acedcd0d",
+      "sap-polling-node:nine-fixed-sql": "sha256:3221921974e44b13334f012a793e021174f8b6d52249cfa16b0eaba289fe605d",
+      "sap-polling-rust:nine-http": "sha256:b9297d62027bc866e57dc0f25929770871ac1fa6e4cf395af70f8e15e6b5c8fe",
+      "sap-polling-rust:nine-sql": "sha256:65c7f725a1f6a9625de2a56891daa2cfa1a9142c8e86d026699d2371f5cc9347"
+    },
+    "previous_run": "results/nine-continued-2026-10-23T16-45-15-388Z",
+    "fresh_run_required": true,
+    "reason": "Fresh comparison after implementation and readiness checks; previous timings were not adopted.",
+    "node_build": {
+      "node": "v24.22.1",
+      "source_sha256": {
+        "package.json": "25e321e91a791f9556dca7bab8dc6e03cf938ecb05cf6be98efc66ff4848300c",
+        "package-lock.json": "35dd7bc0c2bffd245dcd5ce1567def97674649cbb4b49ac83ad779e6e0c9c8e7",
+        "scripts/patch-odbc.mjs": "20c13e1e0461e1c7f96e6adc11e9062b7687c2b693ae14edaf7ac602b6f281fc",
+        "src/benchmark.mjs": "12d46b9858782eb3828c33980bb7fceb9fd517b4c669d531b413f9d9d5b6bd44",
+        "src/cli.mjs": "0ffbdc071dbaa740a36b8da46e79aac3e644f9ba637bd5dce2638d474bc2deb9",
+        "src/config.mjs": "e2aed527ac55c3540abbd57ec70de974fb8cf3d2dad0176a46be78b126d8cddf",
+        "src/poller.mjs": "53b2f7eb2a292d99dea8614e6f9e837d85581875533ad855ed1598c841cf302d",
+        "src/sql-benchmark.mjs": "d270fdd85b0b041438e507c3594d506b3fcd3c080a732794835074759dfbe1bb",
+        "src/sql-cli.mjs": "403d07bf240ce0cb74cd0f32caea961b6fa3350e0c08a824265750b3e3a14673",
+        "src/sql-config.mjs": "a486c5646266deed93cf86d91c0b30a9890fc9bf12254f578203bbe0042fe04b",
+        "src/sql-poller.mjs": "61b5c1f2ce0b0696dbac3b6769dd6b0bf74f82bc5130816e6aca7a73e83e9f2e",
+        "src/sql-profile.mjs": "90590c3135f3a9c6d70fc706ac7939ce38566e54a77896bf99177b4697642133",
+        "src/sql-transport.mjs": "8fde0045d1fd37ebdc32d0535b6a6659399aad0f030f830ed2765da3e75a1778",
+        "src/transport.mjs": "e86c47c252586e859df3ab525947f68184eb6e5726ca607bb91d312abcced2c5"
+      }
+    },
+    "rust_build_reference": "work/nine-readiness/readiness.json",
+    "old_timings_adopted": false
+  },
+  "source_revision": "5a2f2047be1fad80e87b64c5711466a0b1fb19ab",
+  "working_tree_status": "M README.md\n M clients/node/README.md\n M clients/node/scripts/patch-odbc.mjs\n M clients/node/test/odbc-patch.test.mjs\n?? docs/nine-attempt-timeline.png\n?? docs/nine-attempt-timeline.svg\n?? docs/nine-benchmark-protocol.md\n?? docs/nine-comparison.json\n?? docs/nine-comparison.md\n?? docs/nine-comparison.png\n?? docs/nine-comparison.svg\n?? docs/nine-scan-latency.png\n?? docs/nine-scan-latency.svg\n?? docs/node-cds-block26-investigation.md\n?? scripts/analyze-nine-comparison.mjs\n?? scripts/continue-nine-comparison.mjs\n?? scripts/continue-nine-comparison.test.mjs\n?? scripts/plot-nine-comparison.py\n?? scripts/run-nine-comparison.mjs\n?? scripts/run-nine-comparison.test.mjs",
+  "queries": {
+    "native": {
+      "path": "contracts/native-hana.sql",
+      "sha256": "8cad3d9b329526eb6dea7ffe9d682eb1e4a17a7cb29144ae1703a16219c85419"
+    },
+    "cds": {
+      "path": "contracts/abap-cds-odbc.sql",
+      "sha256": "a00236dcebd71ec45302561d268538594e4e7b5524c9452288aa38119b6007a6"
+    }
+  },
+  "driver_files": [
+    {
+      "name": "ODBC_driver_for_ABAP.h",
+      "bytes": 20268,
+      "sha256": "e4cd9723638e5fceb0e24e25516f199c53818da6607dce1a78ddbe49f8494e4d"
+    },
+    {
+      "name": "ODBC_driver_for_ABAP.so",
+      "bytes": 13164488,
+      "sha256": "52d0391fd2c91be78e0ebb021e037627129ebf5780b32818c955c59f5a59cd54"
+    },
+    {
+      "name": "README.txt",
+      "bytes": 343,
+      "sha256": "91e58278b300787b394b7734c9da8884f2acd6f637aa6d91ed7a27ca3e6fcdd9"
+    },
+    {
+      "name": "libicudata77.so",
+      "bytes": 31900808,
+      "sha256": "ff1b97d76d28a69390d98f2a4be80c5e52de01205e886039069525607c5affab"
+    },
+    {
+      "name": "libicudecnumber.so",
+      "bytes": 83968,
+      "sha256": "0762207c7b9a9c1c4a99db84578a3f144cb0b497fef16d6454caf095bdfc61e1"
+    },
+    {
+      "name": "libicui18n77.so",
+      "bytes": 27077616,
+      "sha256": "7b1b37b67ddf3790b1aeb45464ce644e4be82fee64bbb88d0ef2eb46fc6b8362"
+    },
+    {
+      "name": "libicuuc77.so",
+      "bytes": 13560520,
+      "sha256": "a671d5439b51e54ab3995a1aca8ba7525f3e2e736744a8d11575aeac0377b527"
+    },
+    {
+      "name": "libregexpcre2.so",
+      "bytes": 538968,
+      "sha256": "7da10f0838c468a4826024b41134faaa7f48d17216c45681aeb33bde1d79a175"
+    },
+    {
+      "name": "libsapcrypto.so",
+      "bytes": 6126168,
+      "sha256": "b951572d6587f38f9b08722284da2ee0e29fdcdc009d2d3093972c7d4b8965e3"
+    },
+    {
+      "name": "sap-trial-ca.pem",
+      "bytes": 2151,
+      "sha256": "00ecc42e309d3680caf7fab17877bf65d5b82c076dce3ccc569da1b892581465"
+    }
+  ],
+  "topology": {
+    "network": "sap-local-ports",
+    "http_endpoint": "http://host.docker.internal/sap/opu/odata4/sap/zui_bl_orders_o4/srvd_a2x/sap/zui_bl_orders/0001/",
+    "cds_host": "a4h.wdf.sap.corp",
+    "cds_service_path": "/sap/bc/sql/sql1/sap/S_PRIVILEGED",
+    "cds_tls_verified": true,
+    "cds_driver_mount_read_only": true,
+    "native_server": "sap-a4h:30215",
+    "sap_client": "001",
+    "sap_identity_sha256": "38db14398221e79008548dd6aa0e0987ff1049f2afdb2b70ddc340df7915becc",
+    "hana_identity_sha256": "8b13263a1a54761c60ef2977084240ddc5d55379014e0c89c7bc0821e62884c2",
+    "identities_equal": false
+  },
+  "host": {
+    "platform": "win32",
+    "release": "10.0.26200",
+    "cpu_model": "Intel(R) Core(TM) i7-14700K",
+    "logical_cpus": 28,
+    "ram_bytes": 34108788736
+  },
+  "docker": {
+    "version": "29.8.2",
+    "cpus": 16,
+    "memory_bytes": 25201364992
+  },
+  "sap_container": {
+    "image": "sapse/abap-cloud-developer-trial:2025",
+    "memory_limit": 0,
+    "memory_swap_limit": 0,
+    "nano_cpus": 0,
+    "started_at": "2026-10-23T20:25:59.133540807Z"
+  },
+  "access_differences": {
+    "http": "All three use the same OData HTTP endpoint, 51 requests and 1074741 response body bytes; fresh HTTP client per scan.",
+    "cds": "ABAP uses internal Open SQL against CDS (50 nonempty packages); external clients use SAP ABAP ODBC over verified HTTPS (51 logical fetch attempts).",
+    "native": "ABAP uses its existing primary HANA ADBC connection; external clients use a separate read-only HANA principal. All use 51 logical fetch attempts.",
+    "resource_limits": "The 1 CPU/256 MiB limits apply to external clients. ABAP runs inside the shared SAP container and is not isolated to these limits.",
+    "sql_connection_lifecycle": "Persistent block connection, new cursor per scan. First connection is in warmup; final session teardown is outside the measured window.",
+    "deadlines": "External requests and ABAP HTTP use 10 seconds; every scan uses 120 seconds. ABAP CDS/ADBC cannot enforce the same per-call cancellation as external drivers.",
+    "byte_metrics": "SQL body_bytes=0 means no HTTP application response body metric, not zero network traffic."
+  }
+}

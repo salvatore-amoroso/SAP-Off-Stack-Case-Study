@@ -1,0 +1,16 @@
+target
+.git
+*.log
+.env
+.env.*
+*.pem
+*.key
+*.sar
+*.SAR
+*.so
+*.so.*
+*.dll
+*.p12
+*.pfx
+*.pse
+SAPCAR*

@@ -1,0 +1,12 @@
+SELECT
+  OrderId AS ORDERID,
+  PositionNumber AS POSITIONNUMBER,
+  CustomerId AS CUSTOMERID,
+  CONCAT(CONCAT(CONCAT(CONCAT(SUBSTRING(OrderDate, 1, 4), '-'), SUBSTRING(OrderDate, 5, 2)), '-'), SUBSTRING(OrderDate, 7, 2)) AS ORDERDATE,
+  MaterialId AS MATERIALID,
+  CAST(Quantity AS NVARCHAR(32)) AS QUANTITY,
+  Unit AS UNIT,
+  CAST(NetAmount AS NVARCHAR(32)) AS NETAMOUNT,
+  Currency AS CURRENCY
+FROM ZUI_BL_ORDERS_SQL.OrderPositions
+ORDER BY OrderId, PositionNumber

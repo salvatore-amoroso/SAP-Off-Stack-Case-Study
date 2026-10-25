@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "redacted_at_utc": "2026-10-25T14:51:22.550Z",
+  "privacy_redacted_export": true,
+  "scope": "Personal workstation paths, personal activity and paging configuration removed from incidental metadata and narrative copies. Integrity references validate this redacted edition.",
+  "measurement_data_unchanged": true,
+  "raw_block_files_byte_identical": 54,
+  "summaries_verified": 9,
+  "measured_runtime_sources_unchanged": true,
+  "redacted_or_reindexed_files": [
+    {
+      "path": "archive-receipt.json",
+      "original_sha256": "8e1609f756f8720fcbe85f390dadc643445c471835d53a0556718bb049183376",
+      "published_sha256": "14e35ead3b8ab69471cfbfbaa22bb5ddc7937d455a7e66c2327d1cbf6ccb2fe9",
+      "original_bytes": 436,
+      "published_bytes": 518
+    },
+    {
+      "path": "checksums.sha256",
+      "original_sha256": "d6619a5cdd54a2b1c045dbdadf77db34ccff5309b058a7eaf81a76b03bd06624",
+      "published_sha256": "94dc8324044819f9a053cfdf79ec7cff4dfb2c3547c498eff74f112495812131",
+      "original_bytes": 28238,
+      "published_bytes": 28238
+    },
+    {
+      "path": "evidence/work/night-run/host-preflight.json",
+      "original_sha256": "d80a0e5bca710af53db297be3320298c0e72fdd3755e64e62c4bc320ffb9a78b",
+      "published_sha256": "753ef41ccd15fe5ec5dfe84020657532587548312b3c1653efb085adae219eb5",
+      "original_bytes": 722,
+      "published_bytes": 312
+    },
+    {
+      "path": "evidence/work/node-cds-fix/fix-receipt.json",
+      "original_sha256": "7c89ce85511df45a38ec7e18d22fe2b989e15fa13fb38c646e6ec01bb9b0578d",
+      "published_sha256": "2202691067fcbfd2f400429ae42130be669cff746b832742982177ea59b5e5f6",
+      "original_bytes": 4816,
+      "published_bytes": 4816
+    },
+    {
+      "path": "evidence/work/node-cds-fix/post-fix-host.json",
+      "original_sha256": "72e3bd64e4cff04d977f60546fd6f64e4374fb6914da2ce3ac41022f649a623c",
+      "published_sha256": "62eb40b8b8992a00c6659580ca7b2e416f387450793f4caf932861ccf9de684f",
+      "original_bytes": 658,
+      "published_bytes": 314
+    },
+    {
+      "path": "evidence-files.json",
+      "original_sha256": "e4bec54e67e9335c64aa5d8d5ef8b64b58ef1b2b52614109a3f97341a4660995",
+      "published_sha256": "7ff7a64a52fc98bdab4b30922e013083d6f793f95176c969f276e961c38dc1ae",
+      "original_bytes": 46391,
+      "published_bytes": 46391
+    },
+    {
+      "path": "independent-audit.json",
+      "original_sha256": "b83d14e8fc0cb982eb6bb94bd17a323d595a562f362c46d7eb8c14cc35acccb3",
+      "published_sha256": "00abaa63f8785a296d028065e45803ea02deef1a71bb74579601db71b525eddf",
+      "original_bytes": 1148,
+      "published_bytes": 1323
+    },
+    {
+      "path": "inputs.json",
+      "original_sha256": "52fd1833d2b4b3e011e56e7fb1c3fe9c6687f80b9e0b92bb59dd9e51b4df6ed9",
+      "published_sha256": "f27d7d8f4fdfab36952a6520a9491b5c7085ada3e47694da002073083b68c102",
+      "original_bytes": 57606,
+      "published_bytes": 57342
+    },
+    {
+      "path": "manifest.json",
+      "original_sha256": "18e7507cc2ba8005b9c51a3596dfa62b9af1cda51c282479c9dcc8b6a71d1bde",
+      "published_sha256": "101819cf878b18c356c471af4e79f72dd3558cf926b4e35e4d608d84ff98e5ca",
+      "original_bytes": 13288,
+      "published_bytes": 13288
+    },
+    {
+      "path": "readiness-input.json",
+      "original_sha256": "8bf34eaecd570ce12c6cad675962a00cdec9c8f812fbb35e33fc66a1cb06e4c1",
+      "published_sha256": "36c7d7def2c0c36210aa4e76f235aa69cb05557347e054120d77305bec57100a",
+      "original_bytes": 12641,
+      "published_bytes": 12377
+    },
+    {
+      "path": "sources/docs/cds-odbc.md",
+      "original_sha256": "6dabb13cc1a8365556bbc64f2e57256482ed52130a13c3d2734ba7d89a61e463",
+      "published_sha256": "e65b7018406f5265a30874f0302c253d98ca28d1a11a206591f29721ca1f68a1",
+      "original_bytes": 752,
+      "published_bytes": 850
+    },
+    {
+      "path": "sources/docs/implementation-contract.md",
+      "original_sha256": "b07d3f219b6531ab5b0081d978d44ebf9f3c1b78f1732ba6a9ce857b4b2b5c2f",
+      "published_sha256": "5aff4da2140fbdbb2a549053c447cb64bf7971dc2d39325e12d0f29e6af87664",
+      "original_bytes": 851,
+      "published_bytes": 949
+    },
+    {
+      "path": "sources/docs/nine-comparison.md",
+      "original_sha256": "f41bef2f04b49b71012424df346a6a4a2d104180a5ba94d72e98ea94e41755b1",
+      "published_sha256": "3ae1db42f870cc8d650f5cb013366f995e18a2eb8e4f3e90ea33951e19b3af4e",
+      "original_bytes": 638,
+      "published_bytes": 736
+    },
+    {
+      "path": "sources/docs/node-cds-block26-investigation.md",
+      "original_sha256": "27fccce488511245db1872a7dc6cdd56abb9783974b14c4fdfa5f800137dada2",
+      "published_sha256": "1b2ab3ab7d2ac7f0aa1b892009206c296ac31119472ba8e5d8e1652a576bf912",
+      "original_bytes": 6442,
+      "published_bytes": 6347
+    },
+    {
+      "path": "sources/scripts/analyze-nine-comparison.mjs",
+      "original_sha256": "ae3a5bf1704d7f07f1e84ba882c5497924fda002535aa0c91615a41b6a461fdd",
+      "published_sha256": "7e815993ee57f50914ca45116e747182e5e73551fc3382b9ef24405acd082cc0",
+      "original_bytes": 57847,
+      "published_bytes": 57773
+    },
+    {
+      "path": "sources/scripts/plot-nine-comparison.py",
+      "original_sha256": "28715bf6909621a85769cc355a18b2ebe497ee8b6ab5d5c58a6c4363d9614564",
+      "published_sha256": "3a02f6535a7ad8406e250cd83063b67b2560164030b96cdac6c936c33f86654f",
+      "original_bytes": 14861,
+      "published_bytes": 14939
+    },
+    {
+      "path": "sources/work/night-run/enable-readiness.mjs",
+      "original_sha256": "c919af886de7d6e9c92c579855869a521d0da9fc62c2f6d70253f9fd4d6e4763",
+      "published_sha256": "b309e54b1d4e5da9bd03b838ddb83edbec26c2329d660da43889aaf74613cf66",
+      "original_bytes": 3034,
+      "published_bytes": 2874
+    },
+    {
+      "path": "sources/work/node-cds-fix/prepare-inputs.mjs",
+      "original_sha256": "6bc53abf9dd1139cc5516c6dd02b7813965414c09c871a49d63a2b3d5ccd86ea",
+      "published_sha256": "7e5de8d30df9fdf046402c702be456b728f23846cdc5b3cdb5fd4d8b913aa276",
+      "original_bytes": 5759,
+      "published_bytes": 5655
+    }
+  ],
+  "removed_unindexed_process_records": [
+    {
+      "path": "postprocessing/analyze-nine-comparison.mjs",
+      "original_sha256": "ae3a5bf1704d7f07f1e84ba882c5497924fda002535aa0c91615a41b6a461fdd"
+    },
+    {
+      "path": "postprocessing/archive-nine-run.mjs",
+      "original_sha256": "c950b6f822c0e1e1ff409607f1d6b1c2f0a4050ecb6588119946a9d35eb781cc"
+    },
+    {
+      "path": "postprocessing/audit-nine-run.mjs",
+      "original_sha256": "e75627d68f7eb35990fbe1ec980d0409f06c5f2323aebc075c6d40fe0ffffb7f"
+    },
+    {
+      "path": "postprocessing/check-case-study-docs.mjs",
+      "original_sha256": "1c1fee14a3786a2bcbd691d993c32c84b6018288b45637f85b910a3e26492a8c"
+    },
+    {
+      "path": "postprocessing/check-nine-postrun.mjs",
+      "original_sha256": "2b2cecf95392a674e3dd3459b083361f9da47599425eacc75fba76c0e542e7bb"
+    },
+    {
+      "path": "postprocessing/complete-run.mjs",
+      "original_sha256": "f7c9ec090e309753d3500741ec057daf8a23ba01e5904d27b2ba973dc1fa7230"
+    },
+    {
+      "path": "postprocessing/finalize-nine-case-study.mjs",
+      "original_sha256": "fe943e0532d93f16f76645624cc950c26855d400d6c3bce065f5c1f64ef6f41e"
+    },
+    {
+      "path": "postprocessing/plot-nine-comparison.py",
+      "original_sha256": "28715bf6909621a85769cc355a18b2ebe497ee8b6ab5d5c58a6c4363d9614564"
+    },
+    {
+      "path": "postprocessing/source-manifest.json",
+      "original_sha256": "ac833d4f90b1dfd7f6e1910bcbf4431eeba909a575baf5cdf1ca0133a3df0ed5"
+    },
+    {
+      "path": "review-manifest.json",
+      "original_sha256": "04bd8cab15280f1f4b4fc8801d44d51d419d52710d09cb9fede15ae9b2b10590"
+    }
+  ],
+  "repository_account_links_retained": true,
+  "proprietary_binaries_included": false,
+  "runtime_source_files_byte_identical": 65
+}

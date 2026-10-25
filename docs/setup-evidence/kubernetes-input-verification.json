@@ -1,0 +1,471 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-24T12:35:02.823Z",
+  "passed": true,
+  "finding_fixed": "Kubernetes driver merge staging and missing executed-file verification",
+  "scope": "Real local Kubernetes CDS deployment, regression checks and nine-path functional smoke; no new performance cohort",
+  "offline": {
+    "node_tests": 261,
+    "node_tests_skipped_on_windows": 4,
+    "linux_focused_regressions": 12,
+    "linux_regressions_skipped": 0,
+    "rust_default_tests": 8,
+    "rust_all_feature_tests": 17,
+    "node_http_scenarios": 70,
+    "rust_http_scenarios": 70,
+    "sap_contacted": false,
+    "proprietary_abap_odbc_required": false
+  },
+  "sap": {
+    "preflight": "work/kube-staging-fix-2026-10-24T12-06-34-898Z/preflight/preflight.json",
+    "preflight_sha256": "797113d718c447b2a372e7731bc79490047128bf179c3e901b2d6ba776852e37",
+    "source_binding_version": 2,
+    "active_source_parts": 27,
+    "shared_fixtures": 84,
+    "unit_methods": 13
+  },
+  "client_images": {
+    "reused_verified_source_build_receipt": "work/builds/2026-10-24T10-57-58-447Z/build-receipt.json",
+    "receipt_sha256": "9d1fea3450a02cfb4862ff09391fe98f2516a2c923bdc4ed70f29e0a87a6a3bc",
+    "current_client_sources_match_receipt": true,
+    "images": [
+      {
+        "tag": "sap-polling-node:nine-http",
+        "id": "sha256:29a488c1154d80a3953a28ac0ea5ee0eb6a39c947b979f11099d420b7f4a695b",
+        "dockerfile": "clients/node/Dockerfile"
+      },
+      {
+        "tag": "sap-polling-node:nine-sql",
+        "id": "sha256:4f80c7fd4e2b139deb1539b67ed91cfeed4bb2c5ba3f1d36d18dc5a7da871b40",
+        "dockerfile": "clients/node/Dockerfile.sql"
+      },
+      {
+        "tag": "sap-polling-rust:nine-http",
+        "id": "sha256:43ab57d75910de40ed28fc84e7f1d82b694bf3d5f4121d497057e808efab2684",
+        "dockerfile": "clients/rust/Dockerfile"
+      },
+      {
+        "tag": "sap-polling-rust:nine-sql",
+        "id": "sha256:888a1002823ddb196a01fc0e333cbc50ba4dc168d1c2f57029af0594587aa420",
+        "dockerfile": "clients/rust/Dockerfile.sql"
+      }
+    ]
+  },
+  "staging_regression": {
+    "passed": true,
+    "checked_at_utc": "2026-10-24T12:23:25.509Z",
+    "synthetic_only": true,
+    "removed_file_does_not_carry_forward": true,
+    "earlier_bundle_preserved": true,
+    "bundles": [
+      {
+        "name": "a",
+        "id": "7055094ef8a437210a6374dd522c3abde2f14c3c347de0f60380d69289aa98ca",
+        "directory": "/opt/sap/abap-odbc-bundles/7055094ef8a437210a6374dd522c3abde2f14c3c347de0f60380d69289aa98ca",
+        "reused": false,
+        "exact_inventory_verified": true,
+        "reverified_reuse": true,
+        "file_names": [
+          "driver.so",
+          "retired.so"
+        ]
+      },
+      {
+        "name": "b",
+        "id": "7ada0860b89b736b1528819ef8bbd7acacd129e2780a81e0578fdd89a98af900",
+        "directory": "/opt/sap/abap-odbc-bundles/7ada0860b89b736b1528819ef8bbd7acacd129e2780a81e0578fdd89a98af900",
+        "reused": false,
+        "exact_inventory_verified": true,
+        "reverified_reuse": true,
+        "file_names": [
+          "driver.so"
+        ]
+      }
+    ]
+  },
+  "deployment": {
+    "legacy_jobs_refused_before_staging_or_writes": true,
+    "completed_jobs_preserved_before_recreation": true,
+    "only_two_completed_cds_jobs_recreated": true,
+    "other_four_job_uids_and_specs_unchanged": true,
+    "idempotent_bundle_reuse_reverified": true,
+    "completed_jobs_unchanged_on_rerun": true,
+    "proof": {
+      "schema_version": 2,
+      "observed_at": "2026-10-24T12:27:45.512Z",
+      "namespace": "sap-polling-lab",
+      "input_id": "cbc461dc6bffb3c417d4634f47ac6352935135c949a30550f509911855ff83dc",
+      "query_sha256": "a00236dcebd71ec45302561d268538594e4e7b5524c9452288aa38119b6007a6",
+      "driver_inventory_sha256": "844cc5c7245d1525e99c927e64bb16fa96d23e142612dd2f98ca685ca07ce591",
+      "driver_directory_on_node": "/opt/sap/abap-odbc-bundles/844cc5c7245d1525e99c927e64bb16fa96d23e142612dd2f98ca685ca07ce591",
+      "driver_files": [
+        {
+          "name": "ODBC_driver_for_ABAP.h",
+          "bytes": 20268,
+          "sha256": "e4cd9723638e5fceb0e24e25516f199c53818da6607dce1a78ddbe49f8494e4d"
+        },
+        {
+          "name": "ODBC_driver_for_ABAP.so",
+          "bytes": 13164488,
+          "sha256": "52d0391fd2c91be78e0ebb021e037627129ebf5780b32818c955c59f5a59cd54"
+        },
+        {
+          "name": "README.txt",
+          "bytes": 343,
+          "sha256": "91e58278b300787b394b7734c9da8884f2acd6f637aa6d91ed7a27ca3e6fcdd9"
+        },
+        {
+          "name": "libicudata77.so",
+          "bytes": 31900808,
+          "sha256": "ff1b97d76d28a69390d98f2a4be80c5e52de01205e886039069525607c5affab"
+        },
+        {
+          "name": "libicudecnumber.so",
+          "bytes": 83968,
+          "sha256": "0762207c7b9a9c1c4a99db84578a3f144cb0b497fef16d6454caf095bdfc61e1"
+        },
+        {
+          "name": "libicui18n77.so",
+          "bytes": 27077616,
+          "sha256": "7b1b37b67ddf3790b1aeb45464ce644e4be82fee64bbb88d0ef2eb46fc6b8362"
+        },
+        {
+          "name": "libicuuc77.so",
+          "bytes": 13560520,
+          "sha256": "a671d5439b51e54ab3995a1aca8ba7525f3e2e736744a8d11575aeac0377b527"
+        },
+        {
+          "name": "libregexpcre2.so",
+          "bytes": 538968,
+          "sha256": "7da10f0838c468a4826024b41134faaa7f48d17216c45681aeb33bde1d79a175"
+        },
+        {
+          "name": "libsapcrypto.so",
+          "bytes": 6126168,
+          "sha256": "b951572d6587f38f9b08722284da2ee0e29fdcdc009d2d3093972c7d4b8965e3"
+        },
+        {
+          "name": "sap-trial-ca.pem",
+          "bytes": 2151,
+          "sha256": "00ecc42e309d3680caf7fab17877bf65d5b82c076dce3ccc569da1b892581465"
+        }
+      ],
+      "immutable_configmaps": [
+        {
+          "name": "cds-config-cbc461dc6bffb3c417d4",
+          "uid": "28476eff-aeb0-445f-acda-3981af1d6b00",
+          "resource_version": "76448"
+        },
+        {
+          "name": "cds-query-cbc461dc6bffb3c417d4",
+          "uid": "cda736b3-ac56-4e1b-82fc-6ef71e9bdfb3",
+          "resource_version": "76449"
+        },
+        {
+          "name": "cds-inputs-cbc461dc6bffb3c417d4",
+          "uid": "1271e5de-7267-4658-ae5b-a7faa3b40e20",
+          "resource_version": "76450"
+        }
+      ],
+      "expected_rows": 5000,
+      "expected_digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+      "jobs": {
+        "node": {
+          "name": "poller-node-cds",
+          "uid": "7720589d-93ab-4d56-abb0-bc4c694d4d92",
+          "pod": "poller-node-cds-2cl6f",
+          "pod_uid": "f48c7c47-76c5-4ebd-a345-cd8813de96b1",
+          "phase": "Succeeded",
+          "started_at": "2026-10-24T12:27:26Z",
+          "finished_at": "2026-10-24T12:27:27Z",
+          "exit_code": 0,
+          "image": "sap-polling-node:sql-odbc",
+          "image_id": "docker.io/library/import-2026-10-24@sha256:d4fc13d5ec690e73d321f795d4dd61309984f4f90861832c84fb9fcb3a04c099",
+          "docker_image_id": "sha256:4f80c7fd4e2b139deb1539b67ed91cfeed4bb2c5ba3f1d36d18dc5a7da871b40",
+          "runtime_image_id": "sha256:b3b2cabcf0efde47d1751d3e26ab3c0c952f18f8ad36de775db925aa86fef704",
+          "filesystem_layers_sha256": "eeff4ce256163e3d47df436d5b83c3b52d8aaf97271c4dfade766899d9dc81f9",
+          "runtime_configuration_sha256": "0c9facab85b6b6571fcd79c5be0bda62add8bc6e5a127a931cd386650b00fac4",
+          "verified_runtime_matches_docker_build": true,
+          "verified_executed_input_template": true,
+          "resources": {
+            "limits": {
+              "cpu": "1",
+              "memory": "256Mi"
+            },
+            "requests": {
+              "cpu": "1",
+              "memory": "256Mi"
+            }
+          },
+          "host_aliases": [
+            {
+              "hostnames": [
+                "a4h.wdf.sap.corp"
+              ],
+              "ip": "172.18.0.3"
+            }
+          ],
+          "credential_secret": {
+            "name": "cds-credentials-cbc461dc6bffb3c417d4-e6131613",
+            "uid": "63f0d9e5-ba60-4a29-93ef-bd1c7455b178",
+            "resource_version": "76451"
+          },
+          "read_only_driver_and_query": true,
+          "read_only_root_filesystem": true,
+          "input_attestation": {
+            "schema_version": 1,
+            "input_id": "cbc461dc6bffb3c417d4634f47ac6352935135c949a30550f509911855ff83dc",
+            "before": {
+              "status": "passed",
+              "reason": "OK",
+              "driver_sha256": "844cc5c7245d1525e99c927e64bb16fa96d23e142612dd2f98ca685ca07ce591",
+              "query_sha256": "a00236dcebd71ec45302561d268538594e4e7b5524c9452288aa38119b6007a6",
+              "environment_sha256": "081ecbccfec26cb0d2b2bf87ece70a4fd01a29138bde30ccfcfc4b182fb65f02",
+              "script_sha256": "72e67fcbc58b8e18aba7fa10fed024f01c84be7519f91d7bfdd50d84b30548bb"
+            },
+            "after": {
+              "status": "passed",
+              "reason": "OK",
+              "driver_sha256": "844cc5c7245d1525e99c927e64bb16fa96d23e142612dd2f98ca685ca07ce591",
+              "query_sha256": "a00236dcebd71ec45302561d268538594e4e7b5524c9452288aa38119b6007a6",
+              "environment_sha256": "081ecbccfec26cb0d2b2bf87ece70a4fd01a29138bde30ccfcfc4b182fb65f02",
+              "script_sha256": "72e67fcbc58b8e18aba7fa10fed024f01c84be7519f91d7bfdd50d84b30548bb"
+            },
+            "client_exit_code": 0
+          },
+          "input_attestation_bytes": 877,
+          "result": {
+            "schema_version": 1,
+            "scan_index": 0,
+            "outcome": "ok",
+            "rows": 5000,
+            "pages": 51,
+            "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+            "error": null,
+            "metrics": {
+              "elapsed_ms": 377.200779,
+              "body_bytes": 0,
+              "missed_slots": 0
+            }
+          },
+          "passed": true
+        },
+        "rust": {
+          "name": "poller-rust-cds",
+          "uid": "98d6a363-f1b9-4d59-905b-bde47e884564",
+          "pod": "poller-rust-cds-6szfp",
+          "pod_uid": "0a65d9b8-0c7c-429d-947e-a40b76dd201a",
+          "phase": "Succeeded",
+          "started_at": "2026-10-24T12:27:40Z",
+          "finished_at": "2026-10-24T12:27:41Z",
+          "exit_code": 0,
+          "image": "sap-polling-rust:sql-odbc",
+          "image_id": "sha256:a25849bed510c78872d3b1d403cc22b5fe274b6e8462c4a7e98c7bd7a89d6d7f",
+          "docker_image_id": "sha256:888a1002823ddb196a01fc0e333cbc50ba4dc168d1c2f57029af0594587aa420",
+          "runtime_image_id": "sha256:a25849bed510c78872d3b1d403cc22b5fe274b6e8462c4a7e98c7bd7a89d6d7f",
+          "filesystem_layers_sha256": "df36ec2d968158e4ed2ec8a93938e909a7881ae3698408175b8e623f8662875b",
+          "runtime_configuration_sha256": "5ab58f8b7597f3985123e9da667ee171abd4333e015d718f0838ca187bbf3773",
+          "verified_runtime_matches_docker_build": true,
+          "verified_executed_input_template": true,
+          "resources": {
+            "limits": {
+              "cpu": "1",
+              "memory": "256Mi"
+            },
+            "requests": {
+              "cpu": "1",
+              "memory": "256Mi"
+            }
+          },
+          "host_aliases": [
+            {
+              "hostnames": [
+                "a4h.wdf.sap.corp"
+              ],
+              "ip": "172.18.0.3"
+            }
+          ],
+          "credential_secret": {
+            "name": "cds-credentials-cbc461dc6bffb3c417d4-e6131613",
+            "uid": "63f0d9e5-ba60-4a29-93ef-bd1c7455b178",
+            "resource_version": "76451"
+          },
+          "read_only_driver_and_query": true,
+          "read_only_root_filesystem": true,
+          "input_attestation": {
+            "schema_version": 1,
+            "input_id": "cbc461dc6bffb3c417d4634f47ac6352935135c949a30550f509911855ff83dc",
+            "before": {
+              "status": "passed",
+              "reason": "OK",
+              "driver_sha256": "844cc5c7245d1525e99c927e64bb16fa96d23e142612dd2f98ca685ca07ce591",
+              "query_sha256": "a00236dcebd71ec45302561d268538594e4e7b5524c9452288aa38119b6007a6",
+              "environment_sha256": "90621cae6184ffadcf55f0da8bd32ccfa9674878e16155a839c31e785c1b320b",
+              "script_sha256": "72e67fcbc58b8e18aba7fa10fed024f01c84be7519f91d7bfdd50d84b30548bb"
+            },
+            "after": {
+              "status": "passed",
+              "reason": "OK",
+              "driver_sha256": "844cc5c7245d1525e99c927e64bb16fa96d23e142612dd2f98ca685ca07ce591",
+              "query_sha256": "a00236dcebd71ec45302561d268538594e4e7b5524c9452288aa38119b6007a6",
+              "environment_sha256": "90621cae6184ffadcf55f0da8bd32ccfa9674878e16155a839c31e785c1b320b",
+              "script_sha256": "72e67fcbc58b8e18aba7fa10fed024f01c84be7519f91d7bfdd50d84b30548bb"
+            },
+            "client_exit_code": 0
+          },
+          "input_attestation_bytes": 877,
+          "result": {
+            "schema_version": 1,
+            "scan_index": 0,
+            "outcome": "ok",
+            "rows": 5000,
+            "pages": 51,
+            "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+            "error": null,
+            "metrics": {
+              "elapsed_ms": 103,
+              "body_bytes": 0,
+              "missed_slots": 0
+            }
+          },
+          "passed": true
+        }
+      },
+      "matches_docker_functional_results": true,
+      "mounted_inputs_verified_before_and_after": true,
+      "all_passed": true
+    }
+  },
+  "smoke": {
+    "directory": "results/nine-smoke-2026-10-24T12-32-42-281Z",
+    "manifest_sha256": "4f742540b434538b2bb33350d70cb48dc80645fa77cdb879b92ccb9288f8ba95",
+    "applications": [
+      {
+        "app_id": "node-http",
+        "passed": true,
+        "measured_scans": 2,
+        "warmup_scans": 1,
+        "block_sha256": "3befc474924cb678a5e579643ddf60aa345b7fa6fc1bff7aebbb992ac450d2e4",
+        "raw_sha256": "4e6c4f53097594bebb8f450f3d390fe14d1b1b58d0a5b83e09ac011b6d82b54b"
+      },
+      {
+        "app_id": "rust-cds",
+        "passed": true,
+        "measured_scans": 155,
+        "warmup_scans": 1,
+        "block_sha256": "726318133e53c3d168f519c8edb0f162409dd5f7f58e9e51d78ecd1066ac1b73",
+        "raw_sha256": "a241ab359d4de1d554b27410c5879276818a5f25972c6a7d7ef6808aef365645"
+      },
+      {
+        "app_id": "abap-native",
+        "passed": true,
+        "measured_scans": 39,
+        "warmup_scans": 1,
+        "block_sha256": "f203fcbdc622ba39d3cfabc0b748fcb1a02257aedbad4e36cca5bd9416fb5e25",
+        "raw_sha256": "68fc413d429447c6e4ba2da3d0d0b394d6762f4c5f1865e805712b7c97fee7a4"
+      },
+      {
+        "app_id": "node-cds",
+        "passed": true,
+        "measured_scans": 64,
+        "warmup_scans": 1,
+        "block_sha256": "3c0a6c6a90a1751bc1ca4a0972738c3cb65496a0379a29e814223a6781ef3582",
+        "raw_sha256": "41b4b4b7dd8a80ca815b0967876e6845c3db75dd4dd6a0a7b94ef5e205739762"
+      },
+      {
+        "app_id": "rust-native",
+        "passed": true,
+        "measured_scans": 157,
+        "warmup_scans": 1,
+        "block_sha256": "110bba98cb4b1db8a50cc8a51374bd82908bcc048d80d3579cecda2b6c772944",
+        "raw_sha256": "c3d5648e2e1c349b5d5da344c80dac797e79bca59b39997f48a786bbeb009ef3"
+      },
+      {
+        "app_id": "abap-http",
+        "passed": true,
+        "measured_scans": 2,
+        "warmup_scans": 1,
+        "block_sha256": "e15a7caecf31dcca2db6ed3ae223c9d844e9ad97ed7387665abed8c446668896",
+        "raw_sha256": "d55e16420c44dfd14b811cae6071e9cf300b1564af4d6b95403dc78e369e806c"
+      },
+      {
+        "app_id": "node-native",
+        "passed": true,
+        "measured_scans": 63,
+        "warmup_scans": 1,
+        "block_sha256": "0d70cc79d9a9b95ecbf9e9a09f3ef8bd1fca8456bee7fd037741b7572d414a0b",
+        "raw_sha256": "3f382489cacffb06c4e933a3fd524eedc128a3fbd2c9ac595c7b633cf5eb2524"
+      },
+      {
+        "app_id": "rust-http",
+        "passed": true,
+        "measured_scans": 2,
+        "warmup_scans": 1,
+        "block_sha256": "25e051cd01b6aca7d8867ea0f19dc25bc049b2b22db46da38da269acb21c424c",
+        "raw_sha256": "e1c1e350303665ea6c667abccd4f2ed2b4f406a6e8fc53509e81baefb250e8a7"
+      },
+      {
+        "app_id": "abap-cds",
+        "passed": true,
+        "measured_scans": 36,
+        "warmup_scans": 1,
+        "block_sha256": "443aad704c591b92106d959a1c29695147b672e804ee8741b877e7a5f6a2fbd8",
+        "raw_sha256": "459991bb644e3ca18aeacecfae7f0f6e63312a51d361e79ece787fca957d8cbd"
+      }
+    ],
+    "measured_scans": 520,
+    "warmup_scans": 9,
+    "rows_per_successful_scan": 5000,
+    "digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+    "complete_readiness_revalidated": true,
+    "official_timing_enabled": false
+  },
+  "historical_evidence": {
+    "byte_identical_files": 571,
+    "independent_audit_passed": true,
+    "measured_scans": 89189,
+    "measured_failures": 0,
+    "manifest_sha256": "18e7507cc2ba8005b9c51a3596dfa62b9af1cda51c282479c9dcc8b6a71d1bde",
+    "report_sha256": "2d454d921475f02982ad6d0822b481a760ffb01dcfdbbc074334889f7de9211b"
+  },
+  "local_logs": [
+    {
+      "path": "work/kube-staging-fix-2026-10-24T12-06-34-898Z/offline-node.log",
+      "sha256": "50ed5268ec0ae0bcff9da19a7da17db8bf8ca0f2fd86af76840c980298da206a"
+    },
+    {
+      "path": "work/kube-staging-fix-2026-10-24T12-06-34-898Z/offline-rust.log",
+      "sha256": "7f02719981280e5bf690cf326c3be8e6f5ce4e230f96c68cc514eb58ddccf358"
+    },
+    {
+      "path": "work/kube-staging-fix-2026-10-24T12-06-34-898Z/linux-regressions.log",
+      "sha256": "8657661c6ee912ee2ce2b2cdaa41d89d70f0031b265e1a4e86dcc7b2f08c3995"
+    },
+    {
+      "path": "work/kube-staging-fix-2026-10-24T12-06-34-898Z/configure.log",
+      "sha256": "2843e39f3cd20aa69de82ff51bea1f6fe03801f3ecde23411c82f5b0dd05b6c4"
+    },
+    {
+      "path": "work/kube-staging-fix-2026-10-24T12-06-34-898Z/configure-reuse.log",
+      "sha256": "8c836c4b4ae6a31e2f7fa92f1cbdab740213b468cc5aa0f1513572c71ec7677b"
+    },
+    {
+      "path": "work/kube-staging-fix-2026-10-24T12-06-34-898Z/kubernetes-verification.log",
+      "sha256": "0c0c0672dc07a010c86e1cbd469285641a2f247361047c0ff01b4252f3b869cf"
+    },
+    {
+      "path": "work/kube-staging-fix-2026-10-24T12-06-34-898Z/smoke.log",
+      "sha256": "e1987686173eb0b5e7354006512c4a87022fdcc1afb257dbed81e50351e25389"
+    }
+  ],
+  "ci": {
+    "workflow": ".github/workflows/offline-ci.yml",
+    "execution": "Runs on push/PR; see GitHub Actions for the commit-specific hosted result"
+  },
+  "limits": [
+    "No new full performance cohort",
+    "No fresh second-system SAP import",
+    "Local kind deployment only; other Kubernetes distributions not exercised"
+  ],
+  "credentials_or_sap_driver_binaries_included": false
+}

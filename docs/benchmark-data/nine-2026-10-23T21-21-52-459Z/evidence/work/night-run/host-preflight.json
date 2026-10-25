@@ -1,0 +1,13 @@
+{
+  "observed_at_utc": "2026-10-23T21:21:50.5601789Z",
+  "os": {
+    "LastBootUpTime": "2026-10-23T20:02:50.5+02:00",
+    "FreePhysicalMemory": 8150128,
+    "TotalVisibleMemorySize": 33309364
+  },
+  "memory": {
+    "AvailableMBytes": 7959,
+    "CommittedBytes": 51778715648,
+    "CommitLimit": 65247301632
+  }
+}

@@ -1,0 +1,2240 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "two_rows",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"},{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 2,
+        "pages": 1,
+        "digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "error": null
+      }
+    },
+    {
+      "id": "empty",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 0,
+        "expected_digest": "23112f16338f37e5ccdcee69678a6b8c119de246bc487042e012f73ae1337512"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 0,
+        "pages": 1,
+        "digest": "23112f16338f37e5ccdcee69678a6b8c119de246bc487042e012f73ae1337512",
+        "error": null
+      }
+    },
+    {
+      "id": "decimal_normalization",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"0001.0\",\"Unit\":\"EA\",\"NetAmount\":\"0002\",\"Currency\":\"CHF\"},{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 2,
+        "pages": 1,
+        "digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "error": null
+      }
+    },
+    {
+      "id": "unknown_properties",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\",\"Ignored\":{\"anything\":true}},{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}],\"@odata.context\":\"ignored\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 2,
+        "pages": 1,
+        "digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "error": null
+      }
+    },
+    {
+      "id": "next_query",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"?cursor=two\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 2,
+        "pages": 2,
+        "digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "error": null
+      }
+    },
+    {
+      "id": "next_relative",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"OrderPositions?cursor=two\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 2,
+        "pages": 2,
+        "digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "error": null
+      }
+    },
+    {
+      "id": "next_root",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"/odata/OrderPositions?cursor=two\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 2,
+        "pages": 2,
+        "digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "error": null
+      }
+    },
+    {
+      "id": "next_absolute",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"http://fixture.invalid/odata/OrderPositions?cursor=two\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 2,
+        "pages": 2,
+        "digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "error": null
+      }
+    },
+    {
+      "id": "empty_middle_page",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"?cursor=two\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[],\"@odata.nextLink\":\"?cursor=three\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 2,
+        "pages": 3,
+        "digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "error": null
+      }
+    },
+    {
+      "id": "next_encoded_dot_name",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"Order%2ePositions?cursor=two\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 2,
+        "pages": 2,
+        "digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "error": null
+      }
+    },
+    {
+      "id": "leap_day",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 1,
+        "expected_digest": "7fc649f5ce3a12bab05ba7563800dab18e8bb4eb6714dbbb2339b39c9b62a0ae"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2000-02-29\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 1,
+        "pages": 1,
+        "digest": "7fc649f5ce3a12bab05ba7563800dab18e8bb4eb6714dbbb2339b39c9b62a0ae",
+        "error": null
+      }
+    },
+    {
+      "id": "schema_decimal_number",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":1,\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_null",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":null,\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_quantity_scale",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.0000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_amount_scale",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.000\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_decimal_exponent",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1e0\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_negative",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"-1.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_quantity_overflow",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"10000000000.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_amount_overflow",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"10000000000000.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_invalid_date",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-02-30\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_century_nonleap",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"1900-02-29\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_bad_position",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"10\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_tab_identifier",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"A\\tB\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_nonascii",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"Mä\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_currency",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"chf\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_missing",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_trailing_newline_OrderId",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\\n\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_trailing_newline_PositionNumber",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\\n\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_trailing_newline_CustomerId",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\\n\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_trailing_newline_OrderDate",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\\n\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_trailing_newline_MaterialId",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\\n\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_trailing_newline_Quantity",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\\n\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_trailing_newline_Unit",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\\n\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_trailing_newline_NetAmount",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\\n\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_trailing_newline_Currency",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\\n\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_envelope",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":{}}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "schema_json",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":["
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "order_duplicate",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"},{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "ORDER",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "order_descending",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"},{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "ORDER",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "order_across_pages",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"?cursor=two\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 2,
+        "digest": null,
+        "error": {
+          "code": "ORDER",
+          "page_index": 2,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "nextlink_foreign_origin",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"http://other.invalid/odata/OrderPositions\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "nextlink_outside_root",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"http://fixture.invalid/other/OrderPositions\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "nextlink_protocol_relative",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"//fixture.invalid/odata/OrderPositions\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "nextlink_userinfo",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"http://user:example@fixture.invalid/odata/OrderPositions\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "nextlink_fragment",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"?cursor=two#fragment\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "nextlink_client",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"?sap-client=002\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "nextlink_duplicate_client",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"?sap-client=001&sap-client=002\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "nextlink_encoded_traversal",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"/odata/%2e%2e/private\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "nextlink_empty",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "nextlink_wrong_type",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":null}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "nextlink_empty_userinfo",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"http://@fixture.invalid/odata/OrderPositions\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "nextlink_whitespace_protocol_relative",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\" //fixture.invalid/odata/OrderPositions\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "nextlink_raw_space",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"Order Positions?cursor=two\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "nextlink_raw_nonascii",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"OrderPösitions?cursor=two\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "http_401",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 401,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "not JSON"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "HTTP_STATUS",
+          "page_index": 1,
+          "http_status": 401
+        }
+      }
+    },
+    {
+      "id": "http_redirect",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 302,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "HTTP_STATUS",
+          "page_index": 1,
+          "http_status": 302
+        }
+      }
+    },
+    {
+      "id": "count_mismatch",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "COUNT",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "digest_mismatch",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"},{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 2,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "DIGEST",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "body_limit",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "max_body_bytes": 16
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"},{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "LIMIT",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "page_limit",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "max_pages": 1
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"?cursor=two\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "LIMIT",
+          "page_index": 2,
+          "http_status": null
+        }
+      }
+    },
+    {
+      "id": "page_cycle",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"?cursor=two\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"?cursor=two\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 2,
+        "pages": 2,
+        "digest": null,
+        "error": {
+          "code": "LIMIT",
+          "page_index": 2,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "config_negative_rows",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": -1,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 0,
+        "digest": null,
+        "error": {
+          "code": "CONFIG",
+          "page_index": 0,
+          "http_status": null
+        }
+      }
+    },
+    {
+      "id": "config_string_rows",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": "2",
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 0,
+        "digest": null,
+        "error": {
+          "code": "CONFIG",
+          "page_index": 0,
+          "http_status": null
+        }
+      }
+    },
+    {
+      "id": "config_zero_timeout",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "request_timeout_seconds": 0
+      },
+      "pages": [],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 0,
+        "digest": null,
+        "error": {
+          "code": "CONFIG",
+          "page_index": 0,
+          "http_status": null
+        }
+      }
+    },
+    {
+      "id": "config_fractional_interval",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "interval_ms": 1.5
+      },
+      "pages": [],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 0,
+        "digest": null,
+        "error": {
+          "code": "CONFIG",
+          "page_index": 0,
+          "http_status": null
+        }
+      }
+    },
+    {
+      "id": "config_bad_digest",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "BAD"
+      },
+      "pages": [],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 0,
+        "digest": null,
+        "error": {
+          "code": "CONFIG",
+          "page_index": 0,
+          "http_status": null
+        }
+      }
+    },
+    {
+      "id": "config_root_fragment",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/#x",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 0,
+        "digest": null,
+        "error": {
+          "code": "CONFIG",
+          "page_index": 0,
+          "http_status": null
+        }
+      }
+    },
+    {
+      "id": "config_root_leading_space",
+      "config": {
+        "service_root": " http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 0,
+        "digest": null,
+        "error": {
+          "code": "CONFIG",
+          "page_index": 0,
+          "http_status": null
+        }
+      }
+    },
+    {
+      "id": "next_ipv6_expanded_loopback",
+      "config": {
+        "service_root": "http://[::1]/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://[::1]/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"http://[0:0:0:0:0:0:0:1]/odata/OrderPositions?cursor=two\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://[::1]/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 2,
+        "pages": 2,
+        "digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "error": null
+      },
+      "offline_only": true
+    },
+    {
+      "id": "next_ipv6_compressed_root",
+      "config": {
+        "service_root": "http://[2001:0DB8:0:0:0:0:0:000A]/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://[2001:0DB8:0:0:0:0:0:000A]/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"http://[2001:db8::a]/odata/OrderPositions?cursor=two\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://[2001:0DB8:0:0:0:0:0:000A]/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 2,
+        "pages": 2,
+        "digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "error": null
+      },
+      "offline_only": true
+    },
+    {
+      "id": "next_ipv6_embedded_ipv4",
+      "config": {
+        "service_root": "http://[::ffff:c000:280]/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://[::ffff:c000:280]/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"http://[0:0:0:0:0:ffff:192.0.2.128]/odata/OrderPositions?cursor=two\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://[::ffff:c000:280]/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 2,
+        "pages": 2,
+        "digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "error": null
+      },
+      "offline_only": true
+    },
+    {
+      "id": "next_ipv6_default_port",
+      "config": {
+        "service_root": "http://[::1]:80/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://[::1]:80/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"http://[0000:0000:0000:0000:0000:0000:0000:0001]/odata/OrderPositions?cursor=two\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://[::1]:80/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 2,
+        "pages": 2,
+        "digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "error": null
+      },
+      "offline_only": true
+    },
+    {
+      "id": "next_ipv6_all_zero",
+      "config": {
+        "service_root": "http://[::]/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://[::]/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"http://[0:0:0:0:0:0:0:0]/odata/OrderPositions?cursor=two\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://[::]/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 2,
+        "pages": 2,
+        "digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908",
+        "error": null
+      },
+      "offline_only": true
+    },
+    {
+      "id": "nextlink_ipv6_foreign_host",
+      "config": {
+        "service_root": "http://[::1]/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://[::1]/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"http://[::2]/odata/OrderPositions?cursor=two\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      },
+      "offline_only": true
+    },
+    {
+      "id": "nextlink_ipv6_changed_port",
+      "config": {
+        "service_root": "http://[::1]/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://[::1]/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"http://[0:0:0:0:0:0:0:1]:81/odata/OrderPositions?cursor=two\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      },
+      "offline_only": true
+    },
+    {
+      "id": "nextlink_ipv6_invalid_compression",
+      "config": {
+        "service_root": "http://[::1]/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://[::1]/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"http://[::1::]/odata/OrderPositions?cursor=two\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 1,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "NEXTLINK",
+          "page_index": 1,
+          "http_status": 200
+        }
+      },
+      "offline_only": true
+    },
+    {
+      "id": "config_ipv6_invalid",
+      "config": {
+        "service_root": "http://[::1::]/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 0,
+        "digest": null,
+        "error": {
+          "code": "CONFIG",
+          "page_index": 0,
+          "http_status": null
+        }
+      },
+      "offline_only": true
+    },
+    {
+      "id": "page_cycle_ipv6_spelling",
+      "config": {
+        "service_root": "http://[::1]/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://[::1]/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000010\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000001\",\"Quantity\":\"1.000\",\"Unit\":\"EA\",\"NetAmount\":\"2.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"?cursor=two\"}"
+        },
+        {
+          "status": 200,
+          "url": "http://[::1]/odata/OrderPositions",
+          "body_json": "{\"value\":[{\"OrderId\":\"00000000000000000001\",\"PositionNumber\":\"000020\",\"CustomerId\":\"C000000001\",\"OrderDate\":\"2026-01-01\",\"MaterialId\":\"M00000000000000002\",\"Quantity\":\"2.000\",\"Unit\":\"EA\",\"NetAmount\":\"3.00\",\"Currency\":\"CHF\"}],\"@odata.nextLink\":\"http://[0:0:0:0:0:0:0:1]/odata/OrderPositions?cursor=two\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 2,
+        "pages": 2,
+        "digest": null,
+        "error": {
+          "code": "LIMIT",
+          "page_index": 2,
+          "http_status": 200
+        }
+      },
+      "offline_only": true
+    },
+    {
+      "id": "json_depth_127",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 0,
+        "expected_digest": "23112f16338f37e5ccdcee69678a6b8c119de246bc487042e012f73ae1337512"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[],\"ignored\":[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[0]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 0,
+        "pages": 1,
+        "digest": "23112f16338f37e5ccdcee69678a6b8c119de246bc487042e012f73ae1337512",
+        "error": null
+      },
+      "offline_only": true
+    },
+    {
+      "id": "json_depth_128",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 0,
+        "expected_digest": "23112f16338f37e5ccdcee69678a6b8c119de246bc487042e012f73ae1337512"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[],\"ignored\":[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[0]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 0,
+        "pages": 1,
+        "digest": "23112f16338f37e5ccdcee69678a6b8c119de246bc487042e012f73ae1337512",
+        "error": null
+      },
+      "offline_only": true
+    },
+    {
+      "id": "json_depth_128_objects",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 0,
+        "expected_digest": "23112f16338f37e5ccdcee69678a6b8c119de246bc487042e012f73ae1337512"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[],\"ignored\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":0}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 0,
+        "pages": 1,
+        "digest": "23112f16338f37e5ccdcee69678a6b8c119de246bc487042e012f73ae1337512",
+        "error": null
+      },
+      "offline_only": true
+    },
+    {
+      "id": "json_depth_129",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[],\"ignored\":[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[0]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      },
+      "offline_only": true
+    },
+    {
+      "id": "json_depth_129_objects",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 2,
+        "expected_digest": "90cbf5c1f9b3e3ed3a9b6b228ce53c626141fcd1be183401a598dcce48bdb908"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[],\"ignored\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":{\"nested\":0}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}"
+        }
+      ],
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      },
+      "offline_only": true
+    },
+    {
+      "id": "json_depth_escaped_brackets",
+      "config": {
+        "service_root": "http://fixture.invalid/odata/",
+        "sap_client": "001",
+        "expected_rows": 0,
+        "expected_digest": "23112f16338f37e5ccdcee69678a6b8c119de246bc487042e012f73ae1337512"
+      },
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://fixture.invalid/odata/OrderPositions",
+          "body_json": "{\"value\":[],\"ignored\":\"\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\\\\\\\"[{}]\"}"
+        }
+      ],
+      "expected": {
+        "outcome": "ok",
+        "rows": 0,
+        "pages": 1,
+        "digest": "23112f16338f37e5ccdcee69678a6b8c119de246bc487042e012f73ae1337512",
+        "error": null
+      },
+      "offline_only": true
+    }
+  ]
+}

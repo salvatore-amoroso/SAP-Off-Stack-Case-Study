@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "dataset_id": "seed-v1-h1000-p5",
+  "headers": 1000,
+  "positions_per_header": 5,
+  "expected_rows": 5000,
+  "expected_digest": "df57de597e919adb10ae5365201b999788e86b39219ad040ffbc305539180bc7",
+  "digest_algorithm": "sha256-canonical-tsv-v1",
+  "unit": "EA",
+  "fields": [
+    "OrderId",
+    "PositionNumber",
+    "CustomerId",
+    "OrderDate",
+    "MaterialId",
+    "Quantity",
+    "Unit",
+    "NetAmount",
+    "Currency"
+  ]
+}

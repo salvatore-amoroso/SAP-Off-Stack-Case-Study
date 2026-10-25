@@ -1,0 +1,68 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: poller-node-hana
+  labels:
+    app.kubernetes.io/part-of: sap-order-polling-lab
+spec:
+  suspend: true
+  backoffLimit: 0
+  completions: 1
+  parallelism: 1
+  activeDeadlineSeconds: 150
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: poller-node-hana
+    spec:
+      restartPolicy: Never
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: poller
+          image: sap-polling-node:sql
+          imagePullPolicy: Never
+          command: [node, --v8-pool-size=1, /app/src/sql-cli.mjs]
+          args: [--transport, hana]
+          envFrom:
+            - configMapRef:
+                name: native-hana-config
+            - secretRef:
+                name: native-hana-credentials
+          env:
+            - name: UV_THREADPOOL_SIZE
+              value: "1"
+            - name: HDB_NODEJS_THREADPOOL_SIZE
+              value: "1"
+          volumeMounts:
+            - name: query
+              mountPath: /run/sql
+              readOnly: true
+            - name: scratch
+              mountPath: /tmp
+          resources:
+            requests:
+              cpu: "1"
+              memory: "256Mi"
+            limits:
+              cpu: "1"
+              memory: "256Mi"
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: [ALL]
+      volumes:
+        - name: query
+          configMap:
+            name: native-hana-query
+            defaultMode: 0444
+        - name: scratch
+          emptyDir:
+            medium: Memory
+            sizeLimit: 16Mi

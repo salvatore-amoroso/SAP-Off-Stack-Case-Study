@@ -1,0 +1,14 @@
+{
+  "archived_at_utc": "2026-10-23T22:47:58.556Z",
+  "source": "results/nine-2026-10-23T21-21-52-459Z",
+  "archive": "docs/benchmark-data/nine-2026-10-23T21-21-52-459Z",
+  "files": 265,
+  "bytes": 62605937,
+  "manifest_sha256": "101819cf878b18c356c471af4e79f72dd3558cf926b4e35e4d608d84ff98e5ca",
+  "redaction_checked": true,
+  "sap_driver_binaries_included": false,
+  "credentials_included": false,
+  "privacy_redacted_export": true,
+  "all_published_files_hash_verified": true,
+  "measurement_data_unchanged": true
+}

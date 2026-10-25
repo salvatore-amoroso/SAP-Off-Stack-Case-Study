@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: sap-polling-lab
+resources:
+  - ../base
+configMapGenerator:
+  - name: polling-config
+    behavior: merge
+    literals:
+      - SAP_SERVICE_ROOT=https://host.docker.internal/sap/opu/odata4/sap/zui_bl_orders_o4/srvd_a2x/sap/zui_bl_orders/0001/
+      - SAP_TLS_INSECURE=true

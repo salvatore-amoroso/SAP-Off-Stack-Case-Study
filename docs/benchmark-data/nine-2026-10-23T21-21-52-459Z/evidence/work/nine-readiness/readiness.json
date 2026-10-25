@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-23T15:50:57.329Z",
+  "images": {
+    "node-http": {
+      "tag": "sap-polling-node:nine-http",
+      "id": "sha256:d596fbfbb7fd9e05a781aa5a72a2ea1770aad92649a6cf37dc22e1bfec2ae601",
+      "platform": "linux/amd64",
+      "entrypoint": [
+        "node",
+        "/app/src/cli.mjs"
+      ],
+      "user": "node",
+      "size_bytes": 900987984
+    },
+    "node-sql": {
+      "tag": "sap-polling-node:nine-sql",
+      "id": "sha256:a945b55d66dd3209f6215878e3f7c739aed45a32e4647fbd636cf989396cf1b0",
+      "platform": "linux/amd64",
+      "entrypoint": [
+        "node",
+        "/app/src/sql-cli.mjs"
+      ],
+      "user": "node",
+      "size_bytes": 900988149
+    },
+    "rust-http": {
+      "tag": "sap-polling-rust:nine-http",
+      "id": "sha256:b9297d62027bc866e57dc0f25929770871ac1fa6e4cf395af70f8e15e6b5c8fe",
+      "platform": "linux/amd64",
+      "entrypoint": [
+        "poller"
+      ],
+      "user": "10001",
+      "size_bytes": 159517132
+    },
+    "rust-sql": {
+      "tag": "sap-polling-rust:nine-sql",
+      "id": "sha256:65c7f725a1f6a9625de2a56891daa2cfa1a9142c8e86d026699d2371f5cc9347",
+      "platform": "linux/amd64",
+      "entrypoint": [
+        "sql-poller"
+      ],
+      "user": "10001",
+      "size_bytes": 159517278
+    }
+  },
+  "runtimes": {
+    "node": {
+      "node": "v24.22.1",
+      "v8": "13.6.233.17-node.58",
+      "openssl": "3.5.9",
+      "uv": "1.52.1",
+      "package_json_sha256": "25e321e91a791f9556dca7bab8dc6e03cf938ecb05cf6be98efc66ff4848300c",
+      "lock_sha256": "35dd7bc0c2bffd245dcd5ce1567def97674649cbb4b49ac83ad779e6e0c9c8e7",
+      "patch_sha256": "95121c1fe63cb087b0621aedb6c46a3ed56419522eaaec5e0ee990ad98233919",
+      "odbc": "2.6.0",
+      "hana": "2.30.27",
+      "undici": "7.30.1"
+    },
+    "rust": {
+      "compiler_image": "sha256:6b1d0e9a84303b221376f419749a653939860950a4020e2164cf359357614587",
+      "compiler_version": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+      "build_features": [
+        "native-hana",
+        "abap-odbc"
+      ],
+      "optimization": "release",
+      "locked": true,
+      "offline": true,
+      "build_command": "cargo build --release --offline --locked --features native-hana,abap-odbc --bins",
+      "binaries": {
+        "http": {
+          "sha256": "26fcc3d10e8e5d9a51c1126c3d3b4ce3251bd70edbfbbdf2ce4c29c86f934b05",
+          "bytes": 5540312
+        },
+        "sql": {
+          "sha256": "8ef2e4c634017efa33ee17d8c9e7c207ed5819a4f00afc28f6e18b8e4c014557",
+          "bytes": 4066128
+        }
+      }
+    },
+    "unixodbc": {
+      "version_from_cached_build_provenance": "2.3.11-2+deb12u1",
+      "actual_runtime_library_sha256": "94de4cd1acf7718eaf88873af551b92beee6a0643e21ad3d1726bc6fd8fb4619  /usr/lib/x86_64-linux-gnu/libodbc.so.2\nef8c8cf9be0885fac22a101a3e8075b598ab6e1efdf78f3b2754e748708e884c  /usr/lib/x86_64-linux-gnu/libodbcinst.so.2\neefec20eb69408b2c76922cf95ee307f89d8ce1d33890689631cb0086fecc17e  /usr/lib/x86_64-linux-gnu/libltdl.so.7"
+    }
+  },
+  "driver": {
+    "external_readonly_mount": true,
+    "strict_certificate_validation": true,
+    "trust_all": false,
+    "certificate_host": "a4h.wdf.sap.corp",
+    "files": [
+      {
+        "name": "ODBC_driver_for_ABAP.h",
+        "bytes": 20268,
+        "sha256": "e4cd9723638e5fceb0e24e25516f199c53818da6607dce1a78ddbe49f8494e4d"
+      },
+      {
+        "name": "ODBC_driver_for_ABAP.so",
+        "bytes": 13164488,
+        "sha256": "52d0391fd2c91be78e0ebb021e037627129ebf5780b32818c955c59f5a59cd54"
+      },
+      {
+        "name": "README.txt",
+        "bytes": 343,
+        "sha256": "91e58278b300787b394b7734c9da8884f2acd6f637aa6d91ed7a27ca3e6fcdd9"
+      },
+      {
+        "name": "libicudata77.so",
+        "bytes": 31900808,
+        "sha256": "ff1b97d76d28a69390d98f2a4be80c5e52de01205e886039069525607c5affab"
+      },
+      {
+        "name": "libicudecnumber.so",
+        "bytes": 83968,
+        "sha256": "0762207c7b9a9c1c4a99db84578a3f144cb0b497fef16d6454caf095bdfc61e1"
+      },
+      {
+        "name": "libicui18n77.so",
+        "bytes": 27077616,
+        "sha256": "7b1b37b67ddf3790b1aeb45464ce644e4be82fee64bbb88d0ef2eb46fc6b8362"
+      },
+      {
+        "name": "libicuuc77.so",
+        "bytes": 13560520,
+        "sha256": "a671d5439b51e54ab3995a1aca8ba7525f3e2e736744a8d11575aeac0377b527"
+      },
+      {
+        "name": "libregexpcre2.so",
+        "bytes": 538968,
+        "sha256": "7da10f0838c468a4826024b41134faaa7f48d17216c45681aeb33bde1d79a175"
+      },
+      {
+        "name": "libsapcrypto.so",
+        "bytes": 6126168,
+        "sha256": "b951572d6587f38f9b08722284da2ee0e29fdcdc009d2d3093972c7d4b8965e3"
+      },
+      {
+        "name": "sap-trial-ca.pem",
+        "bytes": 2151,
+        "sha256": "00ecc42e309d3680caf7fab17877bf65d5b82c076dce3ccc569da1b892581465"
+      }
+    ]
+  },
+  "query_sha256": "a00236dcebd71ec45302561d268538594e4e7b5524c9452288aa38119b6007a6",
+  "source_sha256": {
+    "clients/node/src/benchmark.mjs": "12d46b9858782eb3828c33980bb7fceb9fd517b4c669d531b413f9d9d5b6bd44",
+    "clients/node/src/cli.mjs": "0ffbdc071dbaa740a36b8da46e79aac3e644f9ba637bd5dce2638d474bc2deb9",
+    "clients/node/src/config.mjs": "e2aed527ac55c3540abbd57ec70de974fb8cf3d2dad0176a46be78b126d8cddf",
+    "clients/node/src/poller.mjs": "53b2f7eb2a292d99dea8614e6f9e837d85581875533ad855ed1598c841cf302d",
+    "clients/node/src/sql-benchmark.mjs": "d270fdd85b0b041438e507c3594d506b3fcd3c080a732794835074759dfbe1bb",
+    "clients/node/src/sql-cli.mjs": "403d07bf240ce0cb74cd0f32caea961b6fa3350e0c08a824265750b3e3a14673",
+    "clients/node/src/sql-config.mjs": "a486c5646266deed93cf86d91c0b30a9890fc9bf12254f578203bbe0042fe04b",
+    "clients/node/src/sql-poller.mjs": "61b5c1f2ce0b0696dbac3b6769dd6b0bf74f82bc5130816e6aca7a73e83e9f2e",
+    "clients/node/src/sql-profile.mjs": "90590c3135f3a9c6d70fc706ac7939ce38566e54a77896bf99177b4697642133",
+    "clients/node/src/sql-transport.mjs": "8fde0045d1fd37ebdc32d0535b6a6659399aad0f030f830ed2765da3e75a1778",
+    "clients/node/src/transport.mjs": "e86c47c252586e859df3ab525947f68184eb6e5726ca607bb91d312abcced2c5",
+    "clients/rust/src/lib.rs": "3e86cb72bf1fe93ed71a126db5091e436babdda799d152c84f4397674b4ecf3f",
+    "clients/rust/src/main.rs": "c5fe94b500696323959e891fa16c5ff0caa84935821e418657dd43bd5e335192",
+    "clients/rust/src/sql/profile.rs": "11073eca805290f55d5702c4136b15ecb35612d946808a57642f3d73af9c3f83",
+    "clients/rust/src/sql.rs": "83af5dfd2d90b0d9beb2de29193d474bb56209146aee5dd3e4b564de6937db65",
+    "clients/rust/src/sql_main.rs": "b9f2a57d1465e4d62a79906ca68debec11ffa329952a97198aac5201ab03de5c",
+    "clients/rust/src/sql_profile_main.rs": "dc65e26981acb959bc28d19ffbc4d4af1458d41d6c827ced41ae8548d5434822",
+    "clients/node/package.json": "25e321e91a791f9556dca7bab8dc6e03cf938ecb05cf6be98efc66ff4848300c",
+    "clients/node/package-lock.json": "35dd7bc0c2bffd245dcd5ce1567def97674649cbb4b49ac83ad779e6e0c9c8e7",
+    "clients/node/scripts/patch-odbc.mjs": "95121c1fe63cb087b0621aedb6c46a3ed56419522eaaec5e0ee990ad98233919",
+    "clients/rust/Cargo.toml": "79b96c3214487acf609c321126332f7f892ad8d0d05f53028390a9233891dc23",
+    "clients/rust/Cargo.lock": "e21a8ceb16efd2d24329f028cb848a41ce8abea3b8f388d42351be2a356d0275"
+  },
+  "checks": {
+    "node": {
+      "passed": true,
+      "tests": 138,
+      "failed": 0,
+      "command": "node --test (fresh runtime with read-only current tests and contracts)"
+    },
+    "rust": {
+      "passed": true,
+      "tests": 15,
+      "failed": 0,
+      "command": "cargo test --release --offline --locked --features native-hana,abap-odbc"
+    },
+    "abap": {
+      "checked_at_utc": "2026-10-23T15:47:37.849Z",
+      "classes": [
+        {
+          "name": "ZCL_BL_POLL_ORDERS",
+          "active_sha256": "fd428d25b6623aa1f1d567af953f99ad6920a12a728f3005a5692e9461f84444",
+          "local_sha256": "c3e72a073f9782a748916a6dc060f9b88161cd26b77eb35d9f5069f7704ce81e",
+          "normalized_sha256": "c3e72a073f9782a748916a6dc060f9b88161cd26b77eb35d9f5069f7704ce81e",
+          "active_matches_local_after_eol_eof_normalization": true
+        },
+        {
+          "name": "ZCL_BL_BENCH_ORDERS",
+          "active_sha256": "ff9690570c626b65ad2f32e206ec42da8bee81e6b879248b7c116bfafdb98459",
+          "local_sha256": "7f36842985875d49610bc1086da6b0a98cd9b83a6008ef44dce7e280c3d946fc",
+          "normalized_sha256": "9e60a570913a2cbfcaa16a774cc7dbf2975d355484a5f1fdcf2d0b5a5ca8895f",
+          "active_matches_local_after_eol_eof_normalization": true
+        },
+        {
+          "name": "ZCL_BL_BENCH_CDS",
+          "active_sha256": "e8e679636d057bfda75722a8b9ac51a3fc5015fd3ffe28d9b62786b861ffecfd",
+          "local_sha256": "e6d849a05e681ad3ffdcc15e1edfb77bc5e95667c8e31e12520e2383e967c3df",
+          "normalized_sha256": "e6d849a05e681ad3ffdcc15e1edfb77bc5e95667c8e31e12520e2383e967c3df",
+          "active_matches_local_after_eol_eof_normalization": true
+        },
+        {
+          "name": "ZCL_BL_BENCH_NATIVE",
+          "active_sha256": "f027613c760e73fbb53512918ce4f2e727068d76a3f6c324a6719c5bde678f06",
+          "local_sha256": "3acc3ea46aebcb9e2f96ea566c7d3800269b75c9fb429e341e4df3776be0f25f",
+          "normalized_sha256": "3acc3ea46aebcb9e2f96ea566c7d3800269b75c9fb429e341e4df3776be0f25f",
+          "active_matches_local_after_eol_eof_normalization": true
+        }
+      ],
+      "abap_unit": {
+        "passed": true,
+        "count": 9,
+        "alerts": 0
+      },
+      "shared_fixtures": {
+        "passed": true,
+        "count": 68
+      }
+    }
+  },
+  "method": {
+    "node_images": "Current source copied over cached patched Node ODBC runtime; package/lock/patch hashes verified equal current files.",
+    "rust_images": "Both fresh release binaries from the same cached compiler and dependencies, copied over cached ODBC-ready bookworm runtime.",
+    "historical_tags_modified": false,
+    "portable_dockerfiles_executed": false
+  },
+  "ready": true
+}

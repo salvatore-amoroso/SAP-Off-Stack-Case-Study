@@ -1,0 +1,5 @@
+@EndUserText.label: 'Order polling benchmark API'
+define service ZUI_BL_ORDERS {
+  expose ZI_BL_OrderHeader as Orders;
+  expose ZI_BL_OrderPosition as OrderPositions;
+}

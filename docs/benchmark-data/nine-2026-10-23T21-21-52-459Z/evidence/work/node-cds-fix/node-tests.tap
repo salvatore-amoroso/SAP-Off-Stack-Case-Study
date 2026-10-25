@@ -1,0 +1,844 @@
+TAP version 13
+# Subtest: benchmark arguments have fixed defaults and reject ambiguous or invalid values
+ok 1 - benchmark arguments have fixed defaults and reject ambiguous or invalid values
+  ---
+  duration_ms: 1.311685
+  type: 'test'
+  ...
+# Subtest: ODBC compatibility patch guards rollback and preserves real disconnect/cleanup
+ok 2 - ODBC compatibility patch guards rollback and preserves real disconnect/cleanup
+  ---
+  duration_ms: 0.797797
+  type: 'test'
+  ...
+# Subtest: ODBC cursor fetch is registered for cancellation until the native call returns
+ok 3 - ODBC cursor fetch is registered for cancellation until the native call returns
+  ---
+  duration_ms: 0.185142
+  type: 'test'
+  ...
+# Subtest: ODBC retires failed open connection before a subsequent successful scan
+ok 4 - ODBC retires failed open connection before a subsequent successful scan
+  ---
+  duration_ms: 2.697542
+  type: 'test'
+  ...
+# Subtest: ODBC retires failed query connection before a subsequent successful scan
+ok 5 - ODBC retires failed query connection before a subsequent successful scan
+  ---
+  duration_ms: 0.58546
+  type: 'test'
+  ...
+# Subtest: ODBC retires failed fetch connection before a subsequent successful scan
+ok 6 - ODBC retires failed fetch connection before a subsequent successful scan
+  ---
+  duration_ms: 0.456859
+  type: 'test'
+  ...
+# Subtest: ODBC retires failed no-data connection before a subsequent successful scan
+ok 7 - ODBC retires failed no-data connection before a subsequent successful scan
+  ---
+  duration_ms: 0.380728
+  type: 'test'
+  ...
+# Subtest: ODBC retires failed cursor-close connection before a subsequent successful scan
+ok 8 - ODBC retires failed cursor-close connection before a subsequent successful scan
+  ---
+  duration_ms: 5.973758
+  type: 'test'
+  ...
+# Subtest: ODBC retires failed connection-close connection before a subsequent successful scan
+ok 9 - ODBC retires failed connection-close connection before a subsequent successful scan
+  ---
+  duration_ms: 0.89152
+  type: 'test'
+  ...
+# Subtest: ODBC retires failed validation-timeout connection before a subsequent successful scan
+ok 10 - ODBC retires failed validation-timeout connection before a subsequent successful scan
+  ---
+  duration_ms: 0.581989
+  type: 'test'
+  ...
+# Subtest: ODBC retires failed cancel connection before a subsequent successful scan
+ok 11 - ODBC retires failed cancel connection before a subsequent successful scan
+  ---
+  duration_ms: 1000.061447
+  type: 'test'
+  ...
+# Subtest: ODBC retires failed cancel-failure connection before a subsequent successful scan
+ok 12 - ODBC retires failed cancel-failure connection before a subsequent successful scan
+  ---
+  duration_ms: 999.0225
+  type: 'test'
+  ...
+# Subtest: ODBC can retire a connection after its healthy cursor was already closed
+ok 13 - ODBC can retire a connection after its healthy cursor was already closed
+  ---
+  duration_ms: 0.512359
+  type: 'test'
+  ...
+# Subtest: ODBC scheduled run reconnects after transport failure and retains the failed run status
+ok 14 - ODBC scheduled run reconnects after transport failure and retains the failed run status
+  ---
+  duration_ms: 3.328781
+  type: 'test'
+  ...
+# Subtest: shared fixture: two_rows
+ok 15 - shared fixture: two_rows
+  ---
+  duration_ms: 7.83932
+  type: 'test'
+  ...
+# Subtest: shared fixture: empty
+ok 16 - shared fixture: empty
+  ---
+  duration_ms: 0.734299
+  type: 'test'
+  ...
+# Subtest: shared fixture: decimal_normalization
+ok 17 - shared fixture: decimal_normalization
+  ---
+  duration_ms: 0.630933
+  type: 'test'
+  ...
+# Subtest: shared fixture: unknown_properties
+ok 18 - shared fixture: unknown_properties
+  ---
+  duration_ms: 0.40843
+  type: 'test'
+  ...
+# Subtest: shared fixture: next_query
+ok 19 - shared fixture: next_query
+  ---
+  duration_ms: 0.669793
+  type: 'test'
+  ...
+# Subtest: shared fixture: next_relative
+ok 20 - shared fixture: next_relative
+  ---
+  duration_ms: 0.552988
+  type: 'test'
+  ...
+# Subtest: shared fixture: next_root
+ok 21 - shared fixture: next_root
+  ---
+  duration_ms: 0.834553
+  type: 'test'
+  ...
+# Subtest: shared fixture: next_absolute
+ok 22 - shared fixture: next_absolute
+  ---
+  duration_ms: 0.507077
+  type: 'test'
+  ...
+# Subtest: shared fixture: empty_middle_page
+ok 23 - shared fixture: empty_middle_page
+  ---
+  duration_ms: 0.783248
+  type: 'test'
+  ...
+# Subtest: shared fixture: next_encoded_dot_name
+ok 24 - shared fixture: next_encoded_dot_name
+  ---
+  duration_ms: 0.511189
+  type: 'test'
+  ...
+# Subtest: shared fixture: leap_day
+ok 25 - shared fixture: leap_day
+  ---
+  duration_ms: 0.168519
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_decimal_number
+ok 26 - shared fixture: schema_decimal_number
+  ---
+  duration_ms: 0.25339
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_null
+ok 27 - shared fixture: schema_null
+  ---
+  duration_ms: 0.16546
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_quantity_scale
+ok 28 - shared fixture: schema_quantity_scale
+  ---
+  duration_ms: 0.147116
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_amount_scale
+ok 29 - shared fixture: schema_amount_scale
+  ---
+  duration_ms: 0.19732
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_decimal_exponent
+ok 30 - shared fixture: schema_decimal_exponent
+  ---
+  duration_ms: 0.232635
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_negative
+ok 31 - shared fixture: schema_negative
+  ---
+  duration_ms: 0.200481
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_quantity_overflow
+ok 32 - shared fixture: schema_quantity_overflow
+  ---
+  duration_ms: 0.176423
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_amount_overflow
+ok 33 - shared fixture: schema_amount_overflow
+  ---
+  duration_ms: 0.204023
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_invalid_date
+ok 34 - shared fixture: schema_invalid_date
+  ---
+  duration_ms: 0.153782
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_century_nonleap
+ok 35 - shared fixture: schema_century_nonleap
+  ---
+  duration_ms: 0.24671
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_bad_position
+ok 36 - shared fixture: schema_bad_position
+  ---
+  duration_ms: 0.148803
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_tab_identifier
+ok 37 - shared fixture: schema_tab_identifier
+  ---
+  duration_ms: 0.122181
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_nonascii
+ok 38 - shared fixture: schema_nonascii
+  ---
+  duration_ms: 0.254259
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_currency
+ok 39 - shared fixture: schema_currency
+  ---
+  duration_ms: 0.167317
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_missing
+ok 40 - shared fixture: schema_missing
+  ---
+  duration_ms: 0.190955
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_trailing_newline_OrderId
+ok 41 - shared fixture: schema_trailing_newline_OrderId
+  ---
+  duration_ms: 0.164394
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_trailing_newline_PositionNumber
+ok 42 - shared fixture: schema_trailing_newline_PositionNumber
+  ---
+  duration_ms: 0.135472
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_trailing_newline_CustomerId
+ok 43 - shared fixture: schema_trailing_newline_CustomerId
+  ---
+  duration_ms: 0.120261
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_trailing_newline_OrderDate
+ok 44 - shared fixture: schema_trailing_newline_OrderDate
+  ---
+  duration_ms: 0.149641
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_trailing_newline_MaterialId
+ok 45 - shared fixture: schema_trailing_newline_MaterialId
+  ---
+  duration_ms: 0.191522
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_trailing_newline_Quantity
+ok 46 - shared fixture: schema_trailing_newline_Quantity
+  ---
+  duration_ms: 0.143808
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_trailing_newline_Unit
+ok 47 - shared fixture: schema_trailing_newline_Unit
+  ---
+  duration_ms: 0.163666
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_trailing_newline_NetAmount
+ok 48 - shared fixture: schema_trailing_newline_NetAmount
+  ---
+  duration_ms: 0.156434
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_trailing_newline_Currency
+ok 49 - shared fixture: schema_trailing_newline_Currency
+  ---
+  duration_ms: 0.13735
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_envelope
+ok 50 - shared fixture: schema_envelope
+  ---
+  duration_ms: 0.108266
+  type: 'test'
+  ...
+# Subtest: shared fixture: schema_json
+ok 51 - shared fixture: schema_json
+  ---
+  duration_ms: 0.203282
+  type: 'test'
+  ...
+# Subtest: shared fixture: order_duplicate
+ok 52 - shared fixture: order_duplicate
+  ---
+  duration_ms: 0.458939
+  type: 'test'
+  ...
+# Subtest: shared fixture: order_descending
+ok 53 - shared fixture: order_descending
+  ---
+  duration_ms: 0.237217
+  type: 'test'
+  ...
+# Subtest: shared fixture: order_across_pages
+ok 54 - shared fixture: order_across_pages
+  ---
+  duration_ms: 0.274432
+  type: 'test'
+  ...
+# Subtest: shared fixture: nextlink_foreign_origin
+ok 55 - shared fixture: nextlink_foreign_origin
+  ---
+  duration_ms: 0.19799
+  type: 'test'
+  ...
+# Subtest: shared fixture: nextlink_outside_root
+ok 56 - shared fixture: nextlink_outside_root
+  ---
+  duration_ms: 0.549953
+  type: 'test'
+  ...
+# Subtest: shared fixture: nextlink_protocol_relative
+ok 57 - shared fixture: nextlink_protocol_relative
+  ---
+  duration_ms: 0.148834
+  type: 'test'
+  ...
+# Subtest: shared fixture: nextlink_userinfo
+ok 58 - shared fixture: nextlink_userinfo
+  ---
+  duration_ms: 0.179461
+  type: 'test'
+  ...
+# Subtest: shared fixture: nextlink_fragment
+ok 59 - shared fixture: nextlink_fragment
+  ---
+  duration_ms: 0.154813
+  type: 'test'
+  ...
+# Subtest: shared fixture: nextlink_client
+ok 60 - shared fixture: nextlink_client
+  ---
+  duration_ms: 0.180287
+  type: 'test'
+  ...
+# Subtest: shared fixture: nextlink_duplicate_client
+ok 61 - shared fixture: nextlink_duplicate_client
+  ---
+  duration_ms: 0.202927
+  type: 'test'
+  ...
+# Subtest: shared fixture: nextlink_encoded_traversal
+ok 62 - shared fixture: nextlink_encoded_traversal
+  ---
+  duration_ms: 0.176089
+  type: 'test'
+  ...
+# Subtest: shared fixture: nextlink_empty
+ok 63 - shared fixture: nextlink_empty
+  ---
+  duration_ms: 0.357876
+  type: 'test'
+  ...
+# Subtest: shared fixture: nextlink_wrong_type
+ok 64 - shared fixture: nextlink_wrong_type
+  ---
+  duration_ms: 0.197269
+  type: 'test'
+  ...
+# Subtest: shared fixture: nextlink_empty_userinfo
+ok 65 - shared fixture: nextlink_empty_userinfo
+  ---
+  duration_ms: 0.256508
+  type: 'test'
+  ...
+# Subtest: shared fixture: nextlink_whitespace_protocol_relative
+ok 66 - shared fixture: nextlink_whitespace_protocol_relative
+  ---
+  duration_ms: 0.70398
+  type: 'test'
+  ...
+# Subtest: shared fixture: nextlink_raw_space
+ok 67 - shared fixture: nextlink_raw_space
+  ---
+  duration_ms: 0.177256
+  type: 'test'
+  ...
+# Subtest: shared fixture: nextlink_raw_nonascii
+ok 68 - shared fixture: nextlink_raw_nonascii
+  ---
+  duration_ms: 0.143434
+  type: 'test'
+  ...
+# Subtest: shared fixture: http_401
+ok 69 - shared fixture: http_401
+  ---
+  duration_ms: 0.241293
+  type: 'test'
+  ...
+# Subtest: shared fixture: http_redirect
+ok 70 - shared fixture: http_redirect
+  ---
+  duration_ms: 0.190387
+  type: 'test'
+  ...
+# Subtest: shared fixture: count_mismatch
+ok 71 - shared fixture: count_mismatch
+  ---
+  duration_ms: 0.140552
+  type: 'test'
+  ...
+# Subtest: shared fixture: digest_mismatch
+ok 72 - shared fixture: digest_mismatch
+  ---
+  duration_ms: 0.419343
+  type: 'test'
+  ...
+# Subtest: shared fixture: body_limit
+ok 73 - shared fixture: body_limit
+  ---
+  duration_ms: 0.212301
+  type: 'test'
+  ...
+# Subtest: shared fixture: page_limit
+ok 74 - shared fixture: page_limit
+  ---
+  duration_ms: 0.169939
+  type: 'test'
+  ...
+# Subtest: shared fixture: page_cycle
+ok 75 - shared fixture: page_cycle
+  ---
+  duration_ms: 0.221349
+  type: 'test'
+  ...
+# Subtest: shared fixture: config_negative_rows
+ok 76 - shared fixture: config_negative_rows
+  ---
+  duration_ms: 0.049492
+  type: 'test'
+  ...
+# Subtest: shared fixture: config_string_rows
+ok 77 - shared fixture: config_string_rows
+  ---
+  duration_ms: 0.039861
+  type: 'test'
+  ...
+# Subtest: shared fixture: config_zero_timeout
+ok 78 - shared fixture: config_zero_timeout
+  ---
+  duration_ms: 0.038908
+  type: 'test'
+  ...
+# Subtest: shared fixture: config_fractional_interval
+ok 79 - shared fixture: config_fractional_interval
+  ---
+  duration_ms: 0.045922
+  type: 'test'
+  ...
+# Subtest: shared fixture: config_bad_digest
+ok 80 - shared fixture: config_bad_digest
+  ---
+  duration_ms: 0.086576
+  type: 'test'
+  ...
+# Subtest: shared fixture: config_root_fragment
+ok 81 - shared fixture: config_root_fragment
+  ---
+  duration_ms: 0.046572
+  type: 'test'
+  ...
+# Subtest: shared fixture: config_root_leading_space
+ok 82 - shared fixture: config_root_leading_space
+  ---
+  duration_ms: 0.047504
+  type: 'test'
+  ...
+# Subtest: first request and numeric bounds follow the common contract
+ok 83 - first request and numeric bounds follow the common contract
+  ---
+  duration_ms: 0.607297
+  type: 'test'
+  ...
+# Subtest: live fetch preserves auth/headers, follows query-only links, and does not retain cookies
+ok 84 - live fetch preserves auth/headers, follows query-only links, and does not retain cookies
+  ---
+  duration_ms: 86.056462
+  type: 'test'
+  ...
+# Subtest: live redirects are not followed
+ok 85 - live redirects are not followed
+  ---
+  duration_ms: 3.736314
+  type: 'test'
+  ...
+# Subtest: request deadline includes a stalled response body
+ok 86 - request deadline includes a stalled response body
+  ---
+  duration_ms: 1003.904018
+  type: 'test'
+  ...
+# Subtest: invalid UTF-8 and declared body limits fail before row processing
+ok 87 - invalid UTF-8 and declared body limits fail before row processing
+  ---
+  duration_ms: 0.79068
+  type: 'test'
+  ...
+# Subtest: transient errors permit the next scan, terminal errors stop, and slots are skipped
+ok 88 - transient errors permit the next scan, terminal errors stop, and slots are skipped
+  ---
+  duration_ms: 40.524704
+  type: 'test'
+  ...
+# Subtest: CDS ODBC requires an explicit shared query instead of the HANA default
+ok 89 - CDS ODBC requires an explicit shared query instead of the HANA default
+  ---
+  duration_ms: 0.836927
+  type: 'test'
+  ...
+# Subtest: CDS ODBC loads the shared query and fixed 100-row configuration
+ok 90 - CDS ODBC loads the shared query and fixed 100-row configuration
+  ---
+  duration_ms: 4.144855
+  type: 'test'
+  ...
+# Subtest: native HANA retains the existing default shared query
+ok 91 - native HANA retains the existing default shared query
+  ---
+  duration_ms: 4.254895
+  type: 'test'
+  ...
+# Subtest: opt-in phase timings preserve SQL result and absent diagnostics preserve output schema
+ok 92 - opt-in phase timings preserve SQL result and absent diagnostics preserve output schema
+  ---
+  duration_ms: 2.329406
+  type: 'test'
+  ...
+# Subtest: profile capture/replay validates shared rows and isolates validation/hash controls
+ok 93 - profile capture/replay validates shared rows and isolates validation/hash controls
+  ---
+  duration_ms: 2.41469
+  type: 'test'
+  ...
+# Subtest: DB-only drain explicitly omits row validation and digest while counting all driver rows
+ok 94 - DB-only drain explicitly omits row validation and digest while counting all driver rows
+  ---
+  duration_ms: 0.31051
+  type: 'test'
+  ...
+# Subtest: diagnostic arguments reject bad modes, repeated switches and unbound replay
+ok 95 - diagnostic arguments reject bad modes, repeated switches and unbound replay
+  ---
+  duration_ms: 3.467768
+  type: 'test'
+  ...
+# Subtest: optional HANA diagnostics count API crossings and separate statement/fetch server reports
+ok 96 - optional HANA diagnostics count API crossings and separate statement/fetch server reports
+  ---
+  duration_ms: 0.880462
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: two_rows
+ok 97 - SQL uses shared row/hash fixture: two_rows
+  ---
+  duration_ms: 2.489909
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: empty
+ok 98 - SQL uses shared row/hash fixture: empty
+  ---
+  duration_ms: 0.353716
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: decimal_normalization
+ok 99 - SQL uses shared row/hash fixture: decimal_normalization
+  ---
+  duration_ms: 0.377503
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: leap_day
+ok 100 - SQL uses shared row/hash fixture: leap_day
+  ---
+  duration_ms: 0.286487
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_decimal_number
+ok 101 - SQL uses shared row/hash fixture: schema_decimal_number
+  ---
+  duration_ms: 0.252663
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_null
+ok 102 - SQL uses shared row/hash fixture: schema_null
+  ---
+  duration_ms: 0.507043
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_quantity_scale
+ok 103 - SQL uses shared row/hash fixture: schema_quantity_scale
+  ---
+  duration_ms: 0.194527
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_amount_scale
+ok 104 - SQL uses shared row/hash fixture: schema_amount_scale
+  ---
+  duration_ms: 0.176395
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_decimal_exponent
+ok 105 - SQL uses shared row/hash fixture: schema_decimal_exponent
+  ---
+  duration_ms: 0.213617
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_negative
+ok 106 - SQL uses shared row/hash fixture: schema_negative
+  ---
+  duration_ms: 0.216213
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_quantity_overflow
+ok 107 - SQL uses shared row/hash fixture: schema_quantity_overflow
+  ---
+  duration_ms: 0.159689
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_amount_overflow
+ok 108 - SQL uses shared row/hash fixture: schema_amount_overflow
+  ---
+  duration_ms: 0.106802
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_invalid_date
+ok 109 - SQL uses shared row/hash fixture: schema_invalid_date
+  ---
+  duration_ms: 0.085793
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_century_nonleap
+ok 110 - SQL uses shared row/hash fixture: schema_century_nonleap
+  ---
+  duration_ms: 0.08001
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_bad_position
+ok 111 - SQL uses shared row/hash fixture: schema_bad_position
+  ---
+  duration_ms: 0.077248
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_tab_identifier
+ok 112 - SQL uses shared row/hash fixture: schema_tab_identifier
+  ---
+  duration_ms: 0.081995
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_nonascii
+ok 113 - SQL uses shared row/hash fixture: schema_nonascii
+  ---
+  duration_ms: 0.15615
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_currency
+ok 114 - SQL uses shared row/hash fixture: schema_currency
+  ---
+  duration_ms: 0.138143
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_missing
+ok 115 - SQL uses shared row/hash fixture: schema_missing
+  ---
+  duration_ms: 0.086445
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_trailing_newline_OrderId
+ok 116 - SQL uses shared row/hash fixture: schema_trailing_newline_OrderId
+  ---
+  duration_ms: 0.090347
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_trailing_newline_PositionNumber
+ok 117 - SQL uses shared row/hash fixture: schema_trailing_newline_PositionNumber
+  ---
+  duration_ms: 0.452949
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_trailing_newline_CustomerId
+ok 118 - SQL uses shared row/hash fixture: schema_trailing_newline_CustomerId
+  ---
+  duration_ms: 0.202668
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_trailing_newline_OrderDate
+ok 119 - SQL uses shared row/hash fixture: schema_trailing_newline_OrderDate
+  ---
+  duration_ms: 0.160445
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_trailing_newline_MaterialId
+ok 120 - SQL uses shared row/hash fixture: schema_trailing_newline_MaterialId
+  ---
+  duration_ms: 0.093012
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_trailing_newline_Quantity
+ok 121 - SQL uses shared row/hash fixture: schema_trailing_newline_Quantity
+  ---
+  duration_ms: 0.08067
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_trailing_newline_Unit
+ok 122 - SQL uses shared row/hash fixture: schema_trailing_newline_Unit
+  ---
+  duration_ms: 0.092028
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_trailing_newline_NetAmount
+ok 123 - SQL uses shared row/hash fixture: schema_trailing_newline_NetAmount
+  ---
+  duration_ms: 0.088996
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: schema_trailing_newline_Currency
+ok 124 - SQL uses shared row/hash fixture: schema_trailing_newline_Currency
+  ---
+  duration_ms: 0.071216
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: order_duplicate
+ok 125 - SQL uses shared row/hash fixture: order_duplicate
+  ---
+  duration_ms: 0.133032
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: order_descending
+ok 126 - SQL uses shared row/hash fixture: order_descending
+  ---
+  duration_ms: 0.140102
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: order_across_pages
+ok 127 - SQL uses shared row/hash fixture: order_across_pages
+  ---
+  duration_ms: 0.214036
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: count_mismatch
+ok 128 - SQL uses shared row/hash fixture: count_mismatch
+  ---
+  duration_ms: 0.101791
+  type: 'test'
+  ...
+# Subtest: SQL uses shared row/hash fixture: digest_mismatch
+ok 129 - SQL uses shared row/hash fixture: digest_mismatch
+  ---
+  duration_ms: 0.114069
+  type: 'test'
+  ...
+# Subtest: hana cursor processes frozen seed with one query and bounded 100-row batches
+ok 130 - hana cursor processes frozen seed with one query and bounded 100-row batches
+  ---
+  duration_ms: 61.876397
+  type: 'test'
+  ...
+# Subtest: hana persistent session reuses its connection and closes scan cursors
+ok 131 - hana persistent session reuses its connection and closes scan cursors
+  ---
+  duration_ms: 90.04554
+  type: 'test'
+  ...
+# Subtest: odbc cursor processes frozen seed with one query and bounded 100-row batches
+ok 132 - odbc cursor processes frozen seed with one query and bounded 100-row batches
+  ---
+  duration_ms: 27.662532
+  type: 'test'
+  ...
+# Subtest: odbc persistent session reuses its connection and closes scan cursors
+ok 133 - odbc persistent session reuses its connection and closes scan cursors
+  ---
+  duration_ms: 61.026926
+  type: 'test'
+  ...
+# Subtest: SQL rejects incompatible fetch sizes, native values, oversized batches and unavailable drivers
+ok 134 - SQL rejects incompatible fetch sizes, native values, oversized batches and unavailable drivers
+  ---
+  duration_ms: 1.05363
+  type: 'test'
+  ...
+# Subtest: SQL bounds fetch attempts and sanitizes driver failures while closing resources
+ok 135 - SQL bounds fetch attempts and sanitizes driver failures while closing resources
+  ---
+  duration_ms: 0.57477
+  type: 'test'
+  ...
+# Subtest: SQL deadline requests cancellation and awaits resource cleanup
+ok 136 - SQL deadline requests cancellation and awaits resource cleanup
+  ---
+  duration_ms: 1000.092851
+  type: 'test'
+  ...
+# Subtest: SQL finite and continuous runners invalidate failed scans
+ok 137 - SQL finite and continuous runners invalidate failed scans
+  ---
+  duration_ms: 2.193881
+  type: 'test'
+  ...
+# Subtest: raw continuation checks reject empty userinfo and whitespace before protocol-relative URLs
+ok 138 - raw continuation checks reject empty userinfo and whitespace before protocol-relative URLs
+  ---
+  duration_ms: 0.928249
+  type: 'test'
+  ...
+# Subtest: service root checks reject empty userinfo, empty query/fragment, and trailing whitespace
+ok 139 - service root checks reject empty userinfo, empty query/fragment, and trailing whitespace
+  ---
+  duration_ms: 0.135891
+  type: 'test'
+  ...
+1..139
+# tests 139
+# suites 0
+# pass 139
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5056.004016

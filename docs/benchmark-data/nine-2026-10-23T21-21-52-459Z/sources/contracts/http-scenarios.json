@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "timeout",
+      "config": {
+        "expected_rows": 0,
+        "expected_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "request_timeout_seconds": 1,
+        "max_body_bytes": 4096
+      },
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "TIMEOUT",
+          "page_index": 1,
+          "http_status": null
+        }
+      }
+    },
+    {
+      "id": "transport",
+      "config": {
+        "expected_rows": 0,
+        "expected_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "request_timeout_seconds": 1,
+        "max_body_bytes": 4096
+      },
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "TRANSPORT",
+          "page_index": 1,
+          "http_status": null
+        }
+      }
+    },
+    {
+      "id": "partial_timeout",
+      "config": {
+        "expected_rows": 0,
+        "expected_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "request_timeout_seconds": 1,
+        "max_body_bytes": 4096
+      },
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "TIMEOUT",
+          "page_index": 1,
+          "http_status": null
+        }
+      }
+    },
+    {
+      "id": "oversized_timeout",
+      "config": {
+        "expected_rows": 0,
+        "expected_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "request_timeout_seconds": 1,
+        "max_body_bytes": 16
+      },
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "TIMEOUT",
+          "page_index": 1,
+          "http_status": null
+        }
+      }
+    },
+    {
+      "id": "partial_disconnect",
+      "config": {
+        "expected_rows": 0,
+        "expected_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "request_timeout_seconds": 1,
+        "max_body_bytes": 4096
+      },
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "TRANSPORT",
+          "page_index": 1,
+          "http_status": null
+        }
+      }
+    },
+    {
+      "id": "chunked_oversized",
+      "config": {
+        "expected_rows": 0,
+        "expected_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "request_timeout_seconds": 1,
+        "max_body_bytes": 16
+      },
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "LIMIT",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "invalid_utf8",
+      "config": {
+        "expected_rows": 0,
+        "expected_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "request_timeout_seconds": 1,
+        "max_body_bytes": 4096
+      },
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "SCHEMA",
+          "page_index": 1,
+          "http_status": 200
+        }
+      }
+    },
+    {
+      "id": "non200_timeout",
+      "config": {
+        "expected_rows": 0,
+        "expected_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "request_timeout_seconds": 1,
+        "max_body_bytes": 16
+      },
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "TIMEOUT",
+          "page_index": 1,
+          "http_status": null
+        }
+      }
+    },
+    {
+      "id": "non200_oversized",
+      "config": {
+        "expected_rows": 0,
+        "expected_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "request_timeout_seconds": 1,
+        "max_body_bytes": 16
+      },
+      "expected": {
+        "outcome": "error",
+        "rows": 0,
+        "pages": 1,
+        "digest": null,
+        "error": {
+          "code": "HTTP_STATUS",
+          "page_index": 1,
+          "http_status": 503
+        }
+      }
+    }
+  ]
+}
